@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details | CorpMove</title>
+    <!-- Bootstrap 5 & Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg py-3 main-nav sticky-top">
+          <!-- standard header layout -->
+          <div class="container">
+              <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
+                  <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
+              </a>
+              <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                  <i class="bi bi-list fs-1"></i>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                  <div class="offcanvas-header">
+                      <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 fs-5">
+                          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+                          <li class="nav-item"><a class="nav-link fw-semibold" href="home2.html">Home 2</a></li>
+                          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                          <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                          <li class="nav-item"><a class="nav-link fw-semibold active text-primary" href="blog.html">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                      </ul>
+                      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                          <button class="btn btn-outline-primary btn-sm rounded-pill fw-bold" id="rtlToggle">RTL</button>
+                          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
+                          <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Login</a>
+                          <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Sign Up</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="py-5 bg-tertiary">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                      <!-- Badge & Meta -->
+                      <div class="text-center mb-4">
+                          <span class="badge bg-secondary mb-3 px-3 py-2 rounded-pill fs-6">HR Tips</span>
+                          <h1 class="display-5 fw-bold mb-4">How to Manage Relocation Stress for Executives</h1>
+                          <div class="d-flex gap-4 justify-content-center text-muted small fw-semibold">
+                              <span><i class="bi bi-calendar3 me-1"></i> October 12, 2026</span>
+                              <span><i class="bi bi-person me-1"></i> CorpMove Admin</span>
+                              <span><i class="bi bi-clock me-1"></i> 5 Min Read</span>
+                          </div>
+                      </div>
+
+                      <!-- Featured Image -->
+                      <div class="bg-light d-flex align-items-center justify-content-center rounded-4 overflow-hidden mb-5 shadow-sm border" style="height: 400px;">
+                          <img src="https://images.unsplash.com/photo-1573496773357-19ad0d41e548?auto=format&fit=crop&q=80&w=800&h=400" alt="Executive Meeting" class="w-100 h-100 object-fit-cover">
+                      </div>
+
+                      <!-- Article Content -->
+                      <div class="article-content fs-5 lh-lg text-dark opacity-100">
+                          <p class="mb-4">Moving a key executive isn't just about moving boxes—it's about transitioning their entire life while keeping them productive in their new role. Stress mitigation is crucial for employee retention.</p>
+                          <h3 class="fw-bold mt-5 mb-3">1. Communication is Key</h3>
+                          <p class="mb-4">From day one, lay out a clear timeline of expectations. The dedicated dashboard we provide helps human resource managers keep an eye on every milestone without needing constant phone calls.</p>
+                          <blockquote class="bg-primary bg-opacity-10 border-start border-5 border-primary p-4 my-5 rounded-end italic opacity-75">
+                              "When employees know what to expect, anxiety drops significantly. Keeping them informed via a dashboard empowers them." — Jane Smith, Expert HR Planner
+                          </blockquote>
+                          <h3 class="fw-bold mt-5 mb-3">2. White-Glove Staging</h3>
+                          <p class="mb-4">High-level personnel often do not have the time to unpack. Opting for full white-glove setup ensures they can walk from their old home into a fully assembled new home.</p>
+                      </div>
+
+                      <!-- Share / Tags -->
+                      <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top">
+                          <div class="d-flex gap-2">
+                              <span class="badge bg-tertiary text-muted fw-normal px-2 py-1 border">Relocation</span>
+                              <span class="badge bg-tertiary text-muted fw-normal px-2 py-1 border">Stress Free</span>
+                              <span class="badge bg-tertiary text-muted fw-normal px-2 py-1 border">Management</span>
+                          </div>
+                          <div class="d-flex gap-3 fs-5">
+                              <span class="text-muted fw-semibold fs-6 mt-1 me-2">Share:</span>
+                              <a href="#" class="text-primary hover-opacity"><i class="bi bi-facebook"></i></a>
+                              <a href="#" class="text-primary hover-opacity"><i class="bi bi-twitter-x"></i></a>
+                              <a href="#" class="text-primary hover-opacity"><i class="bi bi-linkedin"></i></a>
+                          </div>
+                      </div>
+                      
+                      <!-- Reply Form -->
+                      <div class="cm-card p-5 mt-5">
+                          <h4 class="fw-bold mb-4">Leave a Reply</h4>
+                          <form>
+                              <div class="row g-3">
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control bg-light border-0 px-4 py-3 rounded shadow-none" placeholder="Your Name" required>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <input type="email" class="form-control bg-light border-0 px-4 py-3 rounded shadow-none" placeholder="Your Email" required>
+                                  </div>
+                                  <div class="col-12">
+                                      <textarea class="form-control bg-light border-0 px-4 py-3 rounded shadow-none" rows="4" placeholder="Your Comment..." required></textarea>
+                                  </div>
+                                  <div class="col-12 mt-3">
+                                      <button type="submit" class="btn btn-secondary px-5 py-3 fw-bold rounded-pill text-white">Post Comment</button>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+
+    <footer class="footer-wrap bg-tertiary mt-5">
+        <div class="container-fluid border-top py-3 text-center text-muted border-dark-subtle">
+            <p class="mb-0">&copy; 2026 CorpMove. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <button class="btn btn-primary" id="backToTop"><i class="bi bi-arrow-up fs-4"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
