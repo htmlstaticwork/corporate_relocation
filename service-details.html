@@ -1,48 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" dir="ltr">
+<html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Details | CorpMove</title>
+    <meta name="description" content="Mission FAQ & Methodology. Technical breakdown of relocation protocols and resource allocation.">
+    <title>Methodology | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Bootstrap 5 & Custom CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-black">
 
     <!-- Header -->
     <header>
-      <nav class="navbar navbar-expand-lg py-3 main-nav sticky-top">
+      <nav class="navbar navbar-expand-lg py-3 main-nav">
           <div class="container">
               <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
                   <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
               </a>
-              <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                  <i class="bi bi-list fs-1"></i>
-              </button>
+
+              <div class="d-flex align-items-center gap-3 ms-auto order-lg-last">
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                      <i class="bi bi-moon-fill" id="themeIcon"></i>
+                  </button>
+                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
+                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
+                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                      <i class="bi bi-list fs-1"></i>
+                  </button>
+              </div>
+
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                  <div class="offcanvas-header">
+                  <div class="offcanvas-header bg-black border-bottom cm-border-main">
                       <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                   </div>
-                  <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 fs-5">
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home1</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="home2.html">Home2</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                  <div class="offcanvas-body bg-black">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-center">
+                          <li class="nav-item"><a class="nav-link" href="index.html">Home1</a></li>
+                          <li class="nav-item"><a class="nav-link" href="home2.html">Home2</a></li>
+                          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                          <li class="nav-item"><a class="nav-link active text-primary" href="services.html">Services</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                          <li class="nav-item d-md-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-md-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
                       </ul>
-                      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-                          <button class="btn btn-outline-primary btn-sm rounded-pill fw-bold" id="rtlToggle">RTL</button>
-                          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
-                          <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Login</a>
-                          <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Sign Up</a>
-                      </div>
                   </div>
               </div>
           </div>
@@ -50,96 +60,99 @@
     </header>
 
     <main>
-      <!-- Page Header -->
-      <section class="bg-primary text-white text-center py-5">
-          <div class="container py-4">
-              <h1 class="display-4 fw-bold">Service Details</h1>
-              <p class="lead opacity-75 max-w-lg mx-auto mb-0">Dive deep into what makes our relocation process seamless.</p>
+      <!-- Page Header - METHODOLOGY -->
+      <section class="py-5 cm-bg-main border-bottom cm-border-main">
+          <div class="container py-5 text-center reveal">
+              <h1 class="display-4 fw-bold">Mission FAQ & Methodology</h1>
+              <p class="lead text-muted max-w-lg mx-auto mb-0 small">Technical breakdown of asset transition protocols and coordination hubs.</p>
           </div>
       </section>
 
-      <!-- Pricing Plans embed inside Service Details as requested (Service Details (FAQ + Pricing)) -->
-      <section class="py-5 my-5 bg-tertiary">
+      <!-- Pricing Plans - RESOURCE LOADOUTS -->
+      <section class="py-5 my-5 bg-black">
           <div class="container">
-              <div class="text-center mb-5">
-                  <h6 class="text-secondary fw-bold text-uppercase tracking-wider">Clear Costs</h6>
-                  <h2 class="display-6 fw-bold">Estimated Pricing Plans</h2>
+              <div class="text-center mb-5 reveal">
+                  <h6 class="text-primary fw-bold text-uppercase tracking-widest small">COST_VALUATION</h6>
+                  <h2 class="display-6 fw-bold text-white">Operational Loadouts</h2>
               </div>
               <div class="row g-4 justify-content-center">
-                  <div class="col-lg-4 col-md-6">
-                      <div class="cm-card p-5 h-100 text-center">
-                          <h4 class="fw-bold mb-3">Basic Employee</h4>
-                          <h2 class="display-5 text-primary fw-bold mb-4">$900<span class="fs-6 text-muted fw-normal">/move</span></h2>
+                  <div class="col-lg-5 col-md-6 reveal">
+                      <div class="cm-card p-5 h-100 text-center bg-opacity-10 border-white border-opacity-5">
+                          <h6 class="tech-data text-primary x-small mb-4">BASIC_TRANSIT</h6>
+                          <h4 class="fw-bold mb-3">Field Employee</h4>
+                          <h2 class="display-5 fw-bold mb-4">$900<span class="fs-6 text-muted fw-normal x-small">/OPS</span></h2>
                           <ul class="list-unstyled d-flex flex-column gap-3 mb-4 text-start">
-                              <li><i class="bi bi-check-lg text-secondary me-2"></i> Standard Packing</li>
-                              <li><i class="bi bi-check-lg text-secondary me-2"></i> Local Transport</li>
-                              <li><i class="bi bi-check-lg text-secondary me-2"></i> 24/7 Support</li>
-                              <li><i class="bi bi-x-lg text-muted me-2"></i> HR Dashboard Setup</li>
+                              <li class="text-muted small"><i class="bi bi-check2 text-primary me-2"></i> STANDARD_CARGO_CONTROL</li>
+                              <li class="text-muted small"><i class="bi bi-check2 text-primary me-2"></i> REGIONAL_GROUND_GRID</li>
+                              <li class="text-muted small"><i class="bi bi-check2 text-primary me-2"></i> LIVE_STREAM_SUPPORT_B1</li>
+                              <li class="text-muted small opacity-30"><i class="bi bi-dash text-muted me-2"></i> CORE_DASHBOARD_ACCESS</li>
                           </ul>
-                          <a href="#" class="btn btn-outline-primary rounded-pill w-100">Contact Sales</a>
+                          <a href="register.html" class="btn btn-outline-primary rounded-pill w-100 x-small tracking-widest fw-bold">REQUEST_DELETION</a>
                       </div>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                      <div class="cm-card p-5 h-100 text-center border border-2 border-secondary position-relative">
-                          <div class="bg-secondary text-white fw-bold px-3 py-1 rounded-bottom position-absolute top-0 start-50 translate-middle-x">Most Popular</div>
-                          <h4 class="fw-bold mb-3 mt-3">Executive</h4>
-                          <h2 class="display-5 text-primary fw-bold mb-4">$2,500<span class="fs-6 text-muted fw-normal">/move</span></h2>
+                  <div class="col-lg-5 col-md-6 reveal">
+                      <div class="cm-card p-5 h-100 text-center border border-primary border-opacity-25 bg-primary bg-opacity-5 shadow-2xl">
+                          <h6 class="tech-data text-primary x-small mb-4">HIGH_VALUE_PRINCIPAL</h6>
+                          <h4 class="fw-bold mb-3">Executive Node</h4>
+                          <h2 class="display-5 fw-bold mb-4">$2,500<span class="fs-6 text-muted fw-normal x-small">/OPS</span></h2>
                           <ul class="list-unstyled d-flex flex-column gap-3 mb-4 text-start">
-                              <li><i class="bi bi-check-lg text-secondary me-2"></i> White-glove Packing</li>
-                              <li><i class="bi bi-check-lg text-secondary me-2"></i> Global Transport Option</li>
-                              <li><i class="bi bi-check-lg text-secondary me-2"></i> Priority Support</li>
-                              <li><i class="bi bi-check-lg text-secondary me-2"></i> Full HR Dashboard Setup</li>
+                              <li class="text-muted small"><i class="bi bi-check2 text-primary me-2"></i> WHITE_GLOVE_CARGO_ENCRYPTION</li>
+                              <li class="text-muted small"><i class="bi bi-check2 text-primary me-2"></i> MULTI_VECTOR_GLOBAL_TRANS</li>
+                              <li class="text-muted small"><i class="bi bi-check2 text-primary me-2"></i> PRIORITY_COMMAND_CHANNEL</li>
+                              <li class="text-muted small"><i class="bi bi-check2 text-primary me-2"></i> FULL_DATA_CORE_INTEGRATION</li>
                           </ul>
-                          <a href="#" class="btn btn-secondary rounded-pill w-100 fw-bold">Contact Sales</a>
+                          <a href="register.html" class="btn btn-primary rounded-pill w-100 fw-bold text-white x-small tracking-widest px-4">INITIATE_DEPLOYMENT</a>
                       </div>
                   </div>
               </div>
           </div>
       </section>
 
-      <!-- FAQ Accordion -->
+      <!-- FAQ Accordion - INTELLIGENCE ARCHIVE -->
       <section class="py-5 my-5">
           <div class="container">
-              <div class="text-center mb-5">
-                  <h6 class="text-secondary fw-bold text-uppercase tracking-wider">Have Questions?</h6>
-                  <h2 class="display-6 fw-bold">Frequently Asked Questions</h2>
+              <div class="text-center mb-5 reveal">
+                  <h6 class="text-primary fw-bold text-uppercase tracking-widest small">INTELLIGENCE_ARCHIVE</h6>
+                  <h2 class="display-6 fw-bold text-white">Frequently Asked Questions</h2>
               </div>
               <div class="row justify-content-center">
-                  <div class="col-lg-8">
+                  <div class="col-lg-8 reveal">
                       <div class="accordion" id="faqAccordion">
-                          <div class="accordion-item border-0 mb-3 cm-card overflow-hidden">
+                          <div class="accordion-item border-0 mb-4 bg-transparent">
                               <h2 class="accordion-header">
-                                  <button class="accordion-button bg-transparent fw-bold fs-5 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                      What is a corporate relocation package?
+                                  <button class="accordion-button collapsed tech-data text-white shadow-none bg-black border border-white border-opacity-5 rounded-4 p-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                      PROTOCOLS_DEFINITION: RELOCATION_PACKAGE?
                                   </button>
                               </h2>
-                              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                  <div class="accordion-body text-muted">
-                                      It’s a comprehensive allowance or set of services provided by an employer to help transfer an employee for business purposes. This includes packing, transport, and insurance.
+                              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                  <div class="accordion-body text-muted small bg-black bg-opacity-50 border-start border-primary border-3 ms-3 mt-2 rounded-3 p-4">
+                                      Relocation packages represent a comprehensive set of operational allowances provided to facilitate principal transfer across jurisdictional sectors. This includes logistics coordination, asset packing, and risk mitigation coverage.
                                   </div>
                               </div>
                           </div>
-                          <div class="accordion-item border-0 mb-3 cm-card overflow-hidden">
+                          
+                          <div class="accordion-item border-0 mb-4 bg-transparent">
                               <h2 class="accordion-header">
-                                  <button class="accordion-button collapsed bg-transparent fw-bold fs-5 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                      How does the HR Dashboard work?
+                                  <button class="accordion-button collapsed tech-data text-white shadow-none bg-black border border-white border-opacity-5 rounded-4 p-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                      INTERFACE_GUIDE: OPERATIONAL_DASHBOARD?
                                   </button>
                               </h2>
                               <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                  <div class="accordion-body text-muted">
-                                      Our secure portal allows Human Resources to initiate moves, track real-time transit status of employees' items, and monitor budgetary expenses.
+                                  <div class="accordion-body text-muted small bg-black bg-opacity-50 border-start border-primary border-3 ms-3 mt-2 rounded-3 p-4">
+                                      The secure interface provides Human Resources modules to execute new transfers, monitor active asset streams in real-time coordination, and reconcile budgetary resource allocation from a single endpoint.
                                   </div>
                               </div>
                           </div>
-                          <div class="accordion-item border-0 mb-3 cm-card overflow-hidden">
+
+                          <div class="accordion-item border-0 mb-4 bg-transparent">
                               <h2 class="accordion-header">
-                                  <button class="accordion-button collapsed bg-transparent fw-bold fs-5 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                      Do you offer international moving?
+                                  <button class="accordion-button collapsed tech-data text-white shadow-none bg-black border border-white border-opacity-5 rounded-4 p-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                      GLOBAL_RADIUS: CROSS_BORDER_CAPACITY?
                                   </button>
                               </h2>
                               <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                  <div class="accordion-body text-muted">
-                                      Yes, we have 50+ global partners to bypass customs friction and ensure safe delivery worldwide.
+                                  <div class="accordion-body text-muted small bg-black bg-opacity-50 border-start border-primary border-3 ms-3 mt-2 rounded-3 p-4">
+                                      We maintain a network of over 50 international logistical nodes to bypass friction and ensure secure, multi-vector transit across all global sectors.
                                   </div>
                               </div>
                           </div>
@@ -150,64 +163,57 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-wrap bg-tertiary">
+    <!-- Footer - GLOBAL FOOTER REDESIGN -->
+    <footer class="footer-wrap">
         <div class="container pb-5">
-            <div class="row g-4">
-                <!-- Column 1: Brand + Social -->
+            <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-3"
+                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-4"
                         href="index.html">
-                        <i class="bi bi-buildings-fill me-2"></i> CorpMove
+                        <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
                     </a>
-                    <p class="mb-4 text-muted">A professional, organized site that simplifies the stress of corporate
-                        moves for both HR and the relocating employee.</p>
+                    <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
                     <div class="d-flex gap-3">
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
-                <!-- Column 2: Company Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Company</h5>
+                    <h6 class="tech-data mb-4 small">FIRM</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="services.html" class="footer-link">Our Services</a></li>
-                        <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
-                        <li><a href="blog.html" class="footer-link">News & Blog</a></li>
+                        <li><a href="about.html" class="footer-link small">Overview</a></li>
+                        <li><a href="services.html" class="footer-link small">Methodology</a></li>
+                        <li><a href="pricing.html" class="footer-link small">Engagement</a></li>
+                        <li><a href="blog.html" class="footer-link small">Field Reports</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Support Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Support</h5>
+                    <h6 class="tech-data mb-4 small">PROTOCOLS</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="contact.html" class="footer-link">Help Center</a></li>
-                        <li><a href="service-details.html" class="footer-link">FAQ's</a></li>
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="contact.html" class="footer-link small">Intake Center</a></li>
+                        <li><a href="service-details.html" class="footer-link small">FAQ Archive</a></li>
+                        <li><a href="#" class="footer-link small">Compliance</a></li>
+                        <li><a href="#" class="footer-link small">Privileged Access</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 4: Newsletter -->
                 <div class="col-lg-4 col-md-6">
-                    <h5 class="fw-bold mb-4">Newsletter</h5>
-                    <p class="text-muted">Subscribe to our newsletter for the latest relocation tips.</p>
-                    <form class="d-flex w-100">
-                        <input type="email" class="form-control rounded-start-pill border-end-0 shadow-none ps-3"
-                            placeholder="Email Address" required>
-                        <button class="btn btn-secondary rounded-end-pill px-4" type="submit">Subscribe</button>
+                    <h6 class="tech-data mb-4 small">INTEL FEED</h6>
+                    <p class="text-muted small mb-4">Subscribe for secure relocation briefings and global policy alerts.</p>
+                    <form class="d-flex w-100 border border-white border-opacity-10 rounded-pill p-1">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small"
+                            placeholder="Email Endpoint..." required>
+                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold" type="submit">Deploy</button>
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- Copyright line -->
-        <div class="container-fluid border-top py-3 text-center text-muted border-dark-subtle">
-            <p class="mb-0">&copy; 2026 CorpMove. All Rights Reserved.</p>
+        <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
         </div>
     </footer>
 

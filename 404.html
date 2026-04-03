@@ -1,105 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" dir="ltr">
+<html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page Not Found | CorpMove</title>
+    <meta name="description" content="Protocol Breach. Requested sector not found within the network.">
+    <title>Null Sector | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Bootstrap 5 & Custom CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body class="bg-tertiary d-flex flex-column min-vh-100">
+<body class="bg-black d-flex flex-column min-vh-100">
 
     <header>
-      <nav class="navbar navbar-expand-lg py-3 main-nav sticky-top bg-white">
-          <div class="container">
-              <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
+      <nav class="navbar navbar-expand-lg py-3 main-nav">
+          <div class="container text-center">
+              <a class="navbar-brand text-primary fw-bold fs-3 mx-auto d-flex align-items-center" href="index.html">
                   <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
               </a>
-              <div class="ms-auto d-flex align-items-center gap-3">
-                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
-                  <a href="index.html" class="btn btn-primary fw-bold px-4 rounded-pill d-none d-md-inline-flex">Back to Home</a>
-              </div>
           </div>
       </nav>
     </header>
 
     <main class="flex-grow-1 d-flex align-items-center justify-content-center text-center py-5">
-        <div class="container">
+        <div class="container reveal">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="display-1 fw-bold text-primary" style="font-size: 8rem;"><i class="bi bi-emoji-frown text-muted me-3 fs-1 opacity-50"></i>404</div>
-                    <h2 class="display-6 fw-bold mb-4">Page Not Found</h2>
-                    <p class="lead text-muted mb-5">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-                    <a href="index.html" class="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow-sm">
-                        <i class="bi bi-house-door-fill me-2"></i> Back to Homepage
+                <div class="col-lg-8">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest small mb-4">PROTOCOL_BREACH_DETECTED</h6>
+                    <div class="display-1 fw-bold text-white mb-2" style="font-size: 10rem; font-family: 'Roboto Mono', monospace;">404</div>
+                    <h2 class="display-6 fw-bold text-white mb-4">Null Sector Entry_Denied</h2>
+                    <p class="lead text-muted mb-5 small max-w-md mx-auto">The requested navigational coordinate does not exist within the firm's encrypted network. Your access attempt has been logged for security review.</p>
+                    <a href="index.html" class="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow-sm x-small tracking-widest text-uppercase">
+                        <i class="bi bi-shield-fill-check me-2"></i> RE-ESTABLISH_UPLINK
                     </a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-wrap bg-tertiary">
+    <!-- Footer - GLOBAL FOOTER REDESIGN -->
+    <footer class="footer-wrap">
         <div class="container pb-5">
-            <div class="row g-4">
-                <!-- Column 1: Brand + Social -->
+            <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-3"
+                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-4"
                         href="index.html">
-                        <i class="bi bi-buildings-fill me-2"></i> CorpMove
+                        <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
                     </a>
-                    <p class="mb-4 text-muted">A professional, organized site that simplifies the stress of corporate
-                        moves for both HR and the relocating employee.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-instagram"></i></a>
-                    </div>
+                    <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
                 </div>
 
-                <!-- Column 2: Company Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Company</h5>
+                    <h6 class="tech-data mb-4 small">FIRM</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="services.html" class="footer-link">Our Services</a></li>
-                        <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
-                        <li><a href="blog.html" class="footer-link">News & Blog</a></li>
+                        <li><a href="about.html" class="footer-link small">Overview</a></li>
+                        <li><a href="services.html" class="footer-link small">Methodology</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Support Links -->
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Support</h5>
-                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="contact.html" class="footer-link">Help Center</a></li>
-                        <li><a href="service-details.html" class="footer-link">FAQ's</a></li>
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="#" class="footer-link">Terms of Service</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Newsletter -->
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="fw-bold mb-4">Newsletter</h5>
-                    <p class="text-muted">Subscribe to our newsletter for the latest relocation tips.</p>
-                    <form class="d-flex w-100">
-                        <input type="email" class="form-control rounded-start-pill border-end-0 shadow-none ps-3"
-                            placeholder="Email Address" required>
-                        <button class="btn btn-secondary rounded-end-pill px-4" type="submit">Subscribe</button>
-                    </form>
+                <div class="col-lg-6 col-md-12">
+                    <h6 class="tech-data mb-4 small">NETWORK_TELEMETRY</h6>
+                    <p class="text-muted small mb-0">SYSTEM_ID: NULL_NODE_04 | SECTOR: UNAUTHORIZED | IP_LOG: ENCRYPTED</p>
                 </div>
             </div>
         </div>
-
-        <!-- Copyright line -->
-        <div class="container-fluid border-top py-3 text-center text-muted border-dark-subtle">
-            <p class="mb-0">&copy; 2026 CorpMove. All Rights Reserved.</p>
+        <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
         </div>
     </footer>
 

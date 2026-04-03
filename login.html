@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" dir="ltr">
+<html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Login to your CorpMove account.">
+    <meta name="description" content="Secure Access Node. Identify yourself for corporate transition management.">
     <title>Login | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <!-- Bootstrap 5 CSS -->
@@ -11,223 +11,138 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
     <style>
         body {
-            background-color: #1a1e21; /* Dark background as seen in screenshot */
+            background-color: var(--cm-bg);
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
         }
-        .login-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 40px 50px;
+        .login-container {
             width: 100%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 450px;
+            padding: 20px;
+        }
+        .auth-card {
+            background: var(--cm-panel);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--cm-border);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
             position: relative;
+            overflow: hidden;
         }
-        [data-bs-theme="dark"] .login-card {
-            background: #1f2937;
-        }
-        .card-toggles {
+        .auth-card::before {
+            content: '';
             position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--bs-primary), transparent);
+            animation: scan 3s linear infinite;
         }
-        .toggle-btn:hover {
-            background: #e5e7eb;
-            transform: scale(1.1);
-        }
-        [data-bs-theme="dark"] .toggle-btn:hover {
-            background: #4b5563;
-        }
-        [data-bs-theme="dark"] .toggle-btn {
-            background: #374151;
-            color: #f9fafb;
-        }
-        /* Removed custom brand-logo styles to use standard navbar branding */
-        .login-title {
-            text-align: center;
-            font-weight: 800;
-            font-size: 2rem;
-            margin-bottom: 5px;
-            color: #111827;
-        }
-        [data-bs-theme="dark"] .login-title {
-            color: #fff;
-        }
-        .login-subtitle {
-            text-align: center;
-            color: #6b7280;
-            margin-bottom: 30px;
-            font-size: 0.9rem;
-        }
-        .form-label {
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #374151;
-            margin-bottom: 8px;
-        }
-        [data-bs-theme="dark"] .form-label {
-            color: #d1d5db;
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         .form-control {
-            background-color: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 12px 15px;
-            font-size: 0.9rem;
-        }
-        [data-bs-theme="dark"] .form-control {
-            background-color: #374151;
-            border-color: #4b5563;
-            color: #fff;
-        }
-        .form-check-label {
-            font-size: 0.85rem;
-            color: #6b7280;
-        }
-        .forgot-link:hover {
-            text-decoration: underline;
-            color: #1a4f43;
-        }
-        [data-bs-theme="dark"] .forgot-link:hover {
-            color: #34d399;
-        }
-        .btn-signin {
-            background-color: #153e34;
-            color: #fff;
-            font-weight: 700;
-            border-radius: 30px;
-            padding: 12px;
-            width: 100%;
-            border: none;
-            margin-top: 20px;
+            background: var(--cm-bg);
+            border: 1px solid var(--cm-border);
+            border-radius: 12px;
+            padding: 14px 20px;
+            color: var(--cm-text-body);
             transition: all 0.3s ease;
         }
-        .btn-signin:hover {
-            background-color: #0d2922;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .form-control:focus {
+            background: var(--cm-bg);
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
         }
-        [data-bs-theme="dark"] .btn-signin:hover {
-            background-color: #059669;
-        }
-        .divider {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 30px 0;
-            color: #9ca3af;
-            font-size: 0.75rem;
-            font-weight: 700;
+        .tech-label {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--bs-primary);
             text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            display: block;
         }
-        .divider::before, .divider::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .divider::before { margin-right: 15px; }
-        .divider::after { margin-left: 15px; }
-        [data-bs-theme="dark"] .divider::before,
-        [data-bs-theme="dark"] .divider::after { border-color: #4b5563; }
-        
-        .social-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        .social-btn:hover {
-            background: #f9fafb;
-            border-color: #153e34;
-            color: #153e34;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        }
-        [data-bs-theme="dark"] .social-btn:hover {
-            background: #4b5563;
-            border-color: #10b981;
-            color: #10b981;
-        }
-        .signup-text {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.85rem;
-            color: #6b7280;
-        }
-        .signup-link {
-            color: #153e34;
+        .btn-auth {
+            background: var(--bs-primary);
+            border: none;
+            border-radius: 12px;
+            padding: 14px;
             font-weight: 700;
-            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
-        .signup-link:hover {
-            text-decoration: underline;
-            color: #1a4f43;
-        }
-        [data-bs-theme="dark"] .signup-link:hover {
-            color: #34d399;
+        .btn-auth:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
         }
     </style>
 </head>
 <body>
 
-    <div class="login-card">
-        <!-- Icons inside Card -->
-        <div class="card-toggles">
-            <button class="toggle-btn" id="themeToggle" title="Toggle Theme">
-                <i class="bi bi-moon-fill" id="themeIcon"></i>
-            </button>
-            <button class="toggle-btn" id="rtlToggle" title="Toggle RTL" style="font-weight: 700; font-size: 0.7rem;">
-                RTL
-            </button>
-        </div>
-
-        <a href="index.html" class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center justify-content-center mb-4 text-decoration-none">
-            <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
-        </a>
-
-        <h2 class="login-title">Welcome Back</h2>
-        <p class="login-subtitle">Please enter your details to sign in.</p>
-
-        <form action="dashboard.html">
-            <div class="mb-3 text-start">
-                <label for="email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+    <div class="login-container reveal">
+        <div class="auth-card">
+            <div class="text-center mb-5">
+                <a href="index.html" class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center justify-content-center mb-4 text-decoration-none">
+                    <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
+                </a>
+                <h2 class="text-white fw-bold mb-2">Access Portal</h2>
+                <p class="text-muted small">Identify yourself to initiate secure protocols.</p>
             </div>
-            <div class="mb-3 text-start">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+
+            <form action="index.html">
+                <div class="mb-4">
+                    <label class="tech-label">USER_IDENTITY</label>
+                    <input type="email" class="form-control shadow-none" placeholder="Endpoint Identifier..." required>
+                </div>
+                <div class="mb-4">
+                    <label class="tech-label">ACCESS_KEY</label>
+                    <input type="password" class="form-control shadow-none" placeholder="••••••••" required>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="remember">
+                        <label class="form-check-label text-muted x-small" for="remember" style="font-size: 0.75rem;">Persistent Session</label>
+                    </div>
+                    <a href="#" class="text-primary text-decoration-none x-small fw-bold" style="font-size: 0.75rem;">Key Recovery?</a>
+                </div>
+
+                <button type="submit" class="btn btn-auth w-100 text-white">Initialize Link</button>
+            </form>
+
+            <div class="text-center mt-5">
+                <p class="text-muted x-small">Unregistered Entity? <a href="register.html" class="text-primary text-decoration-none fw-bold">Enroll Now</a></p>
             </div>
             
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember">
-                    <label class="form-check-label" for="remember">Remember me</label>
-                </div>
-                <a href="#" class="forgot-link">Forgot password?</a>
+            <div class="mt-4 text-center">
+                 <div class="d-flex gap-3 justify-content-center opacity-50">
+                    <a href="#" class="text-white"><i class="bi bi-google"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-apple"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+                 </div>
             </div>
-
-            <button type="submit" class="btn btn-signin">Sign In</button>
-        </form>
-
-        <div class="divider">Or continue with</div>
-
-        <div class="social-btns">
-            <a href="#" class="social-btn"><i class="bi bi-google"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-apple"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
         </div>
-
-        <p class="signup-text">Don't have an account? <a href="register.html" class="signup-link">Sign up</a></p>
+        
+        <div class="text-center mt-4">
+             <p class="tech-data x-small text-muted" style="font-size: 0.6rem;">&copy; 2026 CORPMOVE_LOGISTICS. SYSTEM_ID: AUTH_NODE_01</p>
+        </div>
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->

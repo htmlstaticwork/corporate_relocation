@@ -1,217 +1,280 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" dir="ltr">
+<html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Dashboard | CorpMove</title>
+    <meta name="description" content="Operational Command Center. Secure monitoring of global corporate transitions.">
+    <title>Command Center | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Bootstrap 5 & Custom CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--cm-bg);
+            color: var(--cm-text-body);
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+        .dash-sidebar {
+            background: var(--cm-panel);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--cm-border) !important;
+            width: 280px;
+            transition: all 0.3s ease;
+        }
+        .sidebar-link {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: var(--cm-text-muted) !important;
+            transition: all 0.3s ease;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--cm-primary) !important;
+        }
+        .sidebar-link i {
+            font-size: 1.1rem;
+            margin-right: 12px;
+        }
+        .dash-content {
+            margin-left: 280px;
+            min-height: 100vh;
+            background-color: var(--cm-bg);
+        }
+        .top-nav {
+            background: var(--cm-nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--cm-border) !important;
+            transition: all 0.3s ease;
+        }
+        .status-pill {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.65rem;
+            padding: 4px 12px;
+        }
+        .metric-card {
+            background: var(--cm-panel);
+            border: 1px solid var(--cm-border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            border-color: var(--cm-primary);
+            background: rgba(16, 185, 129, 0.05);
+        }
+        .table {
+            --bs-table-bg: transparent;
+            --bs-table-color: var(--cm-text-body);
+            --bs-table-hover-bg: rgba(var(--cm-primary), 0.05);
+            transition: all 0.3s ease;
+        }
+        .table thead th {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--cm-primary);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--cm-border);
+        }
+        .table td {
+            border-bottom: 1px solid var(--cm-border);
+            padding: 16px 8px;
+            color: var(--cm-text-body);
+        }
+        [data-bs-theme="light"] .table-hover tbody tr:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+    </style>
 </head>
-<body class="bg-tertiary">
+<body class="bg-black">
 
     <div class="d-flex w-100">
         <!-- Sidebar Navigation -->
-        <div class="dash-sidebar bg-white d-flex flex-column p-4 position-fixed h-100 border-end" style="z-index: 1040; overflow-y: auto;">
+        <div class="dash-sidebar d-flex flex-column p-4 position-fixed h-100" style="z-index: 1040;">
             <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center mb-5" href="index.html">
                 <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
             </a>
 
             <ul class="nav flex-column gap-2 mb-auto">
                 <li class="nav-item">
-                    <a href="#analytics" class="nav-link active fw-semibold text-primary bg-primary bg-opacity-10 rounded px-3 py-2 d-flex align-items-center">
-                        <i class="bi bi-graph-up me-3 fs-5"></i> Analytics
+                    <a href="#analytics" class="sidebar-link active d-flex align-items-center mb-1">
+                        <i class="bi bi-grid-fill"></i> Command_Core
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#users" class="nav-link text-muted fw-semibold hover-primary px-3 py-2 d-flex align-items-center">
-                        <i class="bi bi-people-fill me-3 fs-5"></i> Users / Employees
+                    <a href="#users" class="sidebar-link d-flex align-items-center mb-1">
+                        <i class="bi bi-shield-lock-fill"></i> Personnel_Nodes
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#orders" class="nav-link text-muted fw-semibold hover-primary px-3 py-2 d-flex align-items-center">
-                        <i class="bi bi-box-seam-fill me-3 fs-5"></i> Relocation Orders
+                    <a href="#orders" class="sidebar-link d-flex align-items-center mb-1">
+                        <i class="bi bi-box-seam-fill"></i> Transit_Queues
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#messages" class="nav-link text-muted fw-semibold hover-primary px-3 py-2 d-flex align-items-center">
-                        <i class="bi bi-chat-square-dots-fill me-3 fs-5"></i> Messages
-                        <span class="badge bg-secondary ms-auto rounded-pill">3</span>
+                    <a href="#messages" class="sidebar-link d-flex align-items-center mb-1">
+                        <i class="bi bi-terminal-fill"></i> System_Comms
+                        <span class="badge bg-primary ms-auto rounded-pill" style="font-size: 0.5rem; padding: 0.35em 0.65em;">03</span>
                     </a>
                 </li>
             </ul>
 
-            <hr class="text-muted opacity-25 my-4">
-
-            <!-- Footer / Setting / Logout Links -->
-            <ul class="nav flex-column gap-2">
-                <li class="nav-item">
-                    <a href="#" class="nav-link text-muted fw-semibold px-3 py-2 d-flex align-items-center">
-                        <i class="bi bi-gear-fill me-3 fs-5"></i> Settings
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link text-muted fw-semibold px-3 py-2 d-flex align-items-center w-100 text-start bg-transparent border-0 hover-primary" id="rtlToggle">
-                        <i class="bi bi-arrow-left-right me-3 fs-5"></i> Toggle RTL
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <button class="theme-toggle nav-link text-muted fw-semibold px-3 py-2 d-flex align-items-center w-100 text-start border-0 bg-transparent" id="themeToggle">
-                        <i class="bi bi-moon-fill me-3 fs-5" id="themeIcon"></i> Dark Mode
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html" class="nav-link text-danger fw-semibold px-3 py-2 d-flex align-items-center">
-                        <i class="bi bi-box-arrow-right me-3 fs-5"></i> Log Out
-                    </a>
-                </li>
-            </ul>
+            <div class="mt-auto">
+                <hr class="text-white opacity-10 my-4">
+                <ul class="nav flex-column gap-2">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-link small opacity-50"><i class="bi bi-gear"></i> System_Config</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="sidebar-link small text-danger opacity-75"><i class="bi bi-power"></i> Terminate_Session</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <!-- Main Content Area -->
-        <div class="dash-content w-100" style="margin-left: 280px;">
-            <!-- Top Navbar inside Dashboard -->
-            <nav class="navbar bg-white border-bottom px-4 py-3 sticky-top w-100 shadow-sm d-flex justify-content-between align-items-center">
-                <h4 class="fw-bold mb-0">Overview Analytics</h4>
+        <div class="dash-content w-100">
+            <!-- Top Navbar -->
+            <nav class="navbar top-nav px-4 py-3 d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-outline-secondary position-relative rounded-circle p-2" style="width: 40px; height: 40px; display:flex; align-items:center; justify-content:center;">
-                        <i class="bi bi-bell fs-5"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
-                            <span class="visually-hidden">New alerts</span>
-                        </span>
+                    <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
+                        <i class="bi bi-translate"></i>
                     </button>
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 40px; height: 40px;">JS</div>
-                        <div class="d-none d-md-block">
-                            <h6 class="mb-0 fw-bold small">Jane Smith</h6>
-                            <p class="text-muted small mb-0">HR Director</p>
+                    <h6 class="tech-data mb-0 x-small">MONITORING_STATION_04</h6>
+                </div>
+                <div class="d-flex align-items-center gap-4">
+                    <div class="tech-data x-small text-primary d-none d-md-block">SYSTEM_STATUS: <span class="text-success pulse">ONLINE</span></div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="text-end d-none d-sm-block">
+                            <h6 class="mb-0 fw-bold small text-white">J. Smith</h6>
+                            <p class="text-muted mb-0 x-small tech-data" style="font-size: 0.6rem;">COORD_L3</p>
                         </div>
+                        <div class="bg-primary bg-opacity-20 text-primary border border-primary border-opacity-25 rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 40px; height: 40px; font-family: 'Roboto Mono';">JS</div>
                     </div>
                 </div>
             </nav>
 
-            <!-- Dashboard Body Content -->
-            <div class="container-fluid p-4">
+            <!-- Dashboard Body -->
+            <div class="container-fluid p-5">
                 
-                <!-- Welcome Section -->
-                <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
-                    <div>
-                        <h2 class="fw-bold mb-1">Welcome back, Jane!</h2>
-                        <p class="text-muted mb-0">Here is what is happening with your corporate relocations today.</p>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary fw-bold text-white px-4 py-2 rounded-pill"><i class="bi bi-plus-lg me-2"></i> New Move Request</button>
-                    </div>
+                <!-- Page Intro -->
+                <div class="mb-5 reveal">
+                    <h2 class="text-white fw-bold mb-1">Operational Overview</h2>
+                    <p class="text-muted small">Real-time telemetry of active organization transitions.</p>
                 </div>
 
-                <!-- Stats Cards Row -->
-                <div class="row g-4 mb-4" id="analytics">
+                <!-- Metrics Grid -->
+                <div class="row g-4 mb-5 reveal" id="analytics">
                     <div class="col-xl-3 col-sm-6">
-                        <div class="cm-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h6 class="text-muted fw-bold mb-0">Total Moves Active</h6>
-                                <div class="bg-primary text-white rounded p-2 d-flex align-items-center justify-content-center"><i class="bi bi-truck fs-5"></i></div>
+                        <div class="metric-card">
+                            <h6 class="tech-data text-primary x-small mb-3">ACTIVE_OPS</h6>
+                            <div class="d-flex align-items-end justify-content-between">
+                                <h2 class="text-white fw-bold mb-0">24</h2>
+                                <span class="text-success x-small tech-data">+12%</span>
                             </div>
-                            <h2 class="fw-bold mb-0">24</h2>
-                            <p class="text-success small fw-medium mt-2 mb-0"><i class="bi bi-arrow-up-short"></i> +12% from last month</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6">
-                        <div class="cm-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h6 class="text-muted fw-bold mb-0">Pending Approvals</h6>
-                                <div class="bg-secondary text-white rounded p-2 d-flex align-items-center justify-content-center"><i class="bi bi-check2-circle fs-5"></i></div>
+                        <div class="metric-card">
+                            <h6 class="tech-data text-primary x-small mb-3">PENDING_AUTH</h6>
+                            <div class="d-flex align-items-end justify-content-between">
+                                <h2 class="text-white fw-bold mb-0">06</h2>
+                                <span class="text-muted x-small tech-data">WAIT_L2</span>
                             </div>
-                            <h2 class="fw-bold mb-0">6</h2>
-                            <p class="text-muted small fw-medium mt-2 mb-0">Requires HR attention</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6">
-                        <div class="cm-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h6 class="text-muted fw-bold mb-0">Total Spend (YTD)</h6>
-                                <div class="bg-primary text-white rounded p-2 d-flex align-items-center justify-content-center"><i class="bi bi-currency-dollar fs-5"></i></div>
+                        <div class="metric-card">
+                            <h6 class="tech-data text-primary x-small mb-3">RESOURCE_BURN</h6>
+                            <div class="d-flex align-items-end justify-content-between">
+                                <h2 class="text-white fw-bold mb-0">$124.5K</h2>
+                                <span class="text-danger x-small tech-data">-04%</span>
                             </div>
-                            <h2 class="fw-bold mb-0">$124,500</h2>
-                            <p class="text-danger small fw-medium mt-2 mb-0"><i class="bi bi-arrow-down-short"></i> -4% under budget</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6">
-                        <div class="cm-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h6 class="text-muted fw-bold mb-0">Employee Sat.</h6>
-                                <div class="bg-primary text-white rounded p-2 d-flex align-items-center justify-content-center"><i class="bi bi-emoji-smile fs-5"></i></div>
+                        <div class="metric-card">
+                            <h6 class="tech-data text-primary x-small mb-3">CLIENT_SAT_INDEX</h6>
+                            <div class="d-flex align-items-end justify-content-between">
+                                <h2 class="text-white fw-bold mb-0">4.8</h2>
+                                <span class="text-success x-small tech-data">L9_RATING</span>
                             </div>
-                            <h2 class="fw-bold mb-0">4.8/5</h2>
-                            <p class="text-success small fw-medium mt-2 mb-0"><i class="bi bi-arrow-up-short"></i> Based on 42 reviews</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Main Content Row -->
-                <div class="row g-4">
-                    <!-- Orders / Recent Moves -->
-                    <div class="col-lg-8" id="orders">
-                        <div class="cm-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h5 class="fw-bold mb-0">Recent Relocation Orders</h5>
-                                <a href="#" class="text-primary fw-bold text-decoration-none small">View All <i class="bi bi-arrow-right"></i></a>
+                <!-- Data Tables Section -->
+                <div class="row g-5">
+                    <!-- Transit Log -->
+                    <div class="col-lg-8 reveal" id="orders">
+                        <div class="metric-card p-0 overflow-hidden">
+                            <div class="px-4 py-3 bg-white bg-opacity-5 border-bottom border-white border-opacity-5 d-flex justify-content-between align-items-center">
+                                <h6 class="tech-data mb-0 text-white x-small">TRANSIT_LOG_STREAM</h6>
+                                <button class="btn btn-link text-primary tech-data x-small text-decoration-none">FETCH_ALL</button>
                             </div>
-                            <div class="table-responsive">
+                            <div class="table-responsive p-3">
                                 <table class="table table-hover align-middle mb-0">
-                                    <thead class="text-muted small fw-semibold">
+                                    <thead>
                                         <tr>
-                                            <th class="border-bottom-0">Employee</th>
-                                            <th class="border-bottom-0">Origin &rarr; Dest</th>
-                                            <th class="border-bottom-0">Status</th>
-                                            <th class="border-bottom-0 text-end">Date</th>
+                                            <th>SUBJECT</th>
+                                            <th>VECTOR_PATH</th>
+                                            <th>PROTO_STATUS</th>
+                                            <th class="text-end">TIMESTAMP</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="border-top-0">
+                                    <tbody>
                                         <tr>
                                             <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="bg-light text-dark rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 35px; height: 35px;">AK</div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center x-small" style="width: 32px; height: 32px; font-family:'Roboto Mono';">AK</div>
                                                     <div>
-                                                        <h6 class="mb-0 fw-bold small">Alex Kim</h6>
-                                                        <span class="text-muted small" style="font-size:0.75rem;">Engineeer</span>
+                                                        <div class="text-white fw-bold small">A. KIM</div>
+                                                        <div class="x-small text-muted" style="font-size: 0.6rem;">NODE: ENG_L4</div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="small fw-medium">NY &rarr; London</td>
-                                            <td><span class="badge bg-secondary bg-opacity-10 text-secondary fw-bold rounded-pill border border-secondary">In Transit</span></td>
-                                            <td class="text-end text-muted small">Oct 24</td>
+                                            <td class="small tech-data x-small">NYC &rarr; LDN</td>
+                                            <td><span class="status-pill rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">TRANSIT_ACTIVE</span></td>
+                                            <td class="text-end x-small tech-data">2026.10.24</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="bg-light text-dark rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 35px; height: 35px;">SJ</div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center x-small" style="width: 32px; height: 32px; font-family:'Roboto Mono';">SJ</div>
                                                     <div>
-                                                        <h6 class="mb-0 fw-bold small">Sarah Jones</h6>
-                                                        <span class="text-muted small" style="font-size:0.75rem;">VP Sales</span>
+                                                        <div class="text-white fw-bold small">S. JONES</div>
+                                                        <div class="x-small text-muted" style="font-size: 0.6rem;">NODE: VP_SALES</div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="small fw-medium">SF &rarr; Chicago</td>
-                                            <td><span class="badge bg-success bg-opacity-10 text-success fw-bold rounded-pill border border-success">Completed</span></td>
-                                            <td class="text-end text-muted small">Oct 20</td>
+                                            <td class="small tech-data x-small">SFO &rarr; CHI</td>
+                                            <td><span class="status-pill rounded-pill bg-success bg-opacity-10 text-success border border-success border-opacity-25">MISSION_COMPLETE</span></td>
+                                            <td class="text-end x-small tech-data">2026.10.20</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="bg-light text-dark rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 35px; height: 35px;">MR</div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center x-small" style="width: 32px; height: 32px; font-family:'Roboto Mono';">MR</div>
                                                     <div>
-                                                        <h6 class="mb-0 fw-bold small">Mike Ross</h6>
-                                                        <span class="text-muted small" style="font-size:0.75rem;">Legal Coord.</span>
+                                                        <div class="text-white fw-bold small">M. ROSS</div>
+                                                        <div class="x-small text-muted" style="font-size: 0.6rem;">NODE: LEGAL_ORD</div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="small fw-medium">Austin &rarr; Denver</td>
-                                            <td><span class="badge bg-warning bg-opacity-10 text-warning fw-bold rounded-pill border border-warning">Pending Approval</span></td>
-                                            <td class="text-end text-muted small">Oct 19</td>
+                                            <td class="small tech-data x-small">AUS &rarr; DEN</td>
+                                            <td><span class="status-pill rounded-pill bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">PENDING_AUTH</span></td>
+                                            <td class="text-end x-small tech-data">2026.10.19</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -219,44 +282,40 @@
                         </div>
                     </div>
 
-                    <!-- Messages -->
-                    <div class="col-lg-4" id="messages">
-                        <div class="cm-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h5 class="fw-bold mb-0">Messages</h5>
-                                <a href="#" class="text-secondary fw-bold text-decoration-none fs-5"><i class="bi bi-chat-square-text"></i></a>
+                    <!-- System Comms -->
+                    <div class="col-lg-4 reveal" id="messages">
+                        <div class="metric-card h-100 p-0 overflow-hidden">
+                            <div class="px-4 py-3 bg-white bg-opacity-5 border-bottom border-white border-opacity-5">
+                                <h6 class="tech-data mb-0 text-white x-small">NETWORK_BRIEFINGS</h6>
                             </div>
-                            <div class="d-flex flex-column gap-3">
-                                <!-- Message Item -->
-                                <div class="d-flex gap-3 align-items-start border-bottom pb-3">
-                                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;"><i class="bi bi-person-fill"></i></div>
-                                    <div class="w-100">
-                                        <div class="d-flex justify-content-between align-items-center mb-1">
-                                            <h6 class="fw-bold mb-0 small">Coordinator Lee</h6>
-                                            <span class="text-muted" style="font-size: 0.7rem;">2 hrs ago</span>
+                            <div class="p-4 d-flex flex-column gap-4">
+                                <div class="d-flex gap-3">
+                                    <div class="text-primary mt-1"><i class="bi bi-caret-right-fill"></i></div>
+                                    <div>
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="tech-data text-primary x-small">COORDINATOR_LEE</span>
+                                            <span class="text-muted x-small" style="font-size: 0.6rem;">02:00H</span>
                                         </div>
-                                        <p class="text-muted small mb-0 lh-sm">Alex's container passed customs in London successfully.</p>
+                                        <p class="text-muted small mb-0 fs-10" style="font-size: 0.75rem;">Subject AK container cleared London customs bypass point.</p>
                                     </div>
                                 </div>
-                                <!-- Message Item -->
-                                <div class="d-flex gap-3 align-items-start">
-                                    <div class="bg-tertiary text-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">SJ</div>
-                                    <div class="w-100">
-                                        <div class="d-flex justify-content-between align-items-center mb-1">
-                                            <h6 class="fw-bold mb-0 small text-dark opacity-50">Sarah J.</h6>
-                                            <span class="text-muted" style="font-size: 0.7rem;">Yesterday</span>
+                                <div class="d-flex gap-3">
+                                    <div class="text-primary mt-1"><i class="bi bi-caret-right-fill"></i></div>
+                                    <div>
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span class="tech-data text-primary x-small">SARAH_J</span>
+                                            <span class="text-muted x-small" style="font-size: 0.6rem;">24:00H</span>
                                         </div>
-                                        <p class="text-muted small mb-0 lh-sm opacity-75">Thank you! The transition was incredibly smooth.</p>
+                                        <p class="text-muted small mb-0 fs-10" style="font-size: 0.75rem;">Protocol successful. Transition finalized in Sector Chicago.</p>
                                     </div>
                                 </div>
+                                <button class="btn btn-outline-primary w-100 mt-auto rounded-pill tech-data x-small py-2 border-opacity-25">DOWNLOAD_TRANSCRIPTS</button>
                             </div>
-                            <button class="btn btn-outline-primary w-100 mt-4 rounded-pill fw-bold btn-sm py-2">View All Messages</button>
                         </div>
                     </div>
                 </div>
-
-            </div> <!-- /container -->
-        </div> <!-- /dash-content -->
+            </div>
+        </div>
     </div> <!-- /d-flex -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

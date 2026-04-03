@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light" dir="ltr"> <!-- Change dir="ltr" to dir="rtl" for Right-To-Left Support -->
+<html lang="en" data-bs-theme="dark" dir="ltr"> <!-- Change dir="ltr" to dir="rtl" for Right-To-Left Support -->
 
 <head>
     <meta charset="UTF-8">
@@ -13,8 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Google Fonts (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
@@ -23,311 +22,443 @@
 
     <!-- Header / Navbar (Same Across All Pages) -->
     <header>
-        <nav class="navbar navbar-expand-lg py-3 main-nav sticky-top">
-            <div class="container">
-                <!-- Text Logo -->
-                <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
-                    <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
-                </a>
+      <nav class="navbar navbar-expand-lg py-3 main-nav">
+          <div class="container">
+              <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
+                  <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
+              </a>
 
-                <!-- Mobile Toggle -->
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar">
-                    <i class="bi bi-list fs-1"></i>
-                </button>
+              <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
+                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
+                      <i class="bi bi-translate"></i>
+                  </button>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                      <i class="bi bi-moon-fill" id="themeIcon"></i>
+                  </button>
+                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
+                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
+                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                      <i class="bi bi-list fs-1"></i>
+                  </button>
+              </div>
 
-                <!-- Offcanvas Menu -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i>
-                            CorpMove</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <!-- Menu Links -->
-                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 fs-5">
-                            <li class="nav-item"><a class="nav-link fw-semibold active text-primary" href="index.html">Home1</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="home2.html">Home2</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
-                        </ul>
-
-                        <!-- Actions -->
-                        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-                            <button class="btn btn-outline-primary btn-sm rounded-pill fw-bold"
-                                id="rtlToggle">RTL</button>
-                            <!-- Theme Toggle Top-Right -->
-                            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                                <i class="bi bi-moon-fill" id="themeIcon"></i>
-                            </button>
-                            <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Login</a>
-                            <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                  <div class="offcanvas-header bg-black">
+                      <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                  </div>
+                  <div class="offcanvas-body bg-black">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-center">
+                          <li class="nav-item"><a class="nav-link active text-primary" href="index.html">Home1</a></li>
+                          <li class="nav-item"><a class="nav-link" href="home2.html">Home2</a></li>
+                          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                          <li class="nav-item d-md-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-md-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </nav>
     </header>
 
     <main>
-        <!-- Section 1: Hero -->
-        <section class="hero-wrapper bg-tertiary">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
-                        <h1 class="display-4 fw-bolder text-primary mb-4">Seamless Corporate Relocation Made Simple</h1>
-                        <p class="lead mb-5 text-muted">We handle the heavy lifting. Moving your entire company or key
-                            employees shouldn't pause your business operations. Experience stress-free transitioning.
-                        </p>
-                        <div class="d-flex flex-wrap gap-3">
-                            <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-5">Explore
-                                Services</a>
-                            <a href="contact.html" class="btn btn-outline-secondary btn-lg rounded-pill px-5">Get a
-                                Quote</a>
+        <!-- Section 1: Hero - ELITE DARK THEME REDESIGN -->
+        <section class="hero-wrapper position-relative overflow-hidden d-flex align-items-center bg-black" style="min-height: 90vh; background: linear-gradient(var(--cm-hero-overlay-85), var(--cm-hero-overlay-85)), url('assets/img/hero_main.png') center/cover no-repeat;">
+            <div class="container py-5">
+                <div class="row align-items-center justify-content-between g-5">
+                    <div class="col-lg-7 reveal">
+
+                        <h1 class="display-2 fw-bolder text-white mb-4">Clarity in Every <span class="text-primary">Transition.</span></h1>
+                        <p class="lead mb-5 text-muted pe-lg-5" style="font-size: 1.25rem;">In high-stakes corporate environments, precision is the only currency. We provide elite, discreet relocation services that ensure operational continuity before you move.</p>
+                        
+                        <!-- Status Terminal -->
+                        <div class="bg-black bg-opacity-50 p-4 border border-white border-opacity-10 rounded-3 mb-5 tech-data" style="max-width: 500px;">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-white opacity-50 me-2">></span> Initializing global transit sequence...
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-white opacity-50 me-2">></span> Establishing secure logistics tunnel...
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="text-primary me-2">></span> <span class="fw-bold tracking-widest">READY FOR DEPLOYMENT</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-4">
+                            <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-5">Initiate Request</a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-lg rounded-pill px-5">Methodology</a>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <!-- High-quality image for professional moving -->
-                        <div class="rounded-4 overflow-hidden shadow-lg" style="height: 450px;">
-                            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000"
-                                alt="Corporate Relocation" class="w-100 h-100 object-fit-cover">
+                    <div class="col-lg-5 d-none d-lg-block reveal">
+                        <div class="position-relative">
+                             <!-- Glowing background behind image -->
+                             <div class="position-absolute translate-middle top-50 start-50 bg-primary opacity-10 blur-30" style="width: 140%; height: 140%; filter: blur(80px); border-radius: 50%;"></div>
+                             <div class="rounded-4 overflow-hidden border border-white border-opacity-10 shadow-2xl" style="height: 600px;">
+                                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1440&h=1800"
+                                     alt="Elite Corporate Relocation" class="w-100 h-100 object-fit-cover grayscale">
+                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Features -->
+        <!-- Section 2: Features - TECH GRID -->
         <section class="py-5 my-5">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h6 class="text-secondary fw-bold text-uppercase tracking-wider">Why Choose Us</h6>
-                    <h2 class="display-6 fw-bold">The CorpMove Advantage</h2>
+                <div class="text-center mb-5 reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest small">The corpMove Advantage</h6>
+                    <h2 class="display-6 fw-bold text-white">Elite Operational Standards</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="cm-card p-4 h-100 text-center">
-                            <div class="bg-tertiary d-inline-flex p-3 rounded-circle mb-4 text-primary fs-3">
-                                <i class="bi bi-truck"></i>
+                    <div class="col-md-4 reveal">
+                        <div class="cm-card h-100 position-relative overflow-hidden">
+                            <div class="overflow-hidden" style="height: 180px;">
+                                <img src="assets/img/service-placeholder.svg" alt="Global Network" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
                             </div>
-                            <h4>Global Reach</h4>
-                            <p class="text-muted">Moving across town or across the globe, we have the network to get you
-                                there safely.</p>
+                            <div class="p-4 pt-4">
+                                <div class="tech-data mb-3">NETWORK</div>
+                                <h4 class="fw-bold mb-3">Global Logistics Arc</h4>
+                                <p class="text-muted small">Deploying relocation protocols across 140+ jurisdictions. We navigate cross-border labyrinths seamlessly.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="cm-card p-4 h-100 text-center">
-                            <div class="bg-tertiary d-inline-flex p-3 rounded-circle mb-4 text-primary fs-3">
-                                <i class="bi bi-shield-check"></i>
+                    <div class="col-md-4 reveal">
+                        <div class="cm-card h-100 position-relative overflow-hidden">
+                            <div class="overflow-hidden" style="height: 180px;">
+                                <img src="assets/img/service-placeholder.svg" alt="Zero-Loss Custody" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
                             </div>
-                            <h4>100% Insured</h4>
-                            <p class="text-muted">Your assets are fully protected with our comprehensive corporate
-                                moving insurance.</p>
+                            <div class="p-4 pt-4">
+                                <div class="tech-data mb-3">SECURITY</div>
+                                <h4 class="fw-bold mb-3">Zero-Loss Custody</h4>
+                                <p class="text-muted small">Your high-value physical and digital assets are moved under strict, military-grade custodial protocols.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="cm-card p-4 h-100 text-center">
-                            <div class="bg-tertiary d-inline-flex p-3 rounded-circle mb-4 text-primary fs-3">
-                                <i class="bi bi-headset"></i>
+                    <div class="col-md-4 reveal">
+                        <div class="cm-card h-100 position-relative overflow-hidden">
+                            <div class="overflow-hidden" style="height: 180px;">
+                                <img src="https://images.unsplash.com/photo-1551288049-bbbda536ad0a?auto=format&fit=crop&q=80&w=600&h=400" alt="Predictive Onboarding" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
                             </div>
-                            <h4>24/7 Support</h4>
-                            <p class="text-muted">Dedicated relocation managers available around the clock to assist
-                                your team.</p>
+                            <div class="p-4 pt-4">
+                                <div class="tech-data mb-3">INTEL</div>
+                                <h4 class="fw-bold mb-3">Predictive Onboarding</h4>
+                                <p class="text-muted small">Advanced algorithmic planning to minimize downtime and ensure immediate operational readiness at destination.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: About Preview -->
-        <section class="py-5 bg-tertiary">
+        <!-- Section 3: About Preview - INTELLIGENCE BRIEFING -->
+        <section class="py-5">
             <div class="container py-4">
                 <div class="row align-items-center g-5">
-                    <div class="col-lg-6 order-2 order-lg-1">
-                        <div class="bg-white rounded-4 p-4 shadow-sm h-100 w-100 cm-card" style="min-height: 350px;">
-                            <!-- Add an image here by replacing background -->
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600&h=400"
-                                alt="Office Moves" class="w-100 h-100 object-fit-cover rounded shadow-sm border">
+                    <div class="col-lg-6 reveal">
+                        <div class="rounded-4 overflow-hidden border border-white border-opacity-10 shadow-lg" style="height: 500px;">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800&h=1000"
+                                alt="Operations Briefing" class="w-100 h-100 object-fit-cover grayscale blur-sm-hover transition-all">
                         </div>
                     </div>
-                    <div class="col-lg-6 order-1 order-lg-2">
-                        <h6 class="text-secondary fw-bold text-uppercase tracking-wider">About Us</h6>
-                        <h2 class="display-6 fw-bold mb-4">Simplifying Corporate Moves Since 2010</h2>
-                        <p class="text-muted mb-4">We are experts in corporate relocation, managing moves for Fortune
-                            500 companies and growing startups alike. Our dedicated dashboard empowers HR to track
-                            expenses, manage employees, and review overall progress seamlessly.</p>
-                        <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
-                            <li><i class="bi bi-check-circle-fill text-secondary me-2"></i> Dedicated HR Coordinator
-                            </li>
-                            <li><i class="bi bi-check-circle-fill text-secondary me-2"></i> Employee Relocation
-                                Dashboard</li>
-                            <li><i class="bi bi-check-circle-fill text-secondary me-2"></i> Transparent Pricing &
-                                Reporting</li>
-                        </ul>
-                        <a href="about.html" class="btn btn-primary rounded-pill px-4 py-2">Read More About Us</a>
+                    <div class="col-lg-6 reveal">
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest small">The Firm</h6>
+                        <h2 class="display-6 fw-bold text-white mb-4">Precision Relocation Since 2010</h2>
+                        <p class="text-muted mb-4 lead">We are specialists in high-stakes corporate transitions, managing moves for mission-critical infrastructure and C-suite leadership. Our secure dashboard provides real-time oversight of all active relocation vectors.</p>
+                        
+                        <div class="list-unstyled d-flex flex-column gap-4 mb-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded text-primary"><i class="bi bi-check-lg"></i></div>
+                                <div class="text-white opacity-90 fw-medium">Secured Data Retention Policies</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded text-primary"><i class="bi bi-check-lg"></i></div>
+                                <div class="text-white opacity-90 fw-medium">Air-Gapped Logistics Monitoring</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded text-primary"><i class="bi bi-check-lg"></i></div>
+                                <div class="text-white opacity-90 fw-medium">Rapid Asset Recovery Protocols</div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">Internal Briefing</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: Fast Statistics -->
-        <section class="py-5 bg-primary text-white text-center text-md-start">
+        <!-- Section 4: Fast Statistics - DATA OVERLAY -->
+        <section class="py-5 bg-black border-top border-bottom border-white border-opacity-5">
             <div class="container py-4">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-sm-6 col-lg-3">
-                        <h2 class="display-4 fw-bold text-secondary mb-0">12k+</h2>
-                        <p class="lead mb-0">Successful Moves</p>
+                <div class="row g-4 justify-content-center text-center">
+                    <div class="col-sm-6 col-lg-3 reveal">
+                        <div class="tech-data mb-2">SUCCESS</div>
+                        <h2 class="display-4 fw-bold text-primary mb-0">12k+</h2>
+                        <p class="text-muted small text-uppercase tracking-widest mt-2">Missions Completed</p>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <h2 class="display-4 fw-bold text-secondary mb-0">98%</h2>
-                        <p class="lead mb-0">Client Satisfaction</p>
+                    <div class="col-sm-6 col-lg-3 reveal">
+                        <div class="tech-data mb-2">INTEGRITY</div>
+                        <h2 class="display-4 fw-bold text-primary mb-0">98%</h2>
+                        <p class="text-muted small text-uppercase tracking-widest mt-2">Custody Retention</p>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <h2 class="display-4 fw-bold text-secondary mb-0">50+</h2>
-                        <p class="lead mb-0">Global Partners</p>
+                    <div class="col-sm-6 col-lg-3 reveal">
+                        <div class="tech-data mb-2">REACH</div>
+                        <h2 class="display-4 fw-bold text-primary mb-0">50+</h2>
+                        <p class="text-muted small text-uppercase tracking-widest mt-2">Active Jurisdictions</p>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <h2 class="display-4 fw-bold text-secondary mb-0">15</h2>
-                        <p class="lead mb-0">Years Experience</p>
+                    <div class="col-sm-6 col-lg-3 reveal">
+                        <div class="tech-data mb-2">LEGACY</div>
+                        <h2 class="display-4 fw-bold text-primary mb-0">15</h2>
+                        <p class="text-muted small text-uppercase tracking-widest mt-2">Operational Years</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 5: Services Preview -->
+        <!-- Section 5: Services Preview - CORE METHODOLOGIES -->
         <section class="py-5 my-5">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h6 class="text-secondary fw-bold text-uppercase tracking-wider">What We Provide</h6>
-                    <h2 class="display-6 fw-bold">Our Relocation Services</h2>
+                <div class="text-center mb-5 reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest small">What We Provide</h6>
+                    <h2 class="display-6 fw-bold text-white">Advanced Logistics Protocols</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="cm-card h-100 overflow-hidden">
-                            <div class="overflow-hidden" style="height: 200px;">
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <div class="cm-card h-100">
+                            <div class="overflow-hidden" style="height: 240px;">
                                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600&h=400"
-                                    alt="Office Move" class="w-100 h-100 object-fit-cover">
+                                    alt="Office Move" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
                             </div>
-                            <div class="p-4">
-                                <h4 class="fw-bold">Office Moves</h4>
-                                <p class="text-muted">Efficiently transition entire office departments with minimal
-                                    downtime to operations.</p>
-                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none">Learn
-                                    More <i class="bi bi-arrow-right"></i></a>
+                            <div class="p-4 bg-black bg-opacity-40">
+                                <span class="tech-data mb-2 d-block small">TYPE: OPS_MOVE</span>
+                                <h4 class="fw-bold text-white mb-3">Enterprise Migration</h4>
+                                <p class="text-muted small mb-4">Complete infrastructure relocation with encrypted tracking and zero operational downtime.</p>
+                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="cm-card h-100 overflow-hidden">
-                            <div class="overflow-hidden" style="height: 200px;">
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <div class="cm-card h-100">
+                            <div class="overflow-hidden" style="height: 240px;">
                                 <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600&h=400"
-                                    alt="Employee Relocation" class="w-100 h-100 object-fit-cover">
+                                    alt="Employee Relocation" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
                             </div>
-                            <div class="p-4">
-                                <h4 class="fw-bold">Employee Relocation</h4>
-                                <p class="text-muted">Personalized packages offering white-glove moving services for new
-                                    or relocating staff.</p>
-                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none">Learn
-                                    More <i class="bi bi-arrow-right"></i></a>
+                            <div class="p-4 bg-black bg-opacity-40">
+                                <span class="tech-data mb-2 d-block small">TYPE: EXEC_TRANSIT</span>
+                                <h4 class="fw-bold text-white mb-3">Executive Extraction</h4>
+                                <p class="text-muted small mb-4">Discreet, white-glove relocation for C-Suite leadership requiring high-security destination protocols.</p>
+                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="cm-card h-100 overflow-hidden">
-                            <div class="overflow-hidden" style="height: 200px;">
-                                <img src="https://images.unsplash.com/photo-1579309401359-1ec9511516d7?auto=format&fit=crop&q=80&w=600&h=400"
-                                    alt="International Moving" class="w-100 h-100 object-fit-cover">
+                    <div class="col-lg-4 col-md-6 reveal">
+                        <div class="cm-card h-100">
+                            <div class="overflow-hidden" style="height: 240px;">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600&h=400"
+                                    alt="International Moving" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
                             </div>
-                            <div class="p-4">
-                                <h4 class="fw-bold">International Moving</h4>
-                                <p class="text-muted">Navigate global customs, shipping, and storage easily with our
-                                    international experts.</p>
-                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none">Learn
-                                    More <i class="bi bi-arrow-right"></i></a>
+                            <div class="p-4 bg-black bg-opacity-40">
+                                <span class="tech-data mb-2 d-block small">TYPE: GLOBAL_ARC</span>
+                                <h4 class="fw-bold text-white mb-3">Global Asset Arc</h4>
+                                <p class="text-muted small mb-4">Seamless cross-border transfers bypassing bureaucratic labyrinths through secure global channels.</p>
+                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-5">
-                    <a href="services.html" class="btn btn-outline-primary rounded-pill px-4">View All Services</a>
+                <div class="text-center mt-5 reveal">
+                    <a href="services.html" class="btn btn-outline-primary rounded-pill px-5 fw-bold">Full Methodology Catalogue</a>
                 </div>
             </div>
         </section>
 
-        <!-- Section 6: CTA / Newsletter -->
-        <section class="py-5 bg-tertiary">
-            <div class="container py-5 text-center">
-                <h2 class="display-5 fw-bold mb-4">Ready for a Stress-Free Corporate Move?</h2>
-                <p class="lead text-muted mb-5 max-w-lg mx-auto">Contact us today to schedule a consultation. Let us
-                    build a custom relocation plan tailored entirely around your organization's unique requirements.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-5">Contact Us Now</a>
-                    <a href="login.html" class="btn btn-secondary btn-lg rounded-pill px-5">Client Login</a>
+        <!-- Section: Testimonials - VERIFIED INTEL -->
+        <section class="py-5 bg-black border-top border-white border-opacity-5">
+            <div class="container py-4">
+                <div class="text-center mb-5 reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest small">Testimonials</h6>
+                    <h2 class="display-6 fw-bold text-white">Verified Mission Success</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 reveal">
+                        <div class="cm-card p-4 h-100 bg-opacity-10 border-white border-opacity-5">
+                            <div class="d-flex mb-3 text-primary">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill mx-1"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill mx-1"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-muted mb-4 small fst-italic">"CorpMove handled our entire regional office transition without a single hiccup. The encrypted monitoring was critical for our tracking."</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="assets/img/person-placeholder.svg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Client">
+                                <div>
+                                    <h6 class="text-white small fw-bold mb-0">David Miller</h6>
+                                    <span class="tech-data" style="font-size: 0.7rem;">OPS DIRECTOR, TECHFLOW</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 reveal">
+                        <div class="cm-card p-4 h-100 bg-opacity-10 border-white border-opacity-5">
+                            <div class="d-flex mb-3 text-primary">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill mx-1"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill mx-1"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-muted mb-4 small fst-italic">"The extraction packages are white-glove quality. Our staff moved comfortably and felt fully secured throughout the entire journey."</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Client">
+                                <div>
+                                    <h6 class="text-white small fw-bold mb-0">Sarah Jenkins</h6>
+                                    <span class="tech-data" style="font-size: 0.7rem;">HR LEAD, GLOBANT CORP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 reveal">
+                        <div class="cm-card p-4 h-100 bg-opacity-10 border-white border-opacity-5">
+                            <div class="d-flex mb-3 text-primary">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill mx-1"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill mx-1"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-muted mb-4 small fst-italic">"Moving internationally is usually a nightmare, but their global partners handled customs like absolute specialists. Highly recommended."</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Client">
+                                <div>
+                                    <h6 class="text-white small fw-bold mb-0">Marcus Thorne</h6>
+                                    <span class="tech-data" style="font-size: 0.7rem;">CEO, ALPHA SOLUTIONS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Insights snapshot - FIELD REPORTS -->
+        <section class="py-5">
+            <div class="container py-4">
+                <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-4 reveal">
+                    <div>
+                        <h6 class="text-primary fw-bold text-uppercase tracking-widest small">Intel Center</h6>
+                        <h2 class="display-6 fw-bold text-white">Relocation Field Reports</h2>
+                    </div>
+                    <a href="blog.html" class="btn btn-outline-primary rounded-pill px-4 fw-bold small uppercase">All Archives</a>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="cm-card h-100">
+                            <div class="overflow-hidden" style="height: 220px;">
+                                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600&h=400" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
+                            </div>
+                            <div class="p-4">
+                                <span class="tech-data mb-3 d-block small">STRATEGY_REPORT_01</span>
+                                <h5 class="text-white fw-bold mb-3">Maximizing ROI on Global Relocations</h5>
+                                <p class="text-muted small">Discover how to balance top-tier security with corporate budget constraints effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="cm-card h-100">
+                            <div class="overflow-hidden" style="height: 220px;">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600&h=400" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
+                            </div>
+                            <div class="p-4">
+                                <span class="tech-data mb-3 d-block small">INFRA_REPORT_04</span>
+                                <h5 class="text-white fw-bold mb-3">The Future of Remote-Hybrid Transitions</h5>
+                                <p class="text-muted small">As companies rethink office spaces, relocation strategies are evolving at a rapid pace.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="cm-card h-100">
+                            <div class="overflow-hidden" style="height: 220px;">
+                                <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600&h=400" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
+                            </div>
+                            <div class="p-4">
+                                <span class="tech-data mb-3 d-block small">RISK_REPORT_12</span>
+                                <h5 class="text-white fw-bold mb-3">5 Critical Vulnerabilities in Office Moves</h5>
+                                <p class="text-muted small">Don't let poor planning pause your business. Learn from common industry pitfalls today.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: CTA - INTAKE PORTAL -->
+        <section class="py-5 bg-black border-top border-white border-opacity-5">
+            <div class="container py-5 text-center reveal">
+                <h2 class="display-5 fw-bold text-white mb-4">Request Secure Consultation</h2>
+                <p class="lead text-muted mb-5 max-w-lg mx-auto small" style="max-width: 700px;">Initialization protocol available for verified enterprise entities. Join the secure relocation network today.</p>
+                <div class="d-flex justify-content-center flex-wrap gap-4">
+                    <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-5">Initiate Intake</a>
+                    <a href="login.html" class="btn btn-secondary btn-lg rounded-pill px-5">Secure Portal Login</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer (Same Across All Pages) -->
-    <footer class="footer-wrap bg-tertiary">
+    <!-- Footer - GLOBAL FOOTER REDESIGN -->
+    <footer class="footer-wrap">
         <div class="container pb-5">
-            <div class="row g-4">
-                <!-- Column 1: Brand + Social -->
+            <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-3"
+                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-4"
                         href="index.html">
-                        <i class="bi bi-buildings-fill me-2"></i> CorpMove
+                        <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
                     </a>
-                    <p class="mb-4 text-muted">A professional, organized site that simplifies the stress of corporate
-                        moves for both HR and the relocating employee.</p>
+                    <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
                     <div class="d-flex gap-3">
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
-                <!-- Column 2: Company Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Company</h5>
+                    <h6 class="tech-data mb-4 small">FIRM</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="services.html" class="footer-link">Our Services</a></li>
-                        <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
-                        <li><a href="blog.html" class="footer-link">News & Blog</a></li>
+                        <li><a href="about.html" class="footer-link small">Overview</a></li>
+                        <li><a href="services.html" class="footer-link small">Methodology</a></li>
+                        <li><a href="pricing.html" class="footer-link small">Engagement</a></li>
+                        <li><a href="blog.html" class="footer-link small">Field Reports</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Support Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Support</h5>
+                    <h6 class="tech-data mb-4 small">PROTOCOLS</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="contact.html" class="footer-link">Help Center</a></li>
-                        <li><a href="service-details.html" class="footer-link">FAQ's</a></li>
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="contact.html" class="footer-link small">Intake Center</a></li>
+                        <li><a href="service-details.html" class="footer-link small">FAQ Archive</a></li>
+                        <li><a href="#" class="footer-link small">Compliance</a></li>
+                        <li><a href="#" class="footer-link small">Privileged Access</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 4: Newsletter -->
                 <div class="col-lg-4 col-md-6">
-                    <h5 class="fw-bold mb-4">Newsletter</h5>
-                    <p class="text-muted">Subscribe to our newsletter for the latest relocation tips.</p>
-                    <form class="d-flex w-100">
-                        <input type="email" class="form-control rounded-start-pill border-end-0 shadow-none ps-3"
-                            placeholder="Email Address" required>
-                        <button class="btn btn-secondary rounded-end-pill px-4" type="submit">Subscribe</button>
+                    <h6 class="tech-data mb-4 small">INTEL FEED</h6>
+                    <p class="text-muted small mb-4">Subscribe for secure relocation briefings and global policy alerts.</p>
+                    <form class="d-flex w-100 border border-white border-opacity-10 rounded-pill p-1">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small"
+                            placeholder="Email Endpoint..." required>
+                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold" type="submit">Deploy</button>
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- Copyright line -->
-        <div class="container-fluid border-top py-3 text-center text-muted border-dark-subtle">
-            <p class="mb-0">&copy; 2026 CorpMove. All Rights Reserved.</p>
+        <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
         </div>
     </footer>
 

@@ -1,46 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" dir="ltr">
+<html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog & News | CorpMove</title>
+    <meta name="description" content="Field Intelligence Reports. Relocation strategy and global policy briefings.">
+    <title>Field Intelligence | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Bootstrap 5 & Custom CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-black">
     <header>
-      <nav class="navbar navbar-expand-lg py-3 main-nav sticky-top">
+      <nav class="navbar navbar-expand-lg py-3 main-nav">
           <div class="container">
               <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
                   <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
               </a>
-              <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                  <i class="bi bi-list fs-1"></i>
-              </button>
+
+              <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
+                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
+                      <i class="bi bi-translate"></i>
+                  </button>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                      <i class="bi bi-moon-fill" id="themeIcon"></i>
+                  </button>
+                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
+                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
+                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                      <i class="bi bi-list fs-1"></i>
+                  </button>
+              </div>
+
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                  <div class="offcanvas-header">
+                  <div class="offcanvas-header bg-black border-bottom cm-border-main">
                       <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                   </div>
-                  <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 fs-5">
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home1</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="home2.html">Home2</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold active text-primary" href="blog.html">Blog</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                  <div class="offcanvas-body bg-black">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-center">
+                          <li class="nav-item"><a class="nav-link" href="index.html">Home1</a></li>
+                          <li class="nav-item"><a class="nav-link" href="home2.html">Home2</a></li>
+                          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                          <li class="nav-item"><a class="nav-link active text-primary" href="blog.html">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                          <li class="nav-item d-md-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-md-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
                       </ul>
-                      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-                          <button class="btn btn-outline-primary btn-sm rounded-pill fw-bold" id="rtlToggle">RTL</button>
-                          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
-                          <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Login</a>
-                          <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Sign Up</a>
-                      </div>
                   </div>
               </div>
           </div>
@@ -48,10 +61,11 @@
     </header>
 
     <main>
-      <section class="bg-primary text-white text-center py-5">
-          <div class="container py-4">
-              <h1 class="display-4 fw-bold">Corporate Moving Blog</h1>
-              <p class="lead opacity-75 max-w-lg mx-auto mb-0">Insights, tips, and industry news for HR and relocating executives.</p>
+      <!-- Page Header - INTEL HUB -->
+      <section class="py-5 cm-bg-main border-bottom cm-border-main" style="background: linear-gradient(var(--cm-hero-overlay-90), var(--cm-hero-overlay-90)), url('assets/img/hero-blog.svg') center/cover no-repeat;">
+          <div class="container py-5 text-center reveal">
+              <h1 class="display-4 fw-bold">Field Intelligence Reports</h1>
+              <p class="lead text-muted max-w-lg mx-auto mb-0 small">Strategic briefings for enterprise leaders and logistical coordinators.</p>
           </div>
       </section>
 
@@ -61,49 +75,50 @@
                   <!-- Main Blog Content -->
                   <div class="col-lg-8">
                       <div class="row g-4">
-                          <!-- Blog Post 1 -->
-                          <div class="col-md-6">
+                          <!-- Report 1 -->
+                          <div class="col-md-6 reveal">
                               <div class="cm-card h-100 overflow-hidden">
-                                  <div class="bg-tertiary d-flex align-items-center justify-content-center text-muted position-relative" style="height: 220px; background: url('https://images.unsplash.com/photo-1554200876-56c2f25224fa?auto=format&fit=crop&q=80&w=400&h=220') center/cover;">
-                                      <span class="badge bg-secondary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill shadow-sm">HR Tips</span>
+                                  <div class="overflow-hidden position-relative" style="height: 220px;">
+                                      <img src="assets/img/blog-placeholder.svg" alt="Relocation Analysis" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
+                                      <span class="tech-data position-absolute top-0 end-0 m-3 px-2 py-1 bg-primary text-white x-small" style="font-size: 0.6rem;">CORE_STRAT</span>
                                   </div>
                                   <div class="p-4">
-                                      <div class="d-flex gap-3 text-muted small fw-semibold mb-3">
-                                          <span><i class="bi bi-calendar3 me-1"></i> Oct 12, 2026</span>
-                                          <span><i class="bi bi-person me-1"></i> Admin</span>
+                                      <div class="d-flex gap-3 text-muted x-small mb-3 tech-data">
+                                          <span>OCT_12_2026</span>
+                                          <span>AUTHOR: ADMIN</span>
                                       </div>
-                                      <h4 class="fw-bold mb-3"><a href="blog-details.html" class="text-decoration-none text-dark">How to Manage Relocation Stress</a></h4>
-                                      <p class="text-muted mb-4">Moving a key executive involves many moving parts. Learn the top 5 strategies HR teams use to simplify the process.</p>
-                                      <a href="blog-details.html" class="fw-bold text-primary text-decoration-none">Read Article <i class="bi bi-arrow-right"></i></a>
+                                      <h5 class="fw-bold mb-3">Mitigating Relocation Volatility</h5>
+                                      <p class="text-muted small mb-4">Moving high-value principals involves multiple risk factors. Here are 5 tactical strategies for HR stability.</p>
+                                      <a href="blog-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ACCESS_FILE <i class="bi bi-chevron-right"></i></a>
                                   </div>
                               </div>
                           </div>
-                          <!-- Blog Post 2 -->
-                          <div class="col-md-6">
+                          <!-- Report 2 -->
+                          <div class="col-md-6 reveal">
                               <div class="cm-card h-100 overflow-hidden">
-                                  <div class="bg-tertiary d-flex align-items-center justify-content-center text-muted position-relative" style="height: 220px; background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=400&h=220') center/cover;">
-                                      <span class="badge bg-secondary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill shadow-sm">Industry</span>
+                                  <div class="overflow-hidden position-relative" style="height: 220px;">
+                                      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600&h=400" alt="Global Customs" class="w-100 h-100 object-fit-cover grayscale transition-all hover-scale">
+                                      <span class="tech-data position-absolute top-0 end-0 m-3 px-2 py-1 bg-primary text-white x-small" style="font-size: 0.6rem;">GLOBAL_COMP</span>
                                   </div>
                                   <div class="p-4">
-                                      <div class="d-flex gap-3 text-muted small fw-semibold mb-3">
-                                          <span><i class="bi bi-calendar3 me-1"></i> Oct 05, 2026</span>
-                                          <span><i class="bi bi-person me-1"></i> John Doe</span>
+                                      <div class="d-flex gap-3 text-muted x-small mb-3 tech-data">
+                                          <span>OCT_05_2026</span>
+                                          <span>AUTHOR: J_DOE</span>
                                       </div>
-                                      <h4 class="fw-bold mb-3"><a href="blog-details.html" class="text-decoration-none text-dark">International Customs in 2026</a></h4>
-                                      <p class="text-muted mb-4">A breakdown of recent global regulatory changes affecting cross-border equipment transit for enterprises.</p>
-                                      <a href="blog-details.html" class="fw-bold text-primary text-decoration-none">Read Article <i class="bi bi-arrow-right"></i></a>
+                                      <h5 class="fw-bold mb-3">Customs Protocol 2026 Arc</h5>
+                                      <p class="text-muted small mb-4">A breakdown of recent jurisdictional regulatory adjustments affecting interstate hardware transit.</p>
+                                      <a href="blog-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ACCESS_FILE <i class="bi bi-chevron-right"></i></a>
                                   </div>
                               </div>
                           </div>
-                          <!-- Pagination -->
-                          <div class="col-12 mt-5">
+                          <!-- Pagination - TECH STYLE -->
+                          <div class="col-12 mt-5 reveal">
                               <nav aria-label="Page navigation">
                                   <ul class="pagination justify-content-center gap-2">
-                                      <li class="page-item disabled"><a class="page-link rounded-circle border-0 text-muted" href="#"><i class="bi bi-chevron-left"></i></a></li>
-                                      <li class="page-item active"><a class="page-link rounded-circle border-0 bg-primary shadow-sm" href="#">1</a></li>
-                                      <li class="page-item"><a class="page-link rounded-circle border-0 text-dark bg-tertiary" href="#">2</a></li>
-                                      <li class="page-item"><a class="page-link rounded-circle border-0 text-dark bg-tertiary" href="#">3</a></li>
-                                      <li class="page-item"><a class="page-link rounded-circle border-0 text-dark bg-tertiary" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                                      <li class="page-item disabled"><a class="page-link rounded-pill border-white border-opacity-10 bg-transparent text-muted px-4" href="#"><i class="bi bi-chevron-left"></i></a></li>
+                                      <li class="page-item active"><a class="page-link rounded-pill border-0 bg-primary text-white px-4 fw-bold" href="#">1</a></li>
+                                      <li class="page-item"><a class="page-link rounded-pill border-white border-opacity-10 bg-transparent text-muted px-4" href="#">2</a></li>
+                                      <li class="page-item"><a class="page-link rounded-pill border-white border-opacity-10 bg-transparent text-muted px-4" href="#"><i class="bi bi-chevron-right"></i></a></li>
                                   </ul>
                               </nav>
                           </div>
@@ -137,68 +152,66 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-wrap bg-tertiary">
+    <!-- Footer - GLOBAL FOOTER REDESIGN -->
+    <footer class="footer-wrap">
         <div class="container pb-5">
-            <div class="row g-4">
-                <!-- Column 1: Brand + Social -->
+            <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-3"
+                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-4"
                         href="index.html">
-                        <i class="bi bi-buildings-fill me-2"></i> CorpMove
+                        <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
                     </a>
-                    <p class="mb-4 text-muted">A professional, organized site that simplifies the stress of corporate
-                        moves for both HR and the relocating employee.</p>
+                    <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
                     <div class="d-flex gap-3">
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
-                <!-- Column 2: Company Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Company</h5>
+                    <h6 class="tech-data mb-4 small">FIRM</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="services.html" class="footer-link">Our Services</a></li>
-                        <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
-                        <li><a href="blog.html" class="footer-link">News & Blog</a></li>
+                        <li><a href="about.html" class="footer-link small">Overview</a></li>
+                        <li><a href="services.html" class="footer-link small">Methodology</a></li>
+                        <li><a href="pricing.html" class="footer-link small">Engagement</a></li>
+                        <li><a href="blog.html" class="footer-link small">Field Reports</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Support Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Support</h5>
+                    <h6 class="tech-data mb-4 small">PROTOCOLS</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="contact.html" class="footer-link">Help Center</a></li>
-                        <li><a href="service-details.html" class="footer-link">FAQ's</a></li>
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="contact.html" class="footer-link small">Intake Center</a></li>
+                        <li><a href="service-details.html" class="footer-link small">FAQ Archive</a></li>
+                        <li><a href="#" class="footer-link small">Compliance</a></li>
+                        <li><a href="#" class="footer-link small">Privileged Access</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 4: Newsletter -->
                 <div class="col-lg-4 col-md-6">
-                    <h5 class="fw-bold mb-4">Newsletter</h5>
-                    <p class="text-muted">Subscribe to our newsletter for the latest relocation tips.</p>
-                    <form class="d-flex w-100">
-                        <input type="email" class="form-control rounded-start-pill border-end-0 shadow-none ps-3"
-                            placeholder="Email Address" required>
-                        <button class="btn btn-secondary rounded-end-pill px-4" type="submit">Subscribe</button>
+                    <h6 class="tech-data mb-4 small">INTEL FEED</h6>
+                    <p class="text-muted small mb-4">Subscribe for secure relocation briefings and global policy alerts.</p>
+                    <form class="d-flex w-100 border border-white border-opacity-10 rounded-pill p-1">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small"
+                            placeholder="Email Endpoint..." required>
+                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold" type="submit">Deploy</button>
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- Copyright line -->
-        <div class="container-fluid border-top py-3 text-center text-muted border-dark-subtle">
-            <p class="mb-0">&copy; 2026 CorpMove. All Rights Reserved.</p>
+        <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
         </div>
     </footer>
-    <button class="btn btn-primary" id="backToTop"><i class="bi bi-arrow-up fs-4"></i></button>
+
+    <!-- Back to Top -->
+    <button class="btn btn-primary" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up fs-4"></i></button>
+
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>

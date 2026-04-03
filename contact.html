@@ -1,46 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" dir="ltr">
+<html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | CorpMove</title>
+    <meta name="description" content="Secure Intake Center. Direct lines for enterprise logistical coordination and principal relocation.">
+    <title>Intake Center | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Bootstrap 5 & Custom CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-black">
     <header>
-      <nav class="navbar navbar-expand-lg py-3 main-nav sticky-top">
+      <nav class="navbar navbar-expand-lg py-3 main-nav">
           <div class="container">
               <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
                   <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
               </a>
-              <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                  <i class="bi bi-list fs-1"></i>
-              </button>
+
+              <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
+                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
+                      <i class="bi bi-translate"></i>
+                  </button>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                      <i class="bi bi-moon-fill" id="themeIcon"></i>
+                  </button>
+                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
+                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
+                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                      <i class="bi bi-list fs-1"></i>
+                  </button>
+              </div>
+
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                  <div class="offcanvas-header">
+                  <div class="offcanvas-header bg-black border-bottom cm-border-main">
                       <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                   </div>
-                  <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 fs-5">
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home1</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="home2.html">Home2</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
-                          <li class="nav-item"><a class="nav-link fw-semibold active text-primary" href="contact.html">Contact</a></li>
+                  <div class="offcanvas-body bg-black">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-center">
+                          <li class="nav-item"><a class="nav-link" href="index.html">Home1</a></li>
+                          <li class="nav-item"><a class="nav-link" href="home2.html">Home2</a></li>
+                          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link active text-primary" href="contact.html">Contact</a></li>
+                          <li class="nav-item d-md-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-md-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
                       </ul>
-                      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-                          <button class="btn btn-outline-primary btn-sm rounded-pill fw-bold" id="rtlToggle">RTL</button>
-                          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
-                          <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Login</a>
-                          <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill">Sign Up</a>
-                      </div>
                   </div>
               </div>
           </div>
@@ -48,92 +61,94 @@
     </header>
 
     <main>
-      <section class="bg-primary text-white text-center py-5">
-          <div class="container py-4">
-              <h1 class="display-4 fw-bold">Contact Us</h1>
-              <p class="lead opacity-75 max-w-lg mx-auto mb-0">Reach out for your customized moving quote.</p>
+      <!-- Page Header - INTAKE CENTER -->
+      <section class="py-5 cm-bg-main border-bottom cm-border-main" style="background: linear-gradient(var(--cm-hero-overlay-90), var(--cm-hero-overlay-90)), url('assets/img/hero-contact.svg') center/cover no-repeat;">
+          <div class="container py-5 text-center reveal">
+              <h1 class="display-4 fw-bold">The Intake Center</h1>
+              <p class="lead text-muted max-w-lg mx-auto mb-0 small">Secure channels for high-priority logistics and enterprise engagements.</p>
           </div>
       </section>
 
       <section class="py-5 my-5">
           <div class="container">
               <div class="row g-5">
-                  <!-- Contact Info & Map -->
-                  <div class="col-lg-5">
+                  <!-- Contact Info & Technical Nodes -->
+                  <div class="col-lg-5 reveal">
                       <div class="mb-5">
-                          <h2 class="fw-bold mb-4">Get In Touch</h2>
-                          <p class="text-muted mb-4">Whether you are an HR coordinator looking for a corporate partner, or an employee planning an upcoming transfer, we are here to help.</p>
+                          <h2 class="fw-bold mb-4">Direct Connectivity</h2>
+                          <p class="text-muted small mb-4">Our logistics officers are available 24/7 for active transition management and urgent briefing requests.</p>
                           
                           <div class="d-flex align-items-center mb-4">
-                              <div class="bg-tertiary d-flex align-items-center justify-content-center rounded-circle me-3 text-primary fs-3" style="width: 60px; height: 60px;">
-                                  <i class="bi bi-geo-alt-fill"></i>
+                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10">
+                                  <i class="bi bi-geo-alt-fill fs-4"></i>
                               </div>
                               <div>
-                                  <h6 class="fw-bold mb-1">Our Headquarters</h6>
-                                  <p class="text-muted mb-0">123 Corporate Ave, New York, NY 10001</p>
+                                  <h6 class="fw-bold mb-1 small">HQ_NODE</h6>
+                                  <p class="text-muted mb-0 x-small">SECURE SECTOR 7, NEW YORK GRID</p>
                               </div>
                           </div>
                           
                           <div class="d-flex align-items-center mb-4">
-                              <div class="bg-tertiary d-flex align-items-center justify-content-center rounded-circle me-3 text-primary fs-3" style="width: 60px; height: 60px;">
-                                  <i class="bi bi-telephone-fill"></i>
+                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10">
+                                  <i class="bi bi-telephone-fill fs-4"></i>
                               </div>
                               <div>
-                                  <h6 class="fw-bold mb-1">Phone Inquiry</h6>
-                                  <p class="text-muted mb-0">+1 (800) 123-4567</p>
+                                  <h6 class="fw-bold mb-1 small">SECURE_VOICE</h6>
+                                  <p class="text-muted mb-0 x-small">+1 (800) CORP_MOVE_OPS</p>
                               </div>
                           </div>
                           
                           <div class="d-flex align-items-center">
-                              <div class="bg-tertiary d-flex align-items-center justify-content-center rounded-circle me-3 text-primary fs-3" style="width: 60px; height: 60px;">
-                                  <i class="bi bi-envelope-fill"></i>
+                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10">
+                                  <i class="bi bi-envelope-fill fs-4"></i>
                               </div>
                               <div>
-                                  <h6 class="fw-bold mb-1">Email Support</h6>
-                                  <p class="text-muted mb-0">hello@corpmove.example.com</p>
+                                  <h6 class="fw-bold mb-1 small">ENCRYPTED_ENDPOINT</h6>
+                                  <p class="text-muted mb-0 x-small">OPS@CORPMOVE.SECURE</p>
                               </div>
                           </div>
                       </div>
                       
-                      <!-- Google Map Embed Placeholder -->
-                      <div class="cm-card overflow-hidden">
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.062002166946!2d-73.98774868459343!3d40.7588975793263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1634567890123!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                      <!-- Virtual Visualization (Map) -->
+                      <div class="cm-card overflow-hidden h-300px grayscale">
+                           <img src="assets/img/service-placeholder.svg" alt="Operational Logistics Map" class="w-100 h-100 object-fit-cover opacity-50 grayscale">
+                           <div class="position-absolute bottom-0 start-0 p-3 tech-data text-primary x-small bg-black bg-opacity-50 w-100">ACTIVE_OPERATIONAL_GRID_VISUALIZATION</div>
                       </div>
                   </div>
 
-                  <!-- Contact Form -->
-                  <div class="col-lg-7">
-                      <div class="cm-card p-5 h-100">
-                          <h3 class="fw-bold mb-4">Send us a Message</h3>
+                  <!-- Contact Form - DEPLOYMENT REQUEST -->
+                  <div class="col-lg-7 reveal">
+                      <div class="cm-card p-5 h-100 bg-opacity-10 border-white border-opacity-5 shadow-2xl">
+                          <h3 class="text-white fw-bold mb-4">Logistics Intake Form</h3>
                           <form>
-                              <div class="row g-3">
+                              <div class="row g-4">
                                   <div class="col-md-6">
-                                      <label class="form-label fw-bold text-muted small">Full Name</label>
-                                      <input type="text" class="form-control bg-tertiary border-0 px-4 py-3 rounded-3 shadow-none" placeholder="John Doe">
+                                      <label class="tech-data text-primary x-small mb-2 d-block">PRINCIPAL_NAME</label>
+                                      <input type="text" class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-pill shadow-none focus-primary" placeholder="NAME...">
                                   </div>
                                   <div class="col-md-6">
-                                      <label class="form-label fw-bold text-muted small">Email Address</label>
-                                      <input type="email" class="form-control bg-tertiary border-0 px-4 py-3 rounded-3 shadow-none" placeholder="john@company.com">
+                                      <label class="tech-data text-primary x-small mb-2 d-block">COMMS_ENDPOINT</label>
+                                      <input type="email" class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-pill shadow-none focus-primary" placeholder="EMAIL...">
                                   </div>
                                   <div class="col-md-6">
-                                      <label class="form-label fw-bold text-muted small">Company</label>
-                                      <input type="text" class="form-control bg-tertiary border-0 px-4 py-3 rounded-3 shadow-none" placeholder="Acme Corp">
+                                      <label class="tech-data text-primary x-small mb-2 d-block">FIRM_ENTITY</label>
+                                      <input type="text" class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-pill shadow-none focus-primary" placeholder="ORGANIZATION...">
                                   </div>
                                   <div class="col-md-6">
-                                      <label class="form-label fw-bold text-muted small">Move Size</label>
-                                      <select class="form-select bg-tertiary border-0 px-4 py-3 rounded-3 shadow-none text-muted">
-                                          <option selected>Select an option</option>
-                                          <option value="1">1-10 Employees</option>
-                                          <option value="2">11-50 Employees</option>
-                                          <option value="3">50+ Employees / Full Office</option>
+                                      <label class="tech-data text-primary x-small mb-2 d-block">TARGET_ASSET_SCALE</label>
+                                      <select class="form-select bg-transparent border-white border-opacity-10 text-muted px-4 py-3 rounded-pill shadow-none focus-primary">
+                                          <option selected disabled>SELECT_ASSET_LOAD</option>
+                                          <option value="1">SOLO_PRINCIPAL</option>
+                                          <option value="2">TACTICAL_TEAM (1-10)</option>
+                                          <option value="3">DIVISIONAL_WAVE (50+)</option>
                                       </select>
                                   </div>
                                   <div class="col-12">
-                                      <label class="form-label fw-bold text-muted small">Message</label>
-                                      <textarea class="form-control bg-tertiary border-0 px-4 py-3 rounded-3 shadow-none" rows="5" placeholder="Tell us about your requirements..."></textarea>
+                                      <label class="tech-data text-primary x-small mb-2 d-block">MISSION_PARAMETERS</label>
+                                      <textarea class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-4 shadow-none focus-primary" rows="5" placeholder="INITIAL_DETAILS_REQUIRED..."></textarea>
                                   </div>
                                   <div class="col-12 mt-4">
-                                      <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 w-100 fw-bold">Submit Request</button>
+                                      <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 w-100 fw-bold tracking-widest small">TRANSMIT_DATA</button>
                                   </div>
                               </div>
                           </form>
@@ -144,64 +159,57 @@
       </section>
     </main>
     
-    <!-- Footer -->
-    <footer class="footer-wrap bg-tertiary">
+    <!-- Footer - GLOBAL FOOTER REDESIGN -->
+    <footer class="footer-wrap">
         <div class="container pb-5">
-            <div class="row g-4">
-                <!-- Column 1: Brand + Social -->
+            <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-3"
+                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-4"
                         href="index.html">
-                        <i class="bi bi-buildings-fill me-2"></i> CorpMove
+                        <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
                     </a>
-                    <p class="mb-4 text-muted">A professional, organized site that simplifies the stress of corporate
-                        moves for both HR and the relocating employee.</p>
+                    <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
                     <div class="d-flex gap-3">
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-4 text-primary footer-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
-                <!-- Column 2: Company Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Company</h5>
+                    <h6 class="tech-data mb-4 small">FIRM</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="services.html" class="footer-link">Our Services</a></li>
-                        <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
-                        <li><a href="blog.html" class="footer-link">News & Blog</a></li>
+                        <li><a href="about.html" class="footer-link small">Overview</a></li>
+                        <li><a href="services.html" class="footer-link small">Methodology</a></li>
+                        <li><a href="pricing.html" class="footer-link small">Engagement</a></li>
+                        <li><a href="blog.html" class="footer-link small">Field Reports</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Support Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4">Support</h5>
+                    <h6 class="tech-data mb-4 small">PROTOCOLS</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                        <li><a href="contact.html" class="footer-link">Help Center</a></li>
-                        <li><a href="service-details.html" class="footer-link">FAQ's</a></li>
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="contact.html" class="footer-link small">Intake Center</a></li>
+                        <li><a href="service-details.html" class="footer-link small">FAQ Archive</a></li>
+                        <li><a href="#" class="footer-link small">Compliance</a></li>
+                        <li><a href="#" class="footer-link small">Privileged Access</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 4: Newsletter -->
                 <div class="col-lg-4 col-md-6">
-                    <h5 class="fw-bold mb-4">Newsletter</h5>
-                    <p class="text-muted">Subscribe to our newsletter for the latest relocation tips.</p>
-                    <form class="d-flex w-100">
-                        <input type="email" class="form-control rounded-start-pill border-end-0 shadow-none ps-3"
-                            placeholder="Email Address" required>
-                        <button class="btn btn-secondary rounded-end-pill px-4" type="submit">Subscribe</button>
+                    <h6 class="tech-data mb-4 small">INTEL FEED</h6>
+                    <p class="text-muted small mb-4">Subscribe for secure relocation briefings and global policy alerts.</p>
+                    <form class="d-flex w-100 border border-white border-opacity-10 rounded-pill p-1">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small"
+                            placeholder="Email Endpoint..." required>
+                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold" type="submit">Deploy</button>
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- Copyright line -->
-        <div class="container-fluid border-top py-3 text-center text-muted border-dark-subtle">
-            <p class="mb-0">&copy; 2026 CorpMove. All Rights Reserved.</p>
+        <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
         </div>
     </footer>
 
