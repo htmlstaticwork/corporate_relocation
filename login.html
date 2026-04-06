@@ -119,18 +119,18 @@
 </head>
 <body>
 
-    <!-- FIX #18: Toggle and RTL buttons -->
-    <div style="position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; gap: 8px;">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-            <i class="bi bi-moon-fill" id="themeIcon"></i>
-        </button>
-        <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
-            <i class="bi bi-translate"></i>
-        </button>
-    </div>
-
     <div class="login-container reveal">
-        <div class="auth-card">
+        <div class="auth-card position-relative">
+            <!-- Theme and RTL Buttons inside the card -->
+            <div class="position-absolute top-0 end-0 p-3 d-flex gap-2" style="z-index: 10;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="bi bi-moon-fill" id="themeIcon"></i>
+                </button>
+                <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
+                    <i class="bi bi-translate"></i>
+                </button>
+            </div>
+
             <div class="text-center mb-5">
                 <a href="index.html" class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center justify-content-center mb-4 text-decoration-none">
                     <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
