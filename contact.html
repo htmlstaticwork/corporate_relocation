@@ -6,37 +6,23 @@
     <meta name="description" content="Secure Intake Center. Direct lines for enterprise logistical coordination and principal relocation.">
     <title>Intake Center | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="bg-black">
     <header>
       <nav class="navbar navbar-expand-lg py-3 main-nav">
           <div class="container">
-              <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
-                  <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
-              </a>
-
+              <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html"><i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove</a>
               <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
-                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
-                      <i class="bi bi-translate"></i>
-                  </button>
-                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                      <i class="bi bi-moon-fill" id="themeIcon"></i>
-                  </button>
                   <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
                   <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
-                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                      <i class="bi bi-list fs-1"></i>
-                  </button>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
+                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i></button>
+                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation"><i class="bi bi-list fs-1"></i></button>
               </div>
-
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
                   <div class="offcanvas-header bg-black border-bottom cm-border-main">
                       <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
@@ -61,92 +47,99 @@
     </header>
 
     <main>
-      <!-- Page Header - INTAKE CENTER -->
-      <section class="py-5 cm-bg-main border-bottom cm-border-main" style="background: linear-gradient(var(--cm-hero-overlay-90), var(--cm-hero-overlay-90)), url('assets/img/hero-contact.svg') center/cover no-repeat;">
+      <!-- FIX #20: Hero with sub content -->
+      <section class="hero-wrapper py-5 cm-bg-main border-bottom cm-border-main" style="min-height: 40vh; background: linear-gradient(var(--cm-hero-overlay-90), var(--cm-hero-overlay-90)), url('assets/img/hero-contact.svg') center/cover no-repeat;">
           <div class="container py-5 text-center reveal">
               <h1 class="display-4 fw-bold">The Intake Center</h1>
-              <p class="lead text-muted max-w-lg mx-auto mb-0 small">Secure channels for high-priority logistics and enterprise engagements.</p>
+              <p class="lead text-muted mx-auto mb-3 small" style="max-width: 700px;">Secure channels for high-priority logistics and enterprise engagements.</p>
+              <p class="text-muted small mx-auto" style="max-width: 600px;">Available 24/7 for active transition management, urgent briefings, and new engagement requests.</p>
           </div>
       </section>
 
       <section class="py-5 my-5">
           <div class="container">
               <div class="row g-5">
-                  <!-- Contact Info & Technical Nodes -->
+                  <!-- FIX #16: Contact info + Social media + Map -->
                   <div class="col-lg-5 reveal">
                       <div class="mb-5">
                           <h2 class="fw-bold mb-4">Direct Connectivity</h2>
                           <p class="text-muted small mb-4">Our logistics officers are available 24/7 for active transition management and urgent briefing requests.</p>
                           
                           <div class="d-flex align-items-center mb-4">
-                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10">
-                                  <i class="bi bi-geo-alt-fill fs-4"></i>
-                              </div>
+                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10"><i class="bi bi-geo-alt-fill fs-4"></i></div>
                               <div>
                                   <h6 class="fw-bold mb-1 small">HQ_NODE</h6>
-                                  <p class="text-muted mb-0 x-small">SECURE SECTOR 7, NEW YORK GRID</p>
+                                  <p class="text-muted mb-0 small">SECURE SECTOR 7, NEW YORK GRID</p>
                               </div>
                           </div>
                           
                           <div class="d-flex align-items-center mb-4">
-                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10">
-                                  <i class="bi bi-telephone-fill fs-4"></i>
-                              </div>
+                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10"><i class="bi bi-telephone-fill fs-4"></i></div>
                               <div>
                                   <h6 class="fw-bold mb-1 small">SECURE_VOICE</h6>
-                                  <p class="text-muted mb-0 x-small">+1 (800) CORP_MOVE_OPS</p>
+                                  <p class="text-muted mb-0 small">+1 (800) CORP_MOVE_OPS</p>
                               </div>
                           </div>
                           
-                          <div class="d-flex align-items-center">
-                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10">
-                                  <i class="bi bi-envelope-fill fs-4"></i>
-                              </div>
+                          <div class="d-flex align-items-center mb-5">
+                              <div class="cm-card p-3 me-3 text-primary bg-opacity-10"><i class="bi bi-envelope-fill fs-4"></i></div>
                               <div>
                                   <h6 class="fw-bold mb-1 small">ENCRYPTED_ENDPOINT</h6>
-                                  <p class="text-muted mb-0 x-small">OPS@CORPMOVE.SECURE</p>
+                                  <p class="text-muted mb-0 small">OPS@CORPMOVE.SECURE</p>
                               </div>
+                          </div>
+
+                          <!-- FIX #16: Social media buttons -->
+                          <h6 class="tech-data mb-3 small">CONNECT_CHANNELS</h6>
+                          <div class="d-flex gap-3 mb-5">
+                              <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
+                              <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-twitter-x"></i></a>
+                              <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-linkedin"></i></a>
+                              <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
+                              <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-youtube"></i></a>
                           </div>
                       </div>
                       
-                      <!-- Virtual Visualization (Map) -->
-                      <div class="cm-card overflow-hidden h-300px grayscale">
-                           <img src="assets/img/service-placeholder.svg" alt="Operational Logistics Map" class="w-100 h-100 object-fit-cover opacity-50 grayscale">
-                           <div class="position-absolute bottom-0 start-0 p-3 tech-data text-primary x-small bg-black bg-opacity-50 w-100">ACTIVE_OPERATIONAL_GRID_VISUALIZATION</div>
+                      <!-- FIX #16: Map fixed with proper SVG -->
+                      <div class="cm-card overflow-hidden position-relative" style="height: 300px;">
+                           <img src="assets/img/map-placeholder.svg" alt="Operational Logistics Map" class="w-100 h-100 object-fit-cover grayscale">
+                           <div class="position-absolute bottom-0 start-0 p-3 tech-data text-primary bg-black bg-opacity-75 w-100" style="font-size: 0.7rem;">ACTIVE_OPERATIONAL_GRID_VISUALIZATION</div>
                       </div>
                   </div>
 
-                  <!-- Contact Form - DEPLOYMENT REQUEST -->
+                  <!-- FIX #16: Contact Form with larger text box + button at bottom -->
                   <div class="col-lg-7 reveal">
                       <div class="cm-card p-5 h-100 bg-opacity-10 border-white border-opacity-5 shadow-2xl">
-                          <h3 class="text-white fw-bold mb-4">Logistics Intake Form</h3>
+                          <h3 class="fw-bold mb-4">Logistics Intake Form</h3>
                           <form>
                               <div class="row g-4">
                                   <div class="col-md-6">
-                                      <label class="tech-data text-primary x-small mb-2 d-block">PRINCIPAL_NAME</label>
-                                      <input type="text" class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-pill shadow-none focus-primary" placeholder="NAME...">
+                                      <label class="tech-data text-primary mb-2 d-block" style="font-size: 0.7rem;">PRINCIPAL_NAME</label>
+                                      <input type="text" class="form-control bg-transparent border-white border-opacity-10 px-4 py-3 rounded-pill shadow-none" placeholder="NAME...">
                                   </div>
                                   <div class="col-md-6">
-                                      <label class="tech-data text-primary x-small mb-2 d-block">COMMS_ENDPOINT</label>
-                                      <input type="email" class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-pill shadow-none focus-primary" placeholder="EMAIL...">
+                                      <label class="tech-data text-primary mb-2 d-block" style="font-size: 0.7rem;">COMMS_ENDPOINT</label>
+                                      <input type="email" class="form-control bg-transparent border-white border-opacity-10 px-4 py-3 rounded-pill shadow-none" placeholder="EMAIL...">
                                   </div>
                                   <div class="col-md-6">
-                                      <label class="tech-data text-primary x-small mb-2 d-block">FIRM_ENTITY</label>
-                                      <input type="text" class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-pill shadow-none focus-primary" placeholder="ORGANIZATION...">
+                                      <label class="tech-data text-primary mb-2 d-block" style="font-size: 0.7rem;">FIRM_ENTITY</label>
+                                      <input type="text" class="form-control bg-transparent border-white border-opacity-10 px-4 py-3 rounded-pill shadow-none" placeholder="ORGANIZATION...">
                                   </div>
                                   <div class="col-md-6">
-                                      <label class="tech-data text-primary x-small mb-2 d-block">TARGET_ASSET_SCALE</label>
-                                      <select class="form-select bg-transparent border-white border-opacity-10 text-muted px-4 py-3 rounded-pill shadow-none focus-primary">
+                                      <label class="tech-data text-primary mb-2 d-block" style="font-size: 0.7rem;">TARGET_ASSET_SCALE</label>
+                                      <select class="form-select bg-transparent border-white border-opacity-10 text-muted px-4 py-3 rounded-pill shadow-none">
                                           <option selected disabled>SELECT_ASSET_LOAD</option>
                                           <option value="1">SOLO_PRINCIPAL</option>
                                           <option value="2">TACTICAL_TEAM (1-10)</option>
                                           <option value="3">DIVISIONAL_WAVE (50+)</option>
                                       </select>
                                   </div>
+                                  <!-- FIX #16: Larger text box -->
                                   <div class="col-12">
-                                      <label class="tech-data text-primary x-small mb-2 d-block">MISSION_PARAMETERS</label>
-                                      <textarea class="form-control bg-transparent border-white border-opacity-10 text-white px-4 py-3 rounded-4 shadow-none focus-primary" rows="5" placeholder="INITIAL_DETAILS_REQUIRED..."></textarea>
+                                      <label class="tech-data text-primary mb-2 d-block" style="font-size: 0.7rem;">MISSION_PARAMETERS</label>
+                                      <textarea class="form-control bg-transparent border-white border-opacity-10 px-4 py-3 rounded-4 shadow-none" rows="8" placeholder="INITIAL_DETAILS_REQUIRED... Provide comprehensive details about your relocation needs, timeline, special requirements, and any security considerations."></textarea>
                                   </div>
+                                  <!-- FIX #16: Transmit Data button at bottom -->
                                   <div class="col-12 mt-4">
                                       <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 w-100 fw-bold tracking-widest small">TRANSMIT_DATA</button>
                                   </div>
@@ -159,15 +152,11 @@
       </section>
     </main>
     
-    <!-- Footer - GLOBAL FOOTER REDESIGN -->
     <footer class="footer-wrap">
         <div class="container pb-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-4"
-                        href="index.html">
-                        <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
-                    </a>
+                    <a class="text-primary fw-bold fs-3 text-decoration-none d-flex align-items-center mb-4" href="index.html"><i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove</a>
                     <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
@@ -176,7 +165,6 @@
                         <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-
                 <div class="col-lg-2 col-md-6">
                     <h6 class="tech-data mb-4 small">FIRM</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
@@ -186,7 +174,6 @@
                         <li><a href="blog.html" class="footer-link small">Field Reports</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-2 col-md-6">
                     <h6 class="tech-data mb-4 small">PROTOCOLS</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
@@ -196,13 +183,11 @@
                         <li><a href="#" class="footer-link small">Privileged Access</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <h6 class="tech-data mb-4 small">INTEL FEED</h6>
                     <p class="text-muted small mb-4">Subscribe for secure relocation briefings and global policy alerts.</p>
                     <form class="d-flex w-100 border border-white border-opacity-10 rounded-pill p-1">
-                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small"
-                            placeholder="Email Endpoint..." required>
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small" placeholder="Email Endpoint..." required>
                         <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold" type="submit">Deploy</button>
                     </form>
                 </div>
@@ -213,6 +198,7 @@
         </div>
     </footer>
 
+    <button class="btn btn-primary" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up fs-4"></i></button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

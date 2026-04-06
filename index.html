@@ -1,4 +1,5 @@
-<html lang="en" data-bs-theme="dark" dir="ltr"> <!-- Change dir="ltr" to dir="rtl" for Right-To-Left Support -->
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +21,7 @@
 
 <body>
 
-    <!-- Header / Navbar (Same Across All Pages) -->
+    <!-- Header / Navbar - FIX #1: Toggle & RTL after Sign Up -->
     <header>
       <nav class="navbar navbar-expand-lg py-3 main-nav">
           <div class="container">
@@ -29,21 +30,21 @@
               </a>
 
               <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
-                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
-                      <i class="bi bi-translate"></i>
-                  </button>
+                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
+                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
                   <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
                       <i class="bi bi-moon-fill" id="themeIcon"></i>
                   </button>
-                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
-                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
-                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
+                      <i class="bi bi-translate"></i>
+                  </button>
+                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation">
                       <i class="bi bi-list fs-1"></i>
                   </button>
               </div>
 
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                  <div class="offcanvas-header bg-black">
+                  <div class="offcanvas-header bg-black border-bottom cm-border-main">
                       <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                   </div>
@@ -66,7 +67,7 @@
     </header>
 
     <main>
-        <!-- Section 1: Hero - ELITE DARK THEME REDESIGN -->
+        <!-- Section 1: Hero - FIX #2: Font size consistency, tab alignment -->
         <section class="hero-wrapper position-relative overflow-hidden d-flex align-items-center bg-black" style="min-height: 90vh; background: linear-gradient(var(--cm-hero-overlay-85), var(--cm-hero-overlay-85)), url('assets/img/hero_main.png') center/cover no-repeat;">
             <div class="container py-5">
                 <div class="row align-items-center justify-content-between g-5">
@@ -75,20 +76,20 @@
                         <h1 class="display-2 fw-bolder text-white mb-4">Clarity in Every <span class="text-primary">Transition.</span></h1>
                         <p class="lead mb-5 text-muted pe-lg-5" style="font-size: 1.25rem;">In high-stakes corporate environments, precision is the only currency. We provide elite, discreet relocation services that ensure operational continuity before you move.</p>
                         
-                        <!-- Status Terminal -->
+                        <!-- Status Terminal - FIX #2: Consistent font sizes -->
                         <div class="bg-black bg-opacity-50 p-4 border border-white border-opacity-10 rounded-3 mb-5 tech-data" style="max-width: 500px;">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="text-white opacity-50 me-2">></span> Initializing global transit sequence...
+                            <div class="d-flex align-items-center mb-2" style="font-size: 0.85rem;">
+                                <span class="text-white opacity-50 me-2">&gt;</span> Initializing global transit sequence...
                             </div>
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="text-white opacity-50 me-2">></span> Establishing secure logistics tunnel...
+                            <div class="d-flex align-items-center mb-2" style="font-size: 0.85rem;">
+                                <span class="text-white opacity-50 me-2">&gt;</span> Establishing secure logistics tunnel...
                             </div>
-                            <div class="d-flex align-items-center">
-                                <span class="text-primary me-2">></span> <span class="fw-bold tracking-widest">READY FOR DEPLOYMENT</span>
+                            <div class="d-flex align-items-center" style="font-size: 0.85rem;">
+                                <span class="text-primary me-2">&gt;</span> <span class="fw-bold tracking-widest">READY FOR DEPLOYMENT</span>
                             </div>
                         </div>
 
-                        <div class="d-flex flex-wrap gap-4">
+                        <div class="d-flex flex-wrap gap-4 align-items-center">
                             <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-5">Initiate Request</a>
                             <a href="contact.html" class="btn btn-outline-primary btn-lg rounded-pill px-5">Methodology</a>
                         </div>
@@ -107,12 +108,12 @@
             </div>
         </section>
 
-        <!-- Section 2: Features - TECH GRID -->
+        <!-- Section 2: Features - FIX #3: Ensure images work -->
         <section class="py-5 my-5">
             <div class="container">
                 <div class="text-center mb-5 reveal">
                     <h6 class="text-primary fw-bold text-uppercase tracking-widest small">The corpMove Advantage</h6>
-                    <h2 class="display-6 fw-bold text-white">Elite Operational Standards</h2>
+                    <h2 class="display-6 fw-bold">Elite Operational Standards</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4 reveal">
@@ -155,7 +156,7 @@
             </div>
         </section>
 
-        <!-- Section 3: About Preview - INTELLIGENCE BRIEFING -->
+        <!-- Section 3: About Preview -->
         <section class="py-5">
             <div class="container py-4">
                 <div class="row align-items-center g-5">
@@ -167,7 +168,7 @@
                     </div>
                     <div class="col-lg-6 reveal">
                         <h6 class="text-primary fw-bold text-uppercase tracking-widest small">The Firm</h6>
-                        <h2 class="display-6 fw-bold text-white mb-4">Precision Relocation Since 2010</h2>
+                        <h2 class="display-6 fw-bold mb-4">Precision Relocation Since 2010</h2>
                         <p class="text-muted mb-4 lead">We are specialists in high-stakes corporate transitions, managing moves for mission-critical infrastructure and C-suite leadership. Our secure dashboard provides real-time oversight of all active relocation vectors.</p>
                         
                         <div class="list-unstyled d-flex flex-column gap-4 mb-4">
@@ -190,7 +191,7 @@
             </div>
         </section>
 
-        <!-- Section 4: Fast Statistics - DATA OVERLAY -->
+        <!-- Section 4: Statistics -->
         <section class="py-5 bg-black border-top border-bottom border-white border-opacity-5">
             <div class="container py-4">
                 <div class="row g-4 justify-content-center text-center">
@@ -218,12 +219,12 @@
             </div>
         </section>
 
-        <!-- Section 5: Services Preview - CORE METHODOLOGIES -->
+        <!-- Section 5: Services Preview - FIX #4: CTA hover + alignment -->
         <section class="py-5 my-5">
             <div class="container">
                 <div class="text-center mb-5 reveal">
                     <h6 class="text-primary fw-bold text-uppercase tracking-widest small">What We Provide</h6>
-                    <h2 class="display-6 fw-bold text-white">Advanced Logistics Protocols</h2>
+                    <h2 class="display-6 fw-bold">Advanced Logistics Protocols</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6 reveal">
@@ -236,7 +237,7 @@
                                 <span class="tech-data mb-2 d-block small">TYPE: OPS_MOVE</span>
                                 <h4 class="fw-bold text-white mb-3">Enterprise Migration</h4>
                                 <p class="text-muted small mb-4">Complete infrastructure relocation with encrypted tracking and zero operational downtime.</p>
-                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
+                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -250,7 +251,7 @@
                                 <span class="tech-data mb-2 d-block small">TYPE: EXEC_TRANSIT</span>
                                 <h4 class="fw-bold text-white mb-3">Executive Extraction</h4>
                                 <p class="text-muted small mb-4">Discreet, white-glove relocation for C-Suite leadership requiring high-security destination protocols.</p>
-                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
+                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -264,7 +265,7 @@
                                 <span class="tech-data mb-2 d-block small">TYPE: GLOBAL_ARC</span>
                                 <h4 class="fw-bold text-white mb-3">Global Asset Arc</h4>
                                 <p class="text-muted small mb-4">Seamless cross-border transfers bypassing bureaucratic labyrinths through secure global channels.</p>
-                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
+                                <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ENCRYPTED DETAILS <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -275,12 +276,12 @@
             </div>
         </section>
 
-        <!-- Section: Testimonials - VERIFIED INTEL -->
+        <!-- Section: Testimonials - FIX #5: Author image -->
         <section class="py-5 bg-black border-top border-white border-opacity-5">
             <div class="container py-4">
                 <div class="text-center mb-5 reveal">
                     <h6 class="text-primary fw-bold text-uppercase tracking-widest small">Testimonials</h6>
-                    <h2 class="display-6 fw-bold text-white">Verified Mission Success</h2>
+                    <h2 class="display-6 fw-bold">Verified Mission Success</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 reveal">
@@ -294,7 +295,7 @@
                             </div>
                             <p class="text-muted mb-4 small fst-italic">"CorpMove handled our entire regional office transition without a single hiccup. The encrypted monitoring was critical for our tracking."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/person-placeholder.svg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Client">
+                                <img src="assets/img/person-placeholder.svg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="David Miller">
                                 <div>
                                     <h6 class="text-white small fw-bold mb-0">David Miller</h6>
                                     <span class="tech-data" style="font-size: 0.7rem;">OPS DIRECTOR, TECHFLOW</span>
@@ -313,7 +314,7 @@
                             </div>
                             <p class="text-muted mb-4 small fst-italic">"The extraction packages are white-glove quality. Our staff moved comfortably and felt fully secured throughout the entire journey."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/service-placeholder.svg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Client">
+                                <img src="assets/img/person-placeholder.svg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Sarah Jenkins">
                                 <div>
                                     <h6 class="text-white small fw-bold mb-0">Sarah Jenkins</h6>
                                     <span class="tech-data" style="font-size: 0.7rem;">HR LEAD, GLOBANT CORP</span>
@@ -332,7 +333,7 @@
                             </div>
                             <p class="text-muted mb-4 small fst-italic">"Moving internationally is usually a nightmare, but their global partners handled customs like absolute specialists. Highly recommended."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/service-placeholder.svg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Client">
+                                <img src="assets/img/person-placeholder.svg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Marcus Thorne">
                                 <div>
                                     <h6 class="text-white small fw-bold mb-0">Marcus Thorne</h6>
                                     <span class="tech-data" style="font-size: 0.7rem;">CEO, ALPHA SOLUTIONS</span>
@@ -344,13 +345,13 @@
             </div>
         </section>
 
-        <!-- Section: Insights snapshot - FIELD REPORTS -->
+        <!-- Section: Insights -->
         <section class="py-5">
             <div class="container py-4">
                 <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-4 reveal">
                     <div>
                         <h6 class="text-primary fw-bold text-uppercase tracking-widest small">Intel Center</h6>
-                        <h2 class="display-6 fw-bold text-white">Relocation Field Reports</h2>
+                        <h2 class="display-6 fw-bold">Relocation Field Reports</h2>
                     </div>
                     <a href="blog.html" class="btn btn-outline-primary rounded-pill px-4 fw-bold small uppercase">All Archives</a>
                 </div>
@@ -358,11 +359,11 @@
                     <div class="col-md-6 col-lg-4 reveal">
                         <div class="cm-card h-100">
                             <div class="overflow-hidden" style="height: 220px;">
-                                <img src="assets/img/service-placeholder.svg" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
+                                <img src="assets/img/blog-placeholder.svg" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
                             </div>
                             <div class="p-4">
                                 <span class="tech-data mb-3 d-block small">STRATEGY_REPORT_01</span>
-                                <h5 class="text-white fw-bold mb-3">Maximizing ROI on Global Relocations</h5>
+                                <h5 class="fw-bold mb-3">Maximizing ROI on Global Relocations</h5>
                                 <p class="text-muted small">Discover how to balance top-tier security with corporate budget constraints effectively.</p>
                             </div>
                         </div>
@@ -370,11 +371,11 @@
                     <div class="col-md-6 col-lg-4 reveal">
                         <div class="cm-card h-100">
                             <div class="overflow-hidden" style="height: 220px;">
-                                <img src="assets/img/service-placeholder.svg" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
+                                <img src="assets/img/blog-placeholder.svg" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
                             </div>
                             <div class="p-4">
                                 <span class="tech-data mb-3 d-block small">INFRA_REPORT_04</span>
-                                <h5 class="text-white fw-bold mb-3">The Future of Remote-Hybrid Transitions</h5>
+                                <h5 class="fw-bold mb-3">The Future of Remote-Hybrid Transitions</h5>
                                 <p class="text-muted small">As companies rethink office spaces, relocation strategies are evolving at a rapid pace.</p>
                             </div>
                         </div>
@@ -382,11 +383,11 @@
                     <div class="col-md-6 col-lg-4 reveal">
                         <div class="cm-card h-100">
                             <div class="overflow-hidden" style="height: 220px;">
-                                <img src="assets/img/service-placeholder.svg" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
+                                <img src="assets/img/blog-placeholder.svg" class="w-100 h-100 object-fit-cover grayscale" alt="Insight">
                             </div>
                             <div class="p-4">
                                 <span class="tech-data mb-3 d-block small">RISK_REPORT_12</span>
-                                <h5 class="text-white fw-bold mb-3">5 Critical Vulnerabilities in Office Moves</h5>
+                                <h5 class="fw-bold mb-3">5 Critical Vulnerabilities in Office Moves</h5>
                                 <p class="text-muted small">Don't let poor planning pause your business. Learn from common industry pitfalls today.</p>
                             </div>
                         </div>
@@ -395,11 +396,11 @@
             </div>
         </section>
 
-        <!-- Section 6: CTA - INTAKE PORTAL -->
+        <!-- Section 6: CTA - FIX #4: Text aligned, hovering -->
         <section class="py-5 bg-black border-top border-white border-opacity-5">
             <div class="container py-5 text-center reveal">
-                <h2 class="display-5 fw-bold text-white mb-4">Request Secure Consultation</h2>
-                <p class="lead text-muted mb-5 max-w-lg mx-auto small" style="max-width: 700px;">Initialization protocol available for verified enterprise entities. Join the secure relocation network today.</p>
+                <h2 class="display-5 fw-bold mb-4">Request Secure Consultation</h2>
+                <p class="lead text-muted mb-5 mx-auto small" style="max-width: 700px;">Initialization protocol available for verified enterprise entities. Join the secure relocation network today.</p>
                 <div class="d-flex justify-content-center flex-wrap gap-4">
                     <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-5">Initiate Intake</a>
                     <a href="login.html" class="btn btn-secondary btn-lg rounded-pill px-5">Secure Portal Login</a>
@@ -408,7 +409,7 @@
         </section>
     </main>
 
-    <!-- Footer - GLOBAL FOOTER REDESIGN -->
+    <!-- Footer - FIX #7: Social hover, deploy hover, back-to-top, no extra space -->
     <footer class="footer-wrap">
         <div class="container pb-5">
             <div class="row g-5">
@@ -462,7 +463,7 @@
         </div>
     </footer>
 
-    <!-- Back to Top -->
+    <!-- Back to Top - FIX #7: Positioned right side -->
     <button class="btn btn-primary" id="backToTop" aria-label="Back to top">
         <i class="bi bi-arrow-up fs-4"></i>
     </button>

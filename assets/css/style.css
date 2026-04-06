@@ -26,7 +26,7 @@
   --cm-panel: #ffffff;
   --cm-text-heading: #0f172a;
   --cm-text-body: #334155;
-  --cm-text-muted: #64748b; /* Darkened for better contrast */
+  --cm-text-muted: #64748b;
   --cm-border: rgba(0, 0, 0, 0.08);
   --cm-nav-bg: rgba(255, 255, 255, 0.8);
   --cm-accent-text: #065f46;
@@ -52,13 +52,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-primary { color: var(--cm-accent-text) !important; }
-
 .text-muted { color: var(--cm-text-muted) !important; }
-
 .cm-bg-main { background-color: var(--cm-bg) !important; }
 .cm-bg-panel { background-color: var(--cm-panel) !important; }
 .cm-border-main { border-color: var(--cm-border) !important; }
-
 .cm-text-heading { color: var(--cm-text-heading) !important; }
 .cm-text-body { color: var(--cm-text-body) !important; }
 
@@ -80,24 +77,75 @@ body::before {
   pointer-events: none;
 }
 
-/* Navbar */
+/* =========================================================
+   NAVBAR - FIX #1, #21, #22
+   ========================================================= */
 .main-nav {
   background: var(--cm-nav-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--cm-border);
+  position: relative;
+  z-index: 1050;
 }
 
 .nav-link {
   color: var(--cm-text-muted) !important;
   font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0.5rem 1rem !important;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--cm-primary) !important;
+  transform: translateY(-1px);
 }
 
-/* Elite Cards */
+/* Fix #22: Hamburger menu button visibility */
+.navbar-toggler {
+  color: var(--cm-text-heading) !important;
+  border: none !important;
+  padding: 0.25rem 0.5rem;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.navbar-toggler .bi-list {
+  color: var(--cm-text-heading) !important;
+  font-size: 1.8rem !important;
+}
+
+/* Fix #21: 1024px navbar fix */
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .navbar .nav-link {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.5rem !important;
+  }
+  .navbar .btn {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+  .theme-toggle, .rtl-toggle-btn {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   ELITE CARDS
+   ========================================================= */
 .cm-card {
   background: var(--cm-panel);
   border: 1px solid var(--cm-border);
@@ -113,78 +161,214 @@ body::before {
   box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
 }
 
-/* Buttons */
+/* =========================================================
+   BUTTONS - FIX #4, #7, #9, #17, #18
+   ========================================================= */
 .btn-primary {
   background: var(--cm-primary) !important;
   border: none !important;
-  color: #fff !important; /* Force white for contrast on emerald */
+  color: #fff !important;
   font-weight: 700;
   border-radius: 8px;
   padding: 12px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 [data-bs-theme="dark"] .btn-primary {
-    color: #020617 !important; /* Dark text on dark theme for contrast */
+  color: #020617 !important;
 }
 
-/* Utilities */
-.text-primary { color: var(--cm-primary) !important; }
-.bg-black { background-color: var(--cm-bg) !important; }
-.bg-tertiary { background-color: var(--cm-panel) !important; }
-
-/* Dashboard Sidebar */
-.dash-sidebar {
-  background: var(--cm-bg) !important;
-  border-right: 1px solid var(--cm-border);
+.btn-primary:hover {
+  background: #059669 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35) !important;
 }
 
-/* Footer Section */
+.btn-outline-primary {
+  color: var(--cm-primary) !important;
+  border-color: var(--cm-primary) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-outline-primary:hover {
+  background: var(--cm-primary) !important;
+  color: #fff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35) !important;
+}
+
+.btn-secondary {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* =========================================================
+   CTA LINKS - FIX #4, #12, #15
+   ========================================================= */
+a.text-primary.text-decoration-none {
+  transition: all 0.3s ease !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+a.text-primary.text-decoration-none:hover {
+  color: #059669 !important;
+  transform: translateX(5px);
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+a.text-primary.text-decoration-none:hover .bi {
+  transform: translateX(4px);
+  transition: transform 0.3s ease;
+}
+
+/* =========================================================
+   THEME & RTL TOGGLES
+   ========================================================= */
 .theme-toggle, .rtl-toggle-btn {
-    background: var(--cm-panel);
-    border: 1px solid var(--cm-border);
-    color: var(--cm-primary);
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: var(--cm-panel);
+  border: 1px solid var(--cm-border);
+  color: var(--cm-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover, .rtl-toggle-btn:hover {
-    background: var(--cm-primary);
-    color: white !important;
-    border-color: var(--cm-primary);
-    transform: translateY(-2px);
+  background: var(--cm-primary);
+  color: white !important;
+  border-color: var(--cm-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
 }
 
-@media (max-width: 767.98px) {
-    .footer-wrap .text-center-mobile {
-        text-align: center !important;
-    }
-    .footer-wrap .d-flex {
-        justify-content: center !important;
-    }
-}
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+.text-primary { color: var(--cm-primary) !important; }
+.bg-black { background-color: var(--cm-bg) !important; }
+.bg-tertiary { background-color: var(--cm-panel) !important; }
+.tracking-widest { letter-spacing: 0.15em; }
 
+/* =========================================================
+   FOOTER - FIX #7: Deploy button hover, social media hover, 
+   back-to-top position, remove space below footer
+   ========================================================= */
 .footer-wrap {
   background: var(--cm-bg);
   border-top: 1px solid var(--cm-border);
-  padding: 80px 0 40px;
+  padding: 80px 0 0;
+  margin-bottom: 0 !important;
+}
+
+/* Remove space below footer on ALL pages */
+footer.footer-wrap + * {
+  margin-top: 0;
+}
+
+body > footer:last-of-type {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .footer-link {
   color: var(--cm-text-muted);
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .footer-link:hover {
   color: var(--cm-primary);
+  transform: translateX(4px);
 }
 
-/* Reveal Animations */
+/* Social media hover fix */
+.footer-wrap a.footer-link.hover-primary,
+a.footer-link.hover-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--cm-border);
+  transition: all 0.3s ease;
+}
+
+.footer-wrap a.footer-link.hover-primary:hover,
+a.footer-link.hover-primary:hover {
+  background: var(--cm-primary) !important;
+  color: #fff !important;
+  border-color: var(--cm-primary) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Deploy button in footer */
+.footer-wrap .btn-primary {
+  transition: all 0.3s ease !important;
+}
+
+.footer-wrap .btn-primary:hover {
+  background: #059669 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* No space below footer copyright */
+.footer-wrap + .container-fluid,
+footer .container-fluid:last-child {
+  padding-bottom: 1rem !important;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+  .footer-wrap .text-center-mobile {
+    text-align: center !important;
+  }
+  .footer-wrap .d-flex {
+    justify-content: center !important;
+  }
+}
+
+/* =========================================================
+   BACK TO TOP BUTTON - FIX #7: Position right side
+   ========================================================= */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+#backToTop:hover {
+  transform: translateY(-5px) scale(1.1) !important;
+  box-shadow: 0 14px 35px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* =========================================================
+   REVEAL ANIMATIONS
+   ========================================================= */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -196,14 +380,18 @@ body::before {
   transform: translateY(0);
 }
 
-/* MONOSPACE DATA */
+/* =========================================================
+   MONOSPACE DATA
+   ========================================================= */
 .tech-data {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.85rem;
   color: var(--cm-accent-text);
 }
 
-/* IMAGE TREATMENT FIXED */
+/* =========================================================
+   IMAGE TREATMENT - FIX #3, #5, #8, #10, #11, #12
+   ========================================================= */
 .grayscale {
   filter: grayscale(100%);
   transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -216,12 +404,12 @@ body::before {
 }
 
 .grayscale-filter {
-    filter: grayscale(1);
-    transition: filter 0.4s ease;
+  filter: grayscale(1);
+  transition: filter 0.4s ease;
 }
 
 .grayscale-filter:hover {
-    filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .hover-scale {
@@ -233,53 +421,254 @@ body::before {
 }
 
 .blur-sm-hover:hover {
-    filter: blur(4px);
+  filter: blur(4px);
 }
 
-/* THEME TOGGLE ICON */
-.theme-toggle {
-    background: var(--cm-panel);
-    border: 1px solid var(--cm-border);
-    padding: 0;
-    cursor: pointer;
+/* =========================================================
+   HERO SECTIONS - FIX #2, #8, #20: Text alignment,
+   font size consistency, sub content
+   ========================================================= */
+.hero-wrapper h1, .hero-wrapper p, .hero-wrapper .tech-data {
+  position: relative;
+  z-index: 2;
 }
 
-/* Dashboard Responsiveness */
+.hero-wrapper .tech-data div,
+.hero-wrapper .tech-data span {
+  font-size: 0.85rem !important;
+}
+
+/* Hero status terminal text consistency - FIX #2 */
+.hero-wrapper .bg-black .d-flex span,
+.hero-wrapper .bg-opacity-50 .d-flex span,
+.hero-wrapper .tech-data span {
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   TAB / NAV-TABS ALIGNMENT - FIX #2, #6, #8, #13
+   ========================================================= */
+.nav-tabs, .nav-pills {
+  display: flex;
+  align-items: center;
+}
+
+.nav-tabs .nav-link,
+.nav-pills .nav-link {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link.active,
+.nav-pills .nav-link:hover {
+  color: var(--cm-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PAGINATION - FIX #15: Numbers hover
+   ========================================================= */
+.pagination .page-link {
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+}
+
+.pagination .page-item:not(.active):not(.disabled) .page-link:hover {
+  background: var(--cm-primary) !important;
+  color: #fff !important;
+  border-color: var(--cm-primary) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+}
+
+.pagination .page-item.active .page-link {
+  background: var(--cm-primary) !important;
+  border-color: var(--cm-primary) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* =========================================================
+   BLOG SEARCH BOX - FIX #15: Search visible in dark mode
+   ========================================================= */
+.cm-card .form-control[type="search"],
+.cm-card input[type="search"] {
+  background: var(--cm-bg) !important;
+  color: var(--cm-text-heading) !important;
+  border: 1px solid var(--cm-border) !important;
+}
+
+[data-bs-theme="dark"] .bg-tertiary {
+  background-color: var(--cm-panel) !important;
+}
+
+[data-bs-theme="dark"] .form-control[type="search"] {
+  background: rgba(255,255,255,0.08) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+/* Blog category hover */
+.cm-card a.text-muted.text-decoration-none {
+  transition: all 0.3s ease;
+}
+
+.cm-card a.text-muted.text-decoration-none:hover {
+  color: var(--cm-primary) !important;
+}
+
+.cm-card a.text-muted.text-decoration-none:hover .badge {
+  background: var(--cm-primary) !important;
+  color: #fff !important;
+}
+
+/* =========================================================
+   PLAY BUTTON - FIX #9: Play button hover
+   ========================================================= */
+.btn-primary.rounded-circle {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-primary.rounded-circle:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.5),
+              0 0 80px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* FIX #9: Sub text visible */
+.hero-wrapper .text-muted,
+section .text-muted {
+  color: var(--cm-text-muted) !important;
+}
+
+/* =========================================================
+   CONTACT MAP - FIX #16: Map section
+   ========================================================= */
+.h-300px {
+  height: 300px;
+  position: relative;
+}
+
+/* =========================================================
+   AUTH PAGES - SOCIAL MEDIA HOVER FIX #18, #19
+   ========================================================= */
+.auth-card a.text-white,
+.auth-card .d-flex a {
+  transition: all 0.3s ease !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.auth-card a.text-white:hover,
+.auth-card .d-flex a:hover {
+  color: var(--cm-primary) !important;
+  background: rgba(16, 185, 129, 0.1);
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Key Recovery and Enroll Now hover - FIX #18 */
+.auth-card a.text-primary {
+  transition: all 0.3s ease !important;
+}
+
+.auth-card a.text-primary:hover {
+  color: #059669 !important;
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Auth toggle buttons */
+.auth-toggles {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* =========================================================
+   PRICING TABLE FIXES - FIX #14
+   ========================================================= */
+.pricing-card {
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--cm-primary) !important;
+  box-shadow: 0 25px 50px rgba(16, 185, 129, 0.15);
+}
+
+.pricing-card .btn {
+  transition: all 0.3s ease !important;
+}
+
+.pricing-card .btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* =========================================================
+   DASHBOARD SIDEBAR
+   ========================================================= */
+.dash-sidebar {
+  background: var(--cm-bg) !important;
+  border-right: 1px solid var(--cm-border);
+}
+
 @media (max-width: 991.98px) {
-    .dash-sidebar {
-        position: fixed;
-        left: -280px;
-        top: 0;
-        bottom: 0;
-        z-index: 1060;
-        box-shadow: 20px 0 50px rgba(0,0,0,0.5);
-    }
-    .dash-sidebar.show {
-        left: 0;
-    }
-    .dash-content {
-        margin-left: 0 !important;
-    }
+  .dash-sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    bottom: 0;
+    z-index: 1060;
+    box-shadow: 20px 0 50px rgba(0,0,0,0.5);
+  }
+  .dash-sidebar.show {
+    left: 0;
+  }
+  .dash-content {
+    margin-left: 0 !important;
+  }
 }
 
-/* Responsive Heights */
+/* =========================================================
+   RESPONSIVE HEIGHTS
+   ========================================================= */
 @media (max-width: 767.98px) {
-    [style*="height: 600px"], [style*="height: 500px"] {
-        height: 350px !important;
-    }
+  [style*="height: 600px"], [style*="height: 500px"] {
+    height: 350px !important;
+  }
 }
 
-/* RTL Support fixes */
+/* =========================================================
+   RTL SUPPORT
+   ========================================================= */
 [dir="rtl"] .me-2 {
-    margin-left: .5rem !important;
-    margin-right: 0 !important;
+  margin-left: .5rem !important;
+  margin-right: 0 !important;
 }
 [dir="rtl"] .ms-auto {
-    margin-right: auto !important;
-    margin-left: 0 !important;
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+[dir="rtl"] a.text-primary.text-decoration-none:hover {
+  transform: translateX(-5px);
 }
 
-/* Theme Safety Fallbacks */
+/* =========================================================
+   THEME SAFETY FALLBACKS
+   ========================================================= */
 [data-bs-theme="light"] .text-white:not(.btn .text-white, .alert .text-white, .btn-primary .text-white, .badge .text-white) {
   color: var(--cm-text-heading) !important;
 }
@@ -299,13 +688,13 @@ body::before {
 
 [data-bs-theme="dark"] .bg-white,
 [data-bs-theme="dark"] .bg-light {
-    background-color: var(--cm-panel) !important;
+  background-color: var(--cm-panel) !important;
 }
 
 /* Visibility Enhancements for Light Mode */
 [data-bs-theme="light"] {
-    --bs-border-opacity: 0.25 !important;
-    --bs-bg-opacity: 0.15 !important;
+  --bs-border-opacity: 0.25 !important;
+  --bs-bg-opacity: 0.15 !important;
 }
 
 [data-bs-theme="light"] .opacity-50 { opacity: 0.75 !important; }
@@ -316,40 +705,64 @@ body::before {
 [data-bs-theme="light"] .offcanvas,
 [data-bs-theme="light"] .offcanvas-header,
 [data-bs-theme="light"] .offcanvas-body {
-    background-color: var(--cm-panel) !important;
-    color: var(--cm-text-body) !important;
+  background-color: var(--cm-panel) !important;
+  color: var(--cm-text-body) !important;
 }
 
 [data-bs-theme="light"] .accordion-button.bg-black {
-    background-color: var(--cm-panel) !important;
+  background-color: var(--cm-panel) !important;
 }
 
 [data-bs-theme="light"] .accordion-body.bg-black {
-    background-color: var(--cm-bg) !important;
-}
-
-/* Hero Section Text Contrast Fix */
-.hero-wrapper h1, .hero-wrapper p, .hero-wrapper .tech-data {
-    position: relative;
-    z-index: 2;
+  background-color: var(--cm-bg) !important;
 }
 
 /* Ensuring Form Inputs are Visible in Both Themes */
 .form-control::placeholder {
-    color: var(--cm-text-muted) !important;
-    opacity: 0.7;
+  color: var(--cm-text-muted) !important;
+  opacity: 0.7;
 }
 
 [data-bs-theme="dark"] .form-control {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: var(--cm-text-heading);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--cm-text-heading);
 }
 
 [data-bs-theme="light"] .form-control {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.1);
-    color: var(--cm-text-heading);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--cm-text-heading);
 }
 
+/* Badge visibility */
+[data-bs-theme="dark"] .badge.text-dark {
+  color: var(--cm-text-heading) !important;
+}
 
+/* =========================================================
+   REMOVE EXTRA SPACE BELOW FOOTER GLOBALLY - FIX #7
+   ========================================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer.footer-wrap {
+  margin-top: auto;
+}
+
+/* Ensure no gap between footer and copyright */
+footer .container-fluid {
+  background: var(--cm-bg);
+}
