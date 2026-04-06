@@ -44,6 +44,9 @@ body {
   color: var(--cm-text-body);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,9 +87,17 @@ body::before {
   background: var(--cm-nav-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--cm-border);
-  position: relative;
-  z-index: 1050;
+    border-bottom: 1px solid var(--cm-border);
+    z-index: 1030; /* Updated to allow offcanvas (1045) to appear on top */
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease;
+}
+
+.main-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-link {
@@ -101,7 +112,26 @@ body::before {
   transform: translateY(-1px);
 }
 
-/* Fix #22: Hamburger menu button visibility */
+/* Authentication buttons in navbar - standardization */
+.main-nav .btn {
+    min-width: 110px;
+    white-space: nowrap !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px; /* Fixed height for uniformity */
+}
+
+@media (max-width: 575.98px) {
+    .main-nav .btn {
+        min-width: 90px;
+        font-size: 0.75rem !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}
+
+/* Fix #22: Hamburger menu button visibility - corrected desktop hiding */
 .navbar-toggler {
   color: var(--cm-primary) !important;
   border: 1px solid var(--cm-border) !important;
@@ -109,13 +139,19 @@ body::before {
   width: 40px;
   height: 40px;
   padding: 0 !important;
-  display: flex !important;
+  display: none !important; /* Hide by default on desktop */
   align-items: center;
   justify-content: center;
   outline: none !important;
   box-shadow: none !important;
   background: var(--cm-panel) !important;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 1199.98px) {
+  .navbar-toggler {
+    display: flex !important; /* Show only on mobile/tablet */
+  }
 }
 
 .navbar-toggler:hover {
@@ -128,6 +164,14 @@ body::before {
 
 .navbar-toggler .bi-list {
   font-size: 1.5rem !important;
+  color: var(--cm-primary) !important;
+}
+
+.btn-secondary:hover {
+  background-color: var(--cm-border) !important;
+  color: var(--cm-text-heading) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
 }
 
 /* Fix #21: 1024px navbar fix */
@@ -149,7 +193,7 @@ body::before {
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .navbar-toggler {
     display: flex !important;
     align-items: center;
@@ -325,6 +369,7 @@ a.text-primary.text-decoration-none:hover .bi {
   border-top: 1px solid var(--cm-border);
   padding: 80px 0 0;
   margin-bottom: 0 !important;
+  margin-top: auto;
 }
 
 /* Remove space below footer on ALL pages */
@@ -401,9 +446,10 @@ footer .container-fluid:last-child {
    BACK TO TOP BUTTON - FIX #7: Position right side
    ========================================================= */
 #backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  left: auto !important;
   z-index: 9999;
   display: none;
   width: 50px;
@@ -815,6 +861,21 @@ main {
 
 footer.footer-wrap {
   margin-top: auto;
+}
+
+/* Dashboard Sidebar Responsive Fix */
+@media (max-width: 991.98px) {
+  .dash-sidebar {
+    left: -280px !important;
+    transition: all 0.3s ease !important;
+  }
+  .dash-sidebar.show {
+    left: 0 !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) !important;
+  }
+  .dash-content {
+    margin-left: 0 !important;
+  }
 }
 
 /* Ensure no gap between footer and copyright */

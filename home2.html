@@ -18,31 +18,30 @@
 
     <!-- Header / Navbar - FIX #1: Toggle & RTL after Sign Up -->
     <header>
-      <nav class="navbar navbar-expand-lg py-3 main-nav">
+      <nav class="navbar navbar-expand-xl py-3 main-nav">
           <div class="container">
               <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
                   <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
               </a>
-              <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
-                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
-                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
-                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                      <i class="bi bi-moon-fill" id="themeIcon"></i>
-                  </button>
-                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
-                      <i class="bi bi-translate"></i>
-                  </button>
-                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation">
-                      <i class="bi bi-list"></i>
+              <div class="d-flex align-items-center gap-2 ms-auto order-xl-last">
+                  <a href="login.html" class="btn btn-secondary fw-bold rounded-pill d-none d-xl-block">Login</a>
+                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-none d-xl-block">Sign Up</a>
+                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-flex d-xl-none px-3" style="height: 38px; font-size: 0.7rem; align-items: center;">Continue</a>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
+                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i></button>
+                  <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation">
+                      <i class="bi bi-list fs-2"></i>
                   </button>
               </div>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarHome2">
                   <div class="offcanvas-header border-bottom cm-border-main">
-                      <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                      <h5 class="offcanvas-title text-primary fw-bold" id="offcanvasNavbarHome2"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                   </div>
                   <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-center">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                           <li class="nav-item"><a class="nav-link" href="index.html">Home1</a></li>
                           <li class="nav-item"><a class="nav-link active text-primary" href="home2.html">Home2</a></li>
                           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -50,8 +49,8 @@
                           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                          <li class="nav-item d-md-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
-                          <li class="nav-item d-md-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
+                          <li class="nav-item d-xl-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-xl-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
                       </ul>
                   </div>
               </div>
@@ -70,8 +69,8 @@
                         <p class="text-muted small mb-5">Trusted by Fortune 500 companies for seamless C-suite transitions across 45+ countries with military-grade security protocols.</p>
                         
                         <div class="d-flex flex-wrap gap-4 align-items-center">
-                            <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-5">View Services</a>
-                            <a href="pricing.html" class="btn btn-outline-primary btn-lg rounded-pill px-5">Engagement Details</a>
+                            <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all hover-scale">View Services</a>
+                            <a href="pricing.html" class="btn btn-outline-primary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all hover-scale">Engagement Details</a>
                         </div>
                     </div>
                     <div class="col-lg-6 reveal">
@@ -135,12 +134,12 @@
                 <div class="rounded-4 shadow-2xl overflow-hidden position-relative d-flex align-items-center justify-content-center mx-auto"
                     style="height: 500px; max-width: 1000px; background: linear-gradient(var(--cm-hero-overlay-60), var(--cm-hero-overlay-60)), url('assets/img/hero_about.png') center/cover;">
                     <div class="text-center z-1">
-                        <button class="btn btn-primary rounded-circle mb-4"
+                        <button class="btn btn-primary rounded-circle mb-4 transition-all hover-scale"
                             style="width: 90px; height: 90px; font-size: 2.5rem; border: 5px solid rgba(16, 185, 129, 0.2);">
                             <i class="bi bi-play-fill"></i>
                         </button>
-                        <h3 class="fw-bold cm-text-heading">Executive Methodology Archive</h3>
-                        <p class="cm-text-body tracking-widest small mt-2">ENCRYPTED_PLAYBACK // Explore our elite logistics methodology and client success stories</p>
+                        <h3 class="fw-bold text-white">Executive Methodology Archive</h3>
+                        <p class="text-white opacity-75 fw-semibold tracking-widest small mt-2" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">ENCRYPTED_PLAYBACK // Explore our elite logistics methodology and client success stories</p>
                     </div>
                 </div>
             </div>
@@ -199,6 +198,55 @@
             </div>
         </section>
 
+        <!-- Section: Comparative Advantage -->
+        <section class="py-5">
+            <div class="container py-5">
+                <div class="text-center mb-5 reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest small">The Comparison</h6>
+                    <h2 class="display-6 fw-bold">Elite Capabilities Audit</h2>
+                </div>
+                <div class="row g-4 reveal">
+                    <div class="col-lg-12">
+                        <div class="cm-card overflow-hidden border border-white border-opacity-10">
+                            <div class="table-responsive">
+                                <table class="table table-dark table-hover mb-0 tech-data small">
+                                    <thead>
+                                        <tr class="bg-primary bg-opacity-10">
+                                            <th class="p-4 border-bottom border-white border-opacity-10">FEATURE_VECTOR</th>
+                                            <th class="p-4 border-bottom border-white border-opacity-10">STANDARD_LOGISTICS</th>
+                                            <th class="p-4 border-bottom border-white border-opacity-10 text-primary">CORPMOVE_ELITE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-4 border-bottom border-white border-opacity-5 fw-bold">ASSET_TRACKING</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-5">Public API Tracking</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-5 text-primary">Military-Grade Encryption</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 border-bottom border-white border-opacity-5 fw-bold">DATA_SECURITY</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-5">Shared Servers</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-5 text-primary">Isolated Air-Gapped Nodes</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 border-bottom border-white border-opacity-5 fw-bold">TRANSIT_WINDOW</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-5">3-5 Business Days</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-5 text-primary">Tactical Next-Day Arc</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 border-bottom border-white border-opacity-10 fw-bold">PERSONNEL_HANDLING</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-10">Basic Coach</td>
+                                            <td class="p-4 border-bottom border-white border-opacity-10 text-primary">Zero-Friction Concierge</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section: Testimonials - FIX #10: Author images -->
         <section class="py-5 bg-black border-top border-white border-opacity-5">
             <div class="container py-4">
@@ -212,7 +260,7 @@
                             <i class="bi bi-quote fs-1 text-primary opacity-25 mb-3"></i>
                             <p class="fs-5 text-muted mb-4 fst-italic small">"Moving my entire family and settling into a new headquarters across the ocean was made effortless by their executive team. The attention to detail in neighborhood scouting was impeccable."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/testimonial_male_1.jpg" class="rounded-circle grayscale" style="width: 50px; height: 50px;" alt="Robert Henderson">
+                                <img src="assets/img/testimonial_male_1.jpg" class="rounded-circle grayscale object-fit-cover" style="width: 50px; height: 50px;" alt="Robert Henderson">
                                 <div>
                                     <h6 class="fw-bold mb-0">Robert Henderson</h6>
                                     <span class="tech-data small" style="font-size: 0.7rem;">SVP ARCHITECTURE, BUILTRIGHT</span>
@@ -225,7 +273,7 @@
                             <i class="bi bi-quote fs-1 text-primary opacity-25 mb-3"></i>
                             <p class="fs-5 text-muted mb-4 fst-italic small">"The white-glove service isn't just a marketing slogan—it's their standard. My private collection was handled with incredible care, and the move was completed ahead of schedule."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/testimonial_female_1.jpg" class="rounded-circle grayscale" style="width: 50px; height: 50px;" alt="Linda Fairchild">
+                                <img src="assets/img/testimonial_female_1.jpg" class="rounded-circle grayscale object-fit-cover" style="width: 50px; height: 50px;" alt="Linda Fairchild">
                                 <div>
                                     <h6 class="fw-bold mb-0">Linda Fairchild</h6>
                                     <span class="tech-data small" style="font-size: 0.7rem;">CHIEF PRODUCT OFFICER, NEXTGEN</span>
@@ -247,11 +295,11 @@
                         <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
                     </a>
                     <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
+                    <div class="d-flex justify-content-start flex-wrap gap-3">
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6">
@@ -277,13 +325,13 @@
                     <p class="text-muted small mb-4">Subscribe for secure relocation briefings and global policy alerts.</p>
                     <form class="d-flex w-100 border border-white border-opacity-10 rounded-pill p-1">
                         <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small" placeholder="Email Endpoint..." required>
-                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold" type="submit">Deploy</button>
+                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold transition-all hover-scale" type="submit">Deploy</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
-            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED. <span class="ms-3 text-primary opacity-50">SYSTEM_ID: SECURE_NODE_BETA</span></p>
         </div>
     </footer>
 
@@ -296,3 +344,5 @@
 </body>
 
 </html>
+
+

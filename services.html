@@ -14,25 +14,30 @@
 <body class="bg-black">
 
     <header>
-      <nav class="navbar navbar-expand-lg py-3 main-nav">
+      <nav class="navbar navbar-expand-xl py-3 main-nav">
           <div class="container">
               <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
                   <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
               </a>
-              <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
-                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
-                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
+              <div class="d-flex align-items-center gap-2 ms-auto order-xl-last">
+                  <a href="login.html" class="btn btn-secondary fw-bold rounded-pill d-none d-xl-block">Login</a>
+                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-none d-xl-block">Sign Up</a>
+                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-flex d-xl-none px-3" style="height: 38px; font-size: 0.7rem; align-items: center;">Continue</a>
                   <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
                   <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i></button>
-                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+                  <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation">
+                      <i class="bi bi-list fs-2"></i>
+                  </button>
               </div>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarServices">
                   <div class="offcanvas-header border-bottom cm-border-main">
-                      <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                      <h5 class="offcanvas-title text-primary fw-bold" id="offcanvasNavbarServices"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                   </div>
                   <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-center">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                           <li class="nav-item"><a class="nav-link" href="index.html">Home1</a></li>
                           <li class="nav-item"><a class="nav-link" href="home2.html">Home2</a></li>
                           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -40,8 +45,8 @@
                           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                          <li class="nav-item d-md-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
-                          <li class="nav-item d-md-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
+                          <li class="nav-item d-xl-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-xl-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
                       </ul>
                   </div>
               </div>
@@ -72,7 +77,7 @@
                               <span class="tech-data mb-2 d-block small">OPS_CORE_01</span>
                               <h5 class="fw-bold mb-3">Enterprise Migration</h5>
                               <p class="text-muted small mb-4">Swift infrastructure relocation with zero operational downtime protocols.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -85,7 +90,7 @@
                               <span class="tech-data mb-2 d-block small">HUMAN_CAP_04</span>
                               <h5 class="fw-bold mb-3">Employee Extraction</h5>
                               <p class="text-muted small mb-4">Precision-based individual transitions for high-impact team components.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -98,7 +103,7 @@
                               <span class="tech-data mb-2 d-block small">GLOBAL_TRAC_12</span>
                               <h5 class="fw-bold mb-3">Interstate Shield</h5>
                               <p class="text-muted small mb-4">Cross-border customs navigation and multi-jurisdictional compliance arcs.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -111,7 +116,7 @@
                               <span class="tech-data mb-2 d-block small">SECURE_HOLD_09</span>
                               <h5 class="fw-bold mb-3">Asset Vaulting</h5>
                               <p class="text-muted small mb-4">Environmentally controlled, 24/7 monitored facilities for critical hardware.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -124,7 +129,7 @@
                               <span class="tech-data mb-2 d-block small">TECH_DECON_03</span>
                               <h5 class="fw-bold mb-3">Network Decon</h5>
                               <p class="text-muted small mb-4">Secure teardown and reconstruction of server infrastructures and data hubs.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -137,7 +142,7 @@
                               <span class="tech-data mb-2 d-block small">PRIV_LOG_88</span>
                               <h5 class="fw-bold mb-3">Classified Archive</h5>
                               <p class="text-muted small mb-4">Privileged document handling with chain-of-custodial transparency.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -150,7 +155,7 @@
                               <span class="tech-data mb-2 d-block small">MISSION_READY_05</span>
                               <h5 class="fw-bold mb-3">Tactical Staging</h5>
                               <p class="text-muted small mb-4">Strategic floor planning and furniture deployment for immediate use.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -163,7 +168,7 @@
                               <span class="tech-data mb-2 d-block small">DATA_AUDIT_X</span>
                               <h5 class="fw-bold mb-3">Custody Reports</h5>
                               <p class="text-muted small mb-4">Real-time analytical dashboards for cost tracking and risk mitigation.</p>
-                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
+                              <a href="service-details.html" class="fw-bold text-primary text-decoration-none small tracking-widest d-inline-flex align-items-center gap-2 transition-all hover-scale">ACCESS_SPECS <i class="bi bi-chevron-right"></i></a>
                           </div>
                       </div>
                   </div>
@@ -171,14 +176,47 @@
           </div>
       </section>
 
+        <!-- Section: Operational Flow -->
+        <section class="py-5 bg-black border-top border-white border-opacity-5">
+            <div class="container py-5">
+                <div class="text-center mb-5 reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest small">The Arc</h6>
+                    <h2 class="display-6 fw-bold">Operational Lifecycle</h2>
+                </div>
+                <div class="row g-4 reveal">
+                    <div class="col-lg-4">
+                        <div class="cm-card p-4 border-primary border-opacity-10 h-100">
+                            <div class="tech-data text-primary mb-3">STAGE_01 // INTAKE</div>
+                            <h5 class="fw-bold mb-3">Secure Engagement</h5>
+                            <p class="text-muted small">Initial requirement capture via encrypted channels. We define the mission parameters and resource allocation.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cm-card p-4 border-primary border-opacity-10 h-100">
+                            <div class="tech-data text-primary mb-3">STAGE_02 // TRANSIT</div>
+                            <h5 class="fw-bold mb-3">Custodial Escort</h5>
+                            <p class="text-muted small">Active migration of assets under military-grade surveillance. Real-time updates delivered to your secure dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cm-card p-4 border-primary border-opacity-10 h-100">
+                            <div class="tech-data text-primary mb-3">STAGE_03 // RECOVERY</div>
+                            <h5 class="fw-bold mb-3">Infrastructure Reboot</h5>
+                            <p class="text-muted small">Precision staging at destination. Servers initialized, principals settled, and operational continuity restored.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
       <!-- CTA - FIX #12: CTA text aligned + hovering -->
       <section class="py-5 bg-black border-top border-white border-opacity-5">
             <div class="container py-5 text-center reveal">
                 <h2 class="display-5 fw-bold mb-4">Initialization Required?</h2>
                 <p class="lead text-muted mb-5 mx-auto small" style="max-width: 600px;">Request a secure audit of your current relocation requirements today.</p>
                 <div class="d-flex justify-content-center flex-wrap gap-4">
-                    <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-5">Initiate Intake</a>
-                    <a href="pricing.html" class="btn btn-outline-primary btn-lg rounded-pill px-5">View Pricing Arcs</a>
+                    <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all hover-scale">Initiate Intake</a>
+                    <a href="pricing.html" class="btn btn-outline-primary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all hover-scale">View Pricing Arcs</a>
                 </div>
             </div>
         </section>
@@ -226,7 +264,7 @@
             </div>
         </div>
         <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
-            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED. <span class="ms-3 text-primary opacity-50">SYSTEM_ID: SERVICE_HUB_GAMMA</span></p>
         </div>
     </footer>
     <button class="btn btn-primary" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up fs-4"></i></button>
@@ -234,3 +272,5 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+

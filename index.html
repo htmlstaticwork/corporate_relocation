@@ -23,33 +23,31 @@
 
     <!-- Header / Navbar - FIX #1: Toggle & RTL after Sign Up -->
     <header>
-      <nav class="navbar navbar-expand-lg py-3 main-nav">
+      <nav class="navbar navbar-expand-xl py-3 main-nav">
           <div class="container">
               <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html">
                   <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
               </a>
 
-              <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-lg-last">
-                  <a href="login.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Login</a>
-                  <a href="register.html" class="btn btn-secondary fw-bold px-4 rounded-pill d-none d-md-block">Sign Up</a>
-                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                      <i class="bi bi-moon-fill" id="themeIcon"></i>
-                  </button>
-                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
-                      <i class="bi bi-translate"></i>
-                  </button>
-                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation">
-                      <i class="bi bi-list"></i>
+              <div class="d-flex align-items-center gap-2 ms-auto order-xl-last">
+                  <a href="login.html" class="btn btn-secondary fw-bold rounded-pill d-none d-xl-flex align-items-center justify-content-center">Login</a>
+                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-none d-xl-flex align-items-center justify-content-center">Sign Up</a>
+                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-flex d-xl-none px-3" style="height: 38px; font-size: 0.7rem; align-items: center; justify-content: center;">Continue</a>
+                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
+                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i></button>
+                  <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation">
+                      <i class="bi bi-list fs-2"></i>
                   </button>
               </div>
 
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                   <div class="offcanvas-header border-bottom cm-border-main">
-                      <h5 class="offcanvas-title text-primary fw-bold"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                      <h5 class="offcanvas-title text-primary fw-bold" id="offcanvasNavbarLabel"><i class="bi bi-buildings-fill me-2"></i> CorpMove</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                   </div>
                   <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-center">
+                      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                           <li class="nav-item"><a class="nav-link active text-primary" href="index.html">Home1</a></li>
                           <li class="nav-item"><a class="nav-link" href="home2.html">Home2</a></li>
                           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -57,8 +55,8 @@
                           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                          <li class="nav-item d-md-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
-                          <li class="nav-item d-md-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
+                          <li class="nav-item d-xl-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-xl-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
                       </ul>
                   </div>
               </div>
@@ -85,16 +83,16 @@
                                 <span class="text-white opacity-50 me-2">&gt;</span> Establishing secure logistics tunnel...
                             </div>
                             <div class="d-flex align-items-center" style="font-size: 0.85rem;">
-                                <span class="text-primary me-2">&gt;</span> <span class="fw-bold tracking-widest">READY FOR DEPLOYMENT</span>
+                                <span class="text-primary me-2">&gt;</span> READY FOR DEPLOYMENT
                             </div>
                         </div>
 
                         <div class="d-flex flex-wrap gap-4 align-items-center">
-                            <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-5">Initiate Request</a>
-                            <a href="contact.html" class="btn btn-outline-primary btn-lg rounded-pill px-5">Methodology</a>
+                            <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all">Initiate Request</a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all">Methodology</a>
                         </div>
                     </div>
-                    <div class="col-lg-5 d-none d-lg-block reveal">
+                    <div class="col-lg-5 d-none d-xl-block reveal">
                         <div class="position-relative">
                              <!-- Glowing background behind image -->
                              <div class="position-absolute translate-middle top-50 start-50 bg-primary opacity-10 blur-30" style="width: 140%; height: 140%; filter: blur(80px); border-radius: 50%;"></div>
@@ -276,6 +274,46 @@
             </div>
         </section>
 
+        <!-- Section: Phased Execution -->
+        <section class="py-5 bg-black border-top border-white border-opacity-5">
+            <div class="container py-5">
+                <div class="text-center mb-5 reveal">
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest small">The Workflow</h6>
+                    <h2 class="display-6 fw-bold">Phased Execution Sequence</h2>
+                </div>
+                <div class="row g-0 justify-content-center">
+                    <div class="col-lg-3 col-md-6 reveal">
+                        <div class="p-5 border border-white border-opacity-10 h-100 text-center transition-all hover-scale" style="background: rgba(255,255,255,0.02);">
+                            <div class="display-4 text-primary fw-bold mb-4">01</div>
+                            <h5 class="fw-bold mb-3">Audit</h5>
+                            <p class="text-muted small">Comprehensive analysis of physical assets and digital footprints.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 reveal">
+                        <div class="p-5 border border-white border-opacity-10 h-100 text-center transition-all hover-scale" style="background: rgba(255,255,255,0.025);">
+                            <div class="display-4 text-primary fw-bold mb-4">02</div>
+                            <h5 class="fw-bold mb-3">Protocol</h5>
+                            <p class="text-muted small">Design of secure transit channels and custodial handover points.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 reveal">
+                        <div class="p-5 border border-white border-opacity-10 h-100 text-center transition-all hover-scale" style="background: rgba(255,255,255,0.03);">
+                            <div class="display-4 text-primary fw-bold mb-4">03</div>
+                            <h5 class="fw-bold mb-3">Transit</h5>
+                            <p class="text-muted small">Live-monitored execution of the relocation arc with 24/7 oversight.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 reveal">
+                        <div class="p-5 border border-white border-opacity-10 h-100 text-center transition-all hover-scale" style="background: rgba(255,255,255,0.035);">
+                            <div class="display-4 text-primary fw-bold mb-4">04</div>
+                            <h5 class="fw-bold mb-3">Staging</h5>
+                            <p class="text-muted small">Immediate operational deployment and post-move audit verification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section: Testimonials - FIX #5: Author image -->
         <section class="py-5 bg-black border-top border-white border-opacity-5">
             <div class="container py-4">
@@ -295,7 +333,7 @@
                             </div>
                             <p class="text-muted mb-4 small fst-italic">"CorpMove handled our entire regional office transition without a single hiccup. The encrypted monitoring was critical for our tracking."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/testimonial_male_1.jpg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="David Miller">
+                                <img src="assets/img/testimonial_male_1.jpg" class="rounded-circle grayscale object-fit-cover" style="width: 45px; height: 45px;" alt="David Miller">
                                 <div>
                                     <h6 class="text-white small fw-bold mb-0">David Miller</h6>
                                     <span class="tech-data" style="font-size: 0.7rem;">OPS DIRECTOR, TECHFLOW</span>
@@ -314,7 +352,7 @@
                             </div>
                             <p class="text-muted mb-4 small fst-italic">"The extraction packages are white-glove quality. Our staff moved comfortably and felt fully secured throughout the entire journey."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/testimonial_female_1.jpg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Sarah Jenkins">
+                                <img src="assets/img/testimonial_female_1.jpg" class="rounded-circle grayscale object-fit-cover" style="width: 45px; height: 45px;" alt="Sarah Jenkins">
                                 <div>
                                     <h6 class="text-white small fw-bold mb-0">Sarah Jenkins</h6>
                                     <span class="tech-data" style="font-size: 0.7rem;">HR LEAD, GLOBANT CORP</span>
@@ -333,7 +371,7 @@
                             </div>
                             <p class="text-muted mb-4 small fst-italic">"Moving internationally is usually a nightmare, but their global partners handled customs like absolute specialists. Highly recommended."</p>
                             <div class="d-flex align-items-center gap-3">
-                                <img src="assets/img/testimonial_male_2.jpg" class="rounded-circle grayscale" style="width: 45px; height: 45px;" alt="Marcus Thorne">
+                                <img src="assets/img/testimonial_male_2.jpg" class="rounded-circle grayscale object-fit-cover" style="width: 45px; height: 45px;" alt="Marcus Thorne">
                                 <div>
                                     <h6 class="text-white small fw-bold mb-0">Marcus Thorne</h6>
                                     <span class="tech-data" style="font-size: 0.7rem;">CEO, ALPHA SOLUTIONS</span>
@@ -402,8 +440,8 @@
                 <h2 class="display-5 fw-bold mb-4">Request Secure Consultation</h2>
                 <p class="lead text-muted mb-5 mx-auto small" style="max-width: 700px;">Initialization protocol available for verified enterprise entities. Join the secure relocation network today.</p>
                 <div class="d-flex justify-content-center flex-wrap gap-4">
-                    <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-5">Initiate Intake</a>
-                    <a href="login.html" class="btn btn-secondary btn-lg rounded-pill px-5">Secure Portal Login</a>
+                    <a href="contact.html" class="btn btn-primary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all">Initiate Intake</a>
+                    <a href="login.html" class="btn btn-secondary btn-lg rounded-pill px-5 d-inline-flex justify-content-center align-items-center transition-all">Secure Portal Login</a>
                 </div>
             </div>
         </section>
@@ -419,11 +457,11 @@
                         <i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove
                     </a>
                     <p class="mb-4 text-muted small">Elite relocation agency specializing in enterprise-scale logistics, risk mitigation, and executive due diligence since 2010.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-5 text-muted footer-link hover-primary"><i class="bi bi-instagram"></i></a>
+                    <div class="d-flex justify-content-start flex-wrap gap-3">
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5 text-muted footer-link hover-primary transition-all hover-scale"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
@@ -453,13 +491,13 @@
                     <form class="d-flex w-100 border border-white border-opacity-10 rounded-pill p-1">
                         <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3 small"
                             placeholder="Email Endpoint..." required>
-                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold" type="submit">Deploy</button>
+                        <button class="btn btn-primary rounded-pill px-4 py-2 small fw-bold transition-all hover-scale" type="submit">Deploy</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="container-fluid border-top border-white border-opacity-5 py-4 text-center text-muted">
-            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED.</p>
+            <p class="mb-0 small tech-data" style="font-size: 0.75rem;">&copy; 2026 CORPMOVE_LOGISTICS_NETWORK. ALL PROTOCOLS ENFORCED. <span class="ms-3 text-primary opacity-50">SYSTEM_ID: MAIN_NODE_ALPHA</span></p>
         </div>
     </footer>
 
@@ -475,3 +513,5 @@
 </body>
 
 </html>
+
+
