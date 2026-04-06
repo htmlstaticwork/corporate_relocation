@@ -82,4 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // ---- 4. Dashboard Sidebar Toggle (Mobile) ----
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const dashboardSidebar = document.querySelector('.dash-sidebar');
+    if (sidebarToggle && dashboardSidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            dashboardSidebar.classList.toggle('show');
+        });
+    }
 });

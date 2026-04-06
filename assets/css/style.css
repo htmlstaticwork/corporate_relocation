@@ -103,35 +103,49 @@ body::before {
 
 /* Fix #22: Hamburger menu button visibility */
 .navbar-toggler {
-  color: var(--cm-text-heading) !important;
-  border: none !important;
-  padding: 0.25rem 0.5rem;
+  color: var(--cm-primary) !important;
+  border: 1px solid var(--cm-border) !important;
+  border-radius: 12px !important;
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
   outline: none !important;
   box-shadow: none !important;
+  background: var(--cm-panel) !important;
+  transition: all 0.3s ease;
 }
 
-.navbar-toggler:focus {
-  box-shadow: none !important;
+.navbar-toggler:hover {
+  background: var(--cm-primary) !important;
+  color: white !important;
+  border-color: var(--cm-primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
 }
 
 .navbar-toggler .bi-list {
-  color: var(--cm-text-heading) !important;
-  font-size: 1.8rem !important;
+  font-size: 1.5rem !important;
 }
 
 /* Fix #21: 1024px navbar fix */
 @media (max-width: 1199.98px) and (min-width: 992px) {
   .navbar .nav-link {
-    font-size: 0.85rem !important;
-    padding: 0.5rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.4rem !important;
   }
   .navbar .btn {
-    font-size: 0.8rem !important;
-    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.6rem !important;
   }
   .theme-toggle, .rtl-toggle-btn {
-    width: 34px !important;
-    height: 34px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .navbar-brand {
+    font-size: 1.25rem !important;
   }
 }
 
@@ -140,6 +154,47 @@ body::before {
     display: flex !important;
     align-items: center;
     justify-content: center;
+  }
+  .hero-wrapper {
+    min-height: auto !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
+  [style*="height: 600px"], [style*="height: 500px"] {
+    height: 380px !important;
+    margin-top: 30px;
+  }
+}
+
+/* Mobile Alignment Audit - 360px */
+@media (max-width: 575.98px) {
+  h1.display-1, h1.display-2 { font-size: 2.5rem !important; }
+  h1.display-3, h1.display-4 { font-size: 2.2rem !important; }
+  h2.display-6 { font-size: 1.8rem !important; }
+  .lead { font-size: 1rem !important; }
+  
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .btn-lg {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+    width: 100%;
+  }
+  
+  .hero-wrapper {
+    text-align: center !important;
+  }
+  
+  .hero-wrapper .d-flex.flex-wrap {
+    justify-content: center !important;
+  }
+  
+  .tech-data {
+    max-width: 100% !important;
+    text-align: left;
   }
 }
 

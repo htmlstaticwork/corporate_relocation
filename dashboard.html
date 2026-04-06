@@ -148,10 +148,14 @@
             <!-- Top Navbar -->
             <nav class="navbar top-nav px-4 py-3 d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center gap-3">
+                    <!-- Dashboard Sidebar Toggle for Mobile -->
+                    <button class="rtl-toggle-btn d-lg-none" id="sidebarToggle" aria-label="Toggle Sidebar">
+                        <i class="bi bi-list"></i>
+                    </button>
                     <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
                         <i class="bi bi-translate"></i>
                     </button>
-                    <h6 class="tech-data mb-0 x-small">MONITORING_STATION_04</h6>
+                    <h6 class="tech-data mb-0 x-small d-none d-sm-block">MONITORING_STATION_04</h6>
                 </div>
                 <div class="d-flex align-items-center gap-4">
                     <div class="tech-data x-small text-primary d-none d-md-block">SYSTEM_STATUS: <span class="text-success pulse">ONLINE</span></div>
@@ -166,7 +170,7 @@
             </nav>
 
             <!-- Dashboard Body -->
-            <div class="container-fluid p-5">
+            <div class="container-fluid p-4 p-md-5">
                 
                 <!-- Page Intro -->
                 <div class="mb-5 reveal">
