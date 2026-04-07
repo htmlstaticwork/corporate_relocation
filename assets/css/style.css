@@ -83,14 +83,17 @@ body::before {
 /* =========================================================
    NAVBAR - FIX #1, #21, #22
    ========================================================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
 .main-nav {
   background: var(--cm-nav-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--cm-border);
-    z-index: 1030; /* Updated to allow offcanvas (1045) to appear on top */
-    position: sticky;
-    top: 0;
     transition: all 0.3s ease;
 }
 
@@ -206,7 +209,6 @@ body::before {
   }
   [style*="height: 600px"], [style*="height: 500px"] {
     height: 380px !important;
-    margin-top: 30px;
   }
 }
 
