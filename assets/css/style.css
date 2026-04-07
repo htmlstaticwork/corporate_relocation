@@ -87,14 +87,17 @@ header {
   position: sticky;
   top: 0;
   z-index: 1030;
+  width: 100%;
 }
 
 .main-nav {
+  position: relative;
+  z-index: 1031;
   background: var(--cm-nav-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--cm-border);
-    transition: all 0.3s ease;
+  border-bottom: 1px solid var(--cm-border);
+  transition: all 0.3s ease;
 }
 
 .main-nav .container {
@@ -202,6 +205,9 @@ header {
     align-items: center;
     justify-content: center;
   }
+  .navbar-brand {
+    font-size: 1.5rem !important;
+  }
   .hero-wrapper {
     min-height: auto !important;
     padding-top: 100px !important;
@@ -209,6 +215,17 @@ header {
   }
   [style*="height: 600px"], [style*="height: 500px"] {
     height: 380px !important;
+  }
+}
+
+/* 1024-specific fix (Navbar layout) */
+@media (max-width: 1024px) {
+  .navbar .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.9rem !important;
   }
 }
 
@@ -240,7 +257,7 @@ header {
   
   .tech-data {
     max-width: 100% !important;
-    text-align: left;
+    text-align: center !important;
   }
 }
 
@@ -433,6 +450,13 @@ a.footer-link.hover-primary:hover {
 footer .container-fluid:last-child {
   padding-bottom: 1rem !important;
   margin-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  .footer-wrap .tech-data {
+    font-size: 0.65rem !important;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -792,6 +816,31 @@ section .text-muted {
 [data-bs-theme="dark"] .bg-white,
 [data-bs-theme="dark"] .bg-light {
   background-color: var(--cm-panel) !important;
+}
+
+/* Fix #4 & #7: Light Mode Text Visibility in specialized cards/heroes */
+[data-bs-theme="light"] .cm-card {
+  color: var(--cm-text-body) !important;
+}
+[data-bs-theme="light"] .cm-card .text-muted {
+  color: var(--cm-text-muted) !important;
+}
+[data-bs-theme="light"] .cm-card h1, 
+[data-bs-theme="light"] .cm-card h2, 
+[data-bs-theme="light"] .cm-card h3, 
+[data-bs-theme="light"] .cm-card h4, 
+[data-bs-theme="light"] .cm-card h5, 
+[data-bs-theme="light"] .cm-card h6,
+[data-bs-theme="light"] .cm-card .fw-bold {
+  color: var(--cm-text-heading) !important;
+}
+
+/* Pricing Page specifically */
+[data-bs-theme="light"] .cm-card.bg-primary.bg-opacity-5 {
+  background-color: rgba(16, 185, 129, 0.05) !important;
+}
+[data-bs-theme="light"] .cm-card .text-white {
+  color: var(--cm-text-heading) !important;
 }
 
 /* Visibility Enhancements for Light Mode */
