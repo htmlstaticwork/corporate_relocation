@@ -6,12 +6,12 @@
   --cm-secondary: #3b82f6;  /* Electric Blue */
   
   /* Default: Dark Theme Variables */
-  --cm-bg: #020617;
-  --cm-panel: #0f172a;
+  --cm-bg: #000000;
+  --cm-panel: #0a0a0a;
   --cm-text-heading: #f8fafc;
   --cm-text-body: #cbd5e1;
   --cm-text-muted: #94a3b8;
-  --cm-border: rgba(255, 255, 255, 0.08);
+  --cm-border: rgba(255, 255, 255, 0.15);
   --cm-nav-bg: rgba(15, 23, 42, 0.85);
   --cm-accent-text: #10b981;
   /* Updated adaptable hero overlays */
@@ -174,10 +174,10 @@ header {
 }
 
 .btn-secondary:hover {
-  background-color: var(--cm-border) !important;
-  color: var(--cm-text-heading) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  background: var(--cm-primary) !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2) !important;
 }
 
 /* Fix #21: 1024px navbar fix */
@@ -316,12 +316,17 @@ header {
 }
 
 .btn-secondary {
+  background: transparent !important;
+  color: var(--cm-primary) !important;
+  border: 1px solid var(--cm-primary) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .btn-secondary:hover {
+  background: var(--cm-primary) !important;
+  color: #fff !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2) !important;
 }
 
 /* =========================================================
