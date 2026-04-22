@@ -19,11 +19,9 @@
               <a class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center" href="index.html"><i class="bi bi-buildings-fill me-2 fs-2"></i> CorpMove</a>
               <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto order-xl-last">
                   <a href="login.html" class="btn btn-secondary fw-bold rounded-pill d-none d-xl-block">Login</a>
-                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-none d-xl-block">Sign Up</a>
-                  <a href="register.html" class="btn btn-primary fw-bold rounded-pill d-flex d-xl-none px-3 small" style="height: 40px; font-size: 0.75rem;">Continue</a>
                   <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
                   <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction"><span style="font-size: 0.7rem; font-weight: 700;">RTL</span></button>
-                  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
               </div>
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
                   <div class="offcanvas-header border-bottom cm-border-main">
@@ -40,7 +38,6 @@
                           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                           <li class="nav-item d-xl-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
-                          <li class="nav-item d-xl-none"><a class="btn btn-primary w-100 rounded-pill" href="register.html">Sign Up</a></li>
                       </ul>
                   </div>
               </div>
@@ -74,11 +71,11 @@
                               <p class="text-muted small mb-4">Optimized for individual personnel transit.</p>
                               <h2 class="display-5 fw-bold mt-4 mb-4">$900<span class="fs-6 text-muted fw-normal">/OPS</span></h2>
                               <div class="d-flex flex-column gap-3 mb-5 text-center w-100">
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> GROUND_TRANSPORT_L1</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> LOGISTICS_ASSET_PACK</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> STANDARD_COVERAGE_HUB</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small opacity-30"><i class="bi bi-dash text-muted me-3"></i> REALTIME_DATA_FEED</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small opacity-30"><i class="bi bi-dash text-muted me-3"></i> ELITE_WHITE_GLOVE</span>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">GROUND_TRANSPORT_L1</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">LOGISTICS_ASSET_PACK</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">STANDARD_COVERAGE_HUB</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small opacity-30 w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-dash text-muted"></i></span><span class="text-center">REALTIME_DATA_FEED</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small opacity-30 w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-dash text-muted"></i></span><span class="text-center">ELITE_WHITE_GLOVE</span><span style="width:24px" class="ms-2"></span></div>
                               </div>
                               <a href="register.html" class="btn btn-outline-primary rounded-pill w-100 fw-bold py-3 tracking-widest small d-inline-flex justify-content-center align-items-center transition-all hover-scale mt-auto">INITIATE_ENGAGEMENT</a>
                           </div>
@@ -97,11 +94,11 @@
                               <p class="text-muted small mb-4">Dedicated oversight for mission-critical transfers.</p>
                               <h2 class="display-5 fw-bold mt-4 mb-4">$2,500<span class="fs-6 text-muted fw-normal">/OPS</span></h2>
                               <div class="d-flex flex-column gap-3 mb-5 text-center w-100">
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> TRANS_CONTINENTAL_OPS</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> FULL_WHITE_GLOVE_ASSET_CARE</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> PREMIUM_RISK_MITIGATION</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> DEDICATED_INTEL_DASHBOARD</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small opacity-30"><i class="bi bi-dash text-muted me-3"></i> PRIORITY_FLEET_ACCESS</span>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">TRANS_CONTINENTAL_OPS</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">FULL_WHITE_GLOVE_ASSET_CARE</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">PREMIUM_RISK_MITIGATION</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">DEDICATED_INTEL_DASHBOARD</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small opacity-30 w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-dash text-muted"></i></span><span class="text-center">PRIORITY_FLEET_ACCESS</span><span style="width:24px" class="ms-2"></span></div>
                               </div>
                               <a href="register.html" class="btn btn-primary rounded-pill w-100 fw-bold py-3 shadow tracking-widest small d-inline-flex justify-content-center align-items-center transition-all hover-scale mt-auto">DEPLOY_PROTOCOL</a>
                           </div>
@@ -119,11 +116,11 @@
                               <p class="text-muted small mb-4">Full-scale organizational infrastructure shifts.</p>
                               <h2 class="display-5 fw-bold mt-4 mb-4">CUSTOM<span class="fs-6 text-muted fw-normal">/BRIEF</span></h2>
                               <div class="d-flex flex-column gap-3 mb-5 text-center w-100">
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> GLOBAL_NETWORK_DEPLOYMENT</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> IT_INFRASTRUCTURE_RECOVERY</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> UNLIMITED_VALUATION_INSURE</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> ENTERPRISE_ANALYTICS_CORE</span>
-                                  <span class="d-flex align-items-center justify-content-center text-muted small"><i class="bi bi-check2 text-primary me-3"></i> PRIORITY_FLEET_OVERRIDE</span>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">GLOBAL_NETWORK_DEPLOYMENT</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">IT_INFRASTRUCTURE_RECOVERY</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">UNLIMITED_VALUATION_INSURE</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">ENTERPRISE_ANALYTICS_CORE</span><span style="width:24px" class="ms-2"></span></div>
+                                  <div class="d-flex align-items-center justify-content-center text-muted small w-100"><span style="width:24px" class="text-end me-2"><i class="bi bi-check2 text-primary"></i></span><span class="text-center">PRIORITY_FLEET_OVERRIDE</span><span style="width:24px" class="ms-2"></span></div>
                               </div>
                               <a href="contact.html" class="btn btn-outline-primary rounded-pill w-100 fw-bold py-3 tracking-widest small d-inline-flex justify-content-center align-items-center transition-all hover-scale mt-auto">REQUEST_INTAKE</a>
                           </div>
@@ -142,35 +139,35 @@
                 </div>
                 <div class="row g-4 reveal">
                     <div class="col-lg-12">
-                        <div class="cm-card overflow-hidden border border-white border-opacity-10">
+                        <div class="cm-card overflow-hidden cm-border-main">
                             <div class="table-responsive">
-                                <table class="table table-dark table-hover mb-0 tech-data small">
+                                <table class="table table-hover mb-0 tech-data small">
                                     <thead>
                                         <tr class="bg-primary bg-opacity-10">
-                                            <th class="p-4 border-bottom border-white border-opacity-10">CAPABILITY_ARC</th>
-                                            <th class="p-4 border-bottom border-white border-opacity-10">PRINCIPAL_BASIC</th>
-                                            <th class="p-4 border-bottom border-white border-opacity-10">KEY_PRINCIPAL</th>
-                                            <th class="p-4 border-bottom border-white border-opacity-10">FIRM_ENTITY</th>
+                                            <th class="p-4 border-bottom cm-border-main cm-text-heading">CAPABILITY_ARC</th>
+                                            <th class="p-4 border-bottom cm-border-main cm-text-heading">PRINCIPAL_BASIC</th>
+                                            <th class="p-4 border-bottom cm-border-main cm-text-heading">KEY_PRINCIPAL</th>
+                                            <th class="p-4 border-bottom cm-border-main text-primary">FIRM_ENTITY</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="p-4 border-bottom border-white border-opacity-5 fw-bold">RESPONSE_LATENCY</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5">24_HOUR_DELAY</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5">4_HOUR_PRIORITY</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5 text-primary">INSTANT_OVERRIDE</td>
+                                            <td class="p-4 border-bottom cm-border-main fw-bold cm-text-heading">RESPONSE_LATENCY</td>
+                                            <td class="p-4 border-bottom cm-border-main cm-text-body">24_HOUR_DELAY</td>
+                                            <td class="p-4 border-bottom cm-border-main cm-text-body">4_HOUR_PRIORITY</td>
+                                            <td class="p-4 border-bottom cm-border-main text-primary">INSTANT_OVERRIDE</td>
                                         </tr>
                                         <tr>
-                                            <td class="p-4 border-bottom border-white border-opacity-5 fw-bold">VALUATION_INSURE</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5">UP_TO_100K</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5">UP_TO_1M</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5 text-primary">FULL_INFRASTRUCTURE</td>
+                                            <td class="p-4 border-bottom cm-border-main fw-bold cm-text-heading">VALUATION_INSURE</td>
+                                            <td class="p-4 border-bottom cm-border-main cm-text-body">UP_TO_100K</td>
+                                            <td class="p-4 border-bottom cm-border-main cm-text-body">UP_TO_1M</td>
+                                            <td class="p-4 border-bottom cm-border-main text-primary">FULL_INFRASTRUCTURE</td>
                                         </tr>
                                         <tr>
-                                            <td class="p-4 border-bottom border-white border-opacity-5 fw-bold">SECURE_DASHBOARD</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5">WEB_L1</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5">MOBILE_ARC_L3</td>
-                                            <td class="p-4 border-bottom border-white border-opacity-5 text-primary">DEDICATED_PORTAL</td>
+                                            <td class="p-4 border-bottom cm-border-main fw-bold cm-text-heading">SECURE_DASHBOARD</td>
+                                            <td class="p-4 border-bottom cm-border-main cm-text-body">WEB_L1</td>
+                                            <td class="p-4 border-bottom cm-border-main cm-text-body">MOBILE_ARC_L3</td>
+                                            <td class="p-4 border-bottom cm-border-main text-primary">DEDICATED_PORTAL</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -278,5 +275,8 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
 
 

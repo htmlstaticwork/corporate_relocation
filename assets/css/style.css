@@ -141,22 +141,32 @@ header {
 .navbar-toggler {
   color: var(--cm-primary) !important;
   border: 1px solid var(--cm-border) !important;
-  border-radius: 12px !important;
-  width: 40px;
-  height: 40px;
+  border-radius: 50% !important;
+  width: 44px;
+  height: 44px;
   padding: 0 !important;
-  display: none !important; /* Hide by default on desktop */
+  display: flex !important;
   align-items: center;
   justify-content: center;
   outline: none !important;
   box-shadow: none !important;
   background: var(--cm-panel) !important;
   transition: all 0.3s ease;
+  cursor: pointer !important;
+  position: relative;
+  z-index: 1060; /* Higher than before to be safe */
+}
+
+@media (min-width: 1200px) {
+  .navbar-expand-xl .navbar-toggler {
+    display: none !important;
+  }
 }
 
 @media (max-width: 1199.98px) {
   .navbar-toggler {
-    display: flex !important; /* Show only on mobile/tablet */
+    display: flex !important;
+    margin-right: 0px !important; /* Removed negative margin that pushed it off-screen */
   }
 }
 
@@ -169,8 +179,9 @@ header {
 }
 
 .navbar-toggler .bi-list {
-  font-size: 1.5rem !important;
+  font-size: 1.6rem !important;
   color: var(--cm-primary) !important;
+  line-height: 1;
 }
 
 .btn-secondary:hover {
@@ -200,13 +211,11 @@ header {
 }
 
 @media (max-width: 1199.98px) {
-  .navbar-toggler {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-  }
   .navbar-brand {
     font-size: 1.5rem !important;
+    flex-grow: 0 !important;
+    width: auto !important;
+    margin-right: auto !important;
   }
   .hero-wrapper {
     min-height: auto !important;
@@ -357,21 +366,31 @@ a.text-primary.text-decoration-none:hover .bi {
   background: var(--cm-panel);
   border: 1px solid var(--cm-border);
   color: var(--cm-primary);
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1060;
+}
+
+[data-bs-theme="light"] .theme-toggle, 
+[data-bs-theme="light"] .rtl-toggle-btn,
+[data-bs-theme="light"] .navbar-toggler {
+  border: 1.5px solid var(--cm-primary) !important; /* Visible green border */
+  background: #fff !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
 }
 
 .theme-toggle:hover, .rtl-toggle-btn:hover {
-  background: var(--cm-primary);
+  background: var(--cm-primary) !important;
   color: white !important;
-  border-color: var(--cm-primary);
+  border-color: var(--cm-primary) !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
 }
@@ -859,11 +878,49 @@ section .text-muted {
 [data-bs-theme="light"] .text-muted { color: var(--cm-text-muted) !important; }
 
 /* Component Specific Overrides */
-[data-bs-theme="light"] .offcanvas,
-[data-bs-theme="light"] .offcanvas-header,
-[data-bs-theme="light"] .offcanvas-body {
+.offcanvas {
   background-color: var(--cm-panel) !important;
   color: var(--cm-text-body) !important;
+  z-index: 2000 !important; /* Ensure it stays on top of navbar buttons */
+}
+
+@media (max-width: 1199.98px) {
+  .offcanvas .navbar-nav {
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+  .offcanvas .nav-item {
+    width: 100%;
+  }
+  .offcanvas-header {
+    padding: 1.5rem !important;
+    border-bottom: 1px solid var(--cm-border);
+  }
+  .offcanvas-body {
+    padding: 1.5rem !important;
+  }
+  .offcanvas .nav-link {
+    padding: 0.8rem 0 !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  [data-bs-theme="light"] .offcanvas .nav-link {
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+  }
+  .offcanvas .nav-link:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  [data-bs-theme="light"] .offcanvas,
+  [data-bs-theme="light"] .offcanvas-header,
+  [data-bs-theme="light"] .offcanvas-body {
+    background-color: #ffffff !important;
+    color: var(--cm-text-body) !important;
+  }
 }
 
 [data-bs-theme="light"] .accordion-button.bg-black {
@@ -938,3 +995,4 @@ footer.footer-wrap {
 footer .container-fluid {
   background: var(--cm-bg);
 }
+

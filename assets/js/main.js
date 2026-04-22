@@ -91,4 +91,18 @@ document.addEventListener('DOMContentLoaded', () => {
             dashboardSidebar.classList.toggle('show');
         });
     }
+
+    // ---- 5. Navbar Offcanvas Manual Trigger (Hamburger Fix) ----
+    const navTogglers = document.querySelectorAll('.navbar-toggler');
+    navTogglers.forEach(toggler => {
+        toggler.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-bs-target');
+            const targetEl = document.querySelector(targetId);
+            if (targetEl && typeof bootstrap !== 'undefined') {
+                const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(targetEl);
+                bsOffcanvas.show();
+            }
+        });
+    });
 });
