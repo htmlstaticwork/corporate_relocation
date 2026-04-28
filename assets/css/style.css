@@ -209,6 +209,17 @@ header {
   line-height: 1;
 }
 
+/* Light mode specific fix for toggler visibility */
+[data-bs-theme="light"] .navbar-toggler {
+  background: white !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-bs-theme="light"] .navbar-toggler .bi-list {
+  color: #0f172a !important; /* Use dark color for light mode visibility */
+}
+
+
 .btn-secondary:hover {
   background: var(--cm-primary) !important;
   color: #fff !important;
@@ -793,7 +804,7 @@ section .text-muted {
 }
 
 .auth-card a.text-white:hover,
-.auth-card .d-flex a:hover {
+.auth-card .social-login a:hover {
   color: var(--cm-primary) !important;
   background: rgba(16, 185, 129, 0.1);
   transform: translateY(-3px) scale(1.1);
@@ -806,7 +817,9 @@ section .text-muted {
 
 .auth-card a.text-primary:hover {
   color: #059669 !important;
-  text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  text-decoration: underline !important;
+  text-shadow: none !important;
+  transform: none !important;
 }
 
 /* Auth toggle buttons */
@@ -1142,8 +1155,29 @@ footer.footer-wrap {
   }
 }
 
-/* Ensure no gap between footer and copyright */
-footer .container-fluid {
-  background: var(--cm-bg);
+.login-container, .register-container {
+  position: relative;
+  padding-top: 80px !important;
+}
+
+.auth-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  width: auto;
+  z-index: 1060;
+}
+
+@media (max-width: 575.98px) {
+  .login-container, .register-container {
+    padding-top: 70px !important;
+  }
+  .auth-controls {
+    top: 15px;
+    right: 15px;
+  }
 }
 

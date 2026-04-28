@@ -119,22 +119,23 @@
         .auth-link:hover {
             color: #059669 !important;
             text-decoration: underline !important;
+            transform: none !important;
+            text-shadow: none !important;
+            background: none !important;
         }
     </style>
 </head>
 <body>
 
-    <!-- Theme and RTL Buttons placed outside the container -->
-    <div class="position-fixed top-0 end-0 p-4 d-flex gap-2" style="z-index: 1050;">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-            <i class="bi bi-moon-fill" id="themeIcon"></i>
-        </button>
-        <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
-            <span style="font-size: 0.7rem; font-weight: 700;">RTL</span>
-        </button>
-    </div>
-
     <div class="login-container reveal">
+        <div class="auth-controls">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i class="bi bi-moon-fill" id="themeIcon"></i>
+            </button>
+            <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction">
+                <span style="font-size: 0.7rem; font-weight: 700;">RTL</span>
+            </button>
+        </div>
         <div class="auth-card position-relative">
             <div class="text-center mb-5">
                 <a href="index.html" class="navbar-brand text-primary fw-bold fs-3 d-flex align-items-center justify-content-center mb-4 text-decoration-none">
