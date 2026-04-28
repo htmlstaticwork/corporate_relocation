@@ -97,12 +97,57 @@ document.addEventListener('DOMContentLoaded', () => {
     navTogglers.forEach(toggler => {
         toggler.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             const targetId = this.getAttribute('data-bs-target');
             const targetEl = document.querySelector(targetId);
             if (targetEl && typeof bootstrap !== 'undefined') {
                 const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(targetEl);
-                bsOffcanvas.show();
+                const isTransitioning = targetEl.classList.contains('showing') || targetEl.classList.contains('hiding');
+                if (isTransitioning) return;
+                const isOpen = targetEl.classList.contains('show');
+                if (isOpen) {
+                    bsOffcanvas.hide();
+                } else {
+                    bsOffcanvas.show();
+                }
             }
         });
+    });
+
+    const offcanvasEls = document.querySelectorAll('.offcanvas');
+    const outsideClickHandlers = new WeakMap();
+
+    function isOffcanvasTogglerClick(target, offcanvasEl) {
+        if (!target || !offcanvasEl || !offcanvasEl.id) return false;
+        const selector = `[data-bs-toggle="offcanvas"][data-bs-target="#${offcanvasEl.id}"]`;
+        return Boolean(target.closest(selector) || (target.closest('.navbar-toggler') && target.closest('.navbar-toggler').getAttribute('data-bs-target') === `#${offcanvasEl.id}`));
+    }
+
+    function attachOutsideClose(offcanvasEl) {
+        if (outsideClickHandlers.has(offcanvasEl)) return;
+        const handler = (e) => {
+            if (typeof bootstrap === 'undefined') return;
+            if (!offcanvasEl.classList.contains('show')) return;
+            const target = e.target;
+            if (!target) return;
+            if (offcanvasEl.contains(target)) return;
+            if (isOffcanvasTogglerClick(target, offcanvasEl)) return;
+            const instance = bootstrap.Offcanvas.getInstance(offcanvasEl) || bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+            instance.hide();
+        };
+        document.addEventListener('pointerdown', handler, true);
+        outsideClickHandlers.set(offcanvasEl, handler);
+    }
+
+    function detachOutsideClose(offcanvasEl) {
+        const handler = outsideClickHandlers.get(offcanvasEl);
+        if (!handler) return;
+        document.removeEventListener('pointerdown', handler, true);
+        outsideClickHandlers.delete(offcanvasEl);
+    }
+
+    offcanvasEls.forEach((el) => {
+        el.addEventListener('shown.bs.offcanvas', () => attachOutsideClose(el));
+        el.addEventListener('hidden.bs.offcanvas', () => detachOutsideClose(el));
     });
 });
