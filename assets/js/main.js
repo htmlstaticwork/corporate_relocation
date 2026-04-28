@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ---- 1. Theme Toggle Logic (Light/Dark mode) ----
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const themeIcons = document.querySelectorAll('.theme-icon');
     const htmlEl = document.documentElement;
 
     // Check saved theme from localStorage
     const savedTheme = localStorage.getItem('siteTheme');
     if (savedTheme === 'dark') {
         htmlEl.setAttribute('data-bs-theme', 'dark');
-        updateIcon('dark');
+        updateAllIcons('dark');
     } else {
         htmlEl.setAttribute('data-bs-theme', 'light');
-        updateIcon('light');
+        updateAllIcons('light');
     }
 
     // Check saved RTL direction
@@ -20,39 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlEl.setAttribute('dir', savedDir);
     }
 
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
             const currentTheme = htmlEl.getAttribute('data-bs-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             htmlEl.setAttribute('data-bs-theme', newTheme);
             localStorage.setItem('siteTheme', newTheme);
-            updateIcon(newTheme);
+            updateAllIcons(newTheme);
         });
-    }
+    });
 
     // RTL Toggle Logic
-    const rtlToggles = document.querySelectorAll('#rtlToggle');
-    if (rtlToggles.length > 0) {
-        rtlToggles.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const currentDir = htmlEl.getAttribute('dir');
-                const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-                htmlEl.setAttribute('dir', newDir);
-                localStorage.setItem('siteDir', newDir);
-            });
+    const rtlToggles = document.querySelectorAll('.rtl-toggle-btn');
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentDir = htmlEl.getAttribute('dir');
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            htmlEl.setAttribute('dir', newDir);
+            localStorage.setItem('siteDir', newDir);
         });
-    }
+    });
 
-    function updateIcon(theme) {
-        if (!themeIcon) return;
-        if (theme === 'dark') {
-            themeIcon.classList.remove('bi-moon-fill');
-            themeIcon.classList.add('bi-sun-fill');
-        } else {
-            themeIcon.classList.remove('bi-sun-fill');
-            themeIcon.classList.add('bi-moon-fill');
-        }
+    function updateAllIcons(theme) {
+        themeIcons.forEach(icon => {
+            if (theme === 'dark') {
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+            } else {
+                icon.classList.remove('bi-sun-fill');
+                icon.classList.add('bi-moon-fill');
+            }
+        });
     }
 
     // ---- 2. Back to Top Button ----
@@ -149,5 +148,24 @@ document.addEventListener('DOMContentLoaded', () => {
     offcanvasEls.forEach((el) => {
         el.addEventListener('shown.bs.offcanvas', () => attachOutsideClose(el));
         el.addEventListener('hidden.bs.offcanvas', () => detachOutsideClose(el));
+    });
+
+    // ---- 6. Password Visibility Toggle ----
+    const passwordToggles = document.querySelectorAll('.password-toggle');
+    passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const input = this.parentElement.querySelector('input');
+            const icon = this.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            }
+        });
     });
 });

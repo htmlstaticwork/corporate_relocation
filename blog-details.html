@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Field Intelligence Report. Tactical analysis of relocation stressors and organizational efficiency.">
     <title>Intelligence | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -55,7 +55,14 @@
                           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                           <li class="nav-item"><a class="nav-link active text-primary" href="blog.html">Blog</a></li>
                           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                          <li class="nav-item d-xl-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-xl-none mt-4">
+                              <div class="d-flex align-items-center justify-content-center mb-4 gap-3 px-1">                                  <div class="d-flex gap-3">
+                                      <button class="theme-toggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill theme-icon"></i></button>
+                                      <button class="rtl-toggle-btn" aria-label="Toggle RTL Direction"><span style="font-size: 0.7rem; font-weight: 700;">RTL</span></button>
+                                  </div>
+                              </div>
+                              <a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a>
+                          </li>
                       </ul>
                   </div>
               </div>
@@ -152,6 +159,9 @@
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
+
+
 
 
 

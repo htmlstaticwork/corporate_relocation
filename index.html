@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description"
         content="Corporate Relocation & Moving Services. Expert, seamless, and stress-free office moves.">
     <title>CorpMove | Professional Corporate Relocation</title>
@@ -36,8 +36,10 @@
 
               <div class="d-flex align-items-center gap-2 ms-auto order-xl-last">
                   <a href="login.html" class="btn btn-secondary fw-bold rounded-pill d-none d-xl-flex align-items-center justify-content-center">Login</a>
-                  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill" id="themeIcon"></i></button>
-                  <button class="rtl-toggle-btn" id="rtlToggle" aria-label="Toggle RTL Direction"><span style="font-size: 0.7rem; font-weight: 700;">RTL</span></button>
+                  <div class="d-none d-xl-flex align-items-center gap-2">
+                      <button class="theme-toggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill theme-icon"></i></button>
+                      <button class="rtl-toggle-btn" aria-label="Toggle RTL Direction"><span style="font-size: 0.7rem; font-weight: 700;">RTL</span></button>
+                  </div>
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                       <i class="bi bi-list fs-2"></i>
                   </button>
@@ -58,7 +60,14 @@
                           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                          <li class="nav-item d-xl-none mt-3"><a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a></li>
+                          <li class="nav-item d-xl-none mt-4">
+                              <div class="d-flex align-items-center justify-content-center mb-4 gap-3 px-1">                                  <div class="d-flex gap-3">
+                                      <button class="theme-toggle" aria-label="Toggle Theme"><i class="bi bi-moon-fill theme-icon"></i></button>
+                                      <button class="rtl-toggle-btn" aria-label="Toggle RTL Direction"><span style="font-size: 0.7rem; font-weight: 700;">RTL</span></button>
+                                  </div>
+                              </div>
+                              <a class="btn btn-secondary w-100 rounded-pill mb-2" href="login.html">Login</a>
+                          </li>
                       </ul>
                   </div>
               </div>
@@ -226,7 +235,7 @@
                     <h6 class="text-primary fw-bold text-uppercase tracking-widest small">What We Provide</h6>
                     <h2 class="display-6 fw-bold">Advanced Logistics Protocols</h2>
                 </div>
-                <div class="row g-4">
+                <div class="row g-4 justify-content-center">
                     <div class="col-lg-4 col-md-6 reveal">
                         <div class="cm-card h-100 d-flex flex-column">
                             <div class="overflow-hidden" style="height: 240px;">
@@ -395,7 +404,7 @@
                     </div>
                     <a href="blog.html" class="btn btn-outline-primary rounded-pill px-4 fw-bold small uppercase">All Archives</a>
                 </div>
-                <div class="row g-4">
+                <div class="row g-4 justify-content-center">
                     <div class="col-md-6 col-lg-4 reveal">
                         <div class="cm-card h-100">
                             <div class="overflow-hidden" style="height: 220px;">
@@ -515,6 +524,9 @@
 </body>
 
 </html>
+
+
+
 
 
 

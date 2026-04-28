@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Secure Entity Enrollment. Join the corporate transition network.">
     <title>Register | CorpMove</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -118,7 +118,7 @@
         }
         .auth-link:hover {
             color: #059669 !important;
-            text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+            text-decoration: underline !important;
         }
     </style>
 </head>
@@ -157,17 +157,27 @@
                     <!-- FIX #19: Confirm password on next line (each full width) -->
                     <div class="col-12">
                         <label class="tech-label">PASSWORD</label>
-                        <input type="password" class="form-control shadow-none" placeholder="••••••••" required>
+                        <div class="password-field">
+                            <input type="password" class="form-control shadow-none" placeholder="••••••••" required>
+                            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="col-12">
                         <label class="tech-label">CONFIRM PASSWORD</label>
-                        <input type="password" class="form-control shadow-none" placeholder="••••••••" required>
+                        <div class="password-field">
+                            <input type="password" class="form-control shadow-none" placeholder="••••••••" required>
+                            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="form-check my-4">
                     <input class="form-check-input shadow-none" type="checkbox" id="terms" required>
-                    <label class="form-check-label text-muted" for="terms" style="font-size: 0.7rem;">I acknowledge the <a href="#" class="text-primary text-decoration-none fw-bold auth-link transition-all hover-scale">ENFORCEMENT PROTOCOLS.</a></label>
+                    <label class="form-check-label text-muted" for="terms" style="font-size: 0.7rem;">I acknowledge the <a href="#" class="text-primary text-decoration-none fw-bold auth-link transition-all">ENFORCEMENT PROTOCOLS.</a></label>
                 </div>
 
                 <button type="submit" class="btn btn-auth w-100 text-white transition-all hover-scale">Create Account</button>
@@ -186,7 +196,7 @@
 
             <!-- FIX #19: Re-Link Portal hover -->
             <div class="text-center mt-5">
-                <p class="text-muted small text-nowrap">Existing Entity? <a href="login.html" class="text-primary text-decoration-none fw-bold auth-link transition-all hover-scale">Re-Link Portal</a></p>
+                <p class="text-muted small text-nowrap">Existing Entity? <a href="login.html" class="text-primary text-decoration-none fw-bold auth-link transition-all">Re-Link Portal</a></p>
             </div>
         </div>
         
@@ -199,4 +209,7 @@
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
+
+
 
